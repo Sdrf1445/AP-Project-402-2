@@ -8,6 +8,6 @@ namespace Restaurant_Manager.Classes
 {
     public class GlobalVariables
     {
-        public string Height { get; set; }
+        
     }
 }
