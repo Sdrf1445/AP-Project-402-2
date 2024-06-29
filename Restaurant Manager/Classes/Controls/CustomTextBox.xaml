@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Restaurant_Manager.Classes.Controls.CustomTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restaurant_Manager.Classes.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="273"
+             >
+
+    <Canvas>
+        
+    <Border CornerRadius="10" Width="273" Height="40" Background="#F2F3F7" x:Name="Border">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="4" Opacity="0.25" Direction="270" ShadowDepth="4"></DropShadowEffect>
+        </Border.Effect>
+        </Border>
+            <Grid Height="40" Width="273">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Canvas Width="273" Height="20" Grid.Row="1">
+                    
+                    <TextBox Margin="10,0,0,0" FontSize="14" x:Name="TextBox" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Height="20" Width="253"></TextBox>
+                    <TextBlock Foreground="#595D6C" Margin="10,0,0,0" x:Name="HintBlock" IsHitTestVisible="False" Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Left" Height="20" Width="253" FontSize="14" FontFamily="LilGrotesk">Test</TextBlock>
+                </Canvas>
+            </Grid>
+    </Canvas>
+</UserControl>

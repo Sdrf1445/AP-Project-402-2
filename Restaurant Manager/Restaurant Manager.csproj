@@ -10,11 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\background.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Classes\" />
-    <Folder Include="Styles\" />
-    <Folder Include="Pages\" />
-    <Folder Include="Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
   </ItemGroup>
 
 </Project>

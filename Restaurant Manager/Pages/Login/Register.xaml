@@ -1,0 +1,51 @@
+﻿<Page x:Class="Restaurant_Manager.Pages.Login.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant_Manager.Pages.Login" xmlns:controls="clr-namespace:Restaurant_Manager.Classes.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="980"
+      Title="Register"
+      Style="{StaticResource Login.Login}">
+
+    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="476">
+
+        <Border Height="476" Width="320"  Background="White" CornerRadius="29">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.25"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <StackPanel Height="476" Width="320">
+
+            <TextBlock Text="Register" 
+                   HorizontalAlignment="Center" 
+                   FontSize="26" 
+                   TextWrapping="Wrap" 
+                   Width="254" 
+                   TextAlignment="Center"
+                   Margin="0,42,0,0"
+                   FontFamily="LilGrotesk"
+                   Foreground="#140F7B"
+                   FontWeight="Bold">
+            </TextBlock>
+            <controls:CustomTextBox Margin="0,40,0,0" HintText="First Name" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Margin="0,10,0,0" HintText="Last Name" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Margin="0,10,0,0" HintText="Mobile" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Margin="0,10,0,0" HintText="Username" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Margin="0,10,0,0" HintText="Email" Height="40" Width="273"></controls:CustomTextBox>
+
+            <Button Margin="0,20,0,0" Click="Register_Click" Style="{StaticResource Login.Login.RegisterButton}"  Width="273" Height="40" Content="Login" Foreground="White" FontFamily="LilGrotesk" FontSize="17"></Button>
+            <Canvas Height="15" Width="165" Margin="0,4,0,0">
+                <TextBlock Text="Already have an account?" FontFamily="LilGrotesk"></TextBlock>
+                <TextBlock PreviewMouseDown="Login_Click" Style="{StaticResource Login.Login.CreateOne}" FontFamily="LilGrotesk" TextAlignment="Right" Width="165">
+                    <Run Text="Login">
+                        <Run.TextDecorations>
+                            <TextDecoration Location="Underline" />
+                        </Run.TextDecorations>
+                    </Run>
+                </TextBlock>
+            </Canvas>
+        </StackPanel>
+    </Canvas>
+</Page>
