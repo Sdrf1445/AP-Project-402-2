@@ -16,6 +16,12 @@
     <Compile Update="Pages\Login\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Login\SetPassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Login\Verification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,10 +39,19 @@
     <Page Update="Pages\Login\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Login\SetPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Login\Verification.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\GlobalStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Verification.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\LoginWindow.xaml">

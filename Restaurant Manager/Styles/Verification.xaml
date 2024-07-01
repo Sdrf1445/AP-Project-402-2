@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="Login.Login" TargetType="Page">
+    <Style x:Key="Verification.Verification" TargetType="Page">
         <Style.Setters>
             <Setter Property="Background">
                 <Setter.Value>
@@ -10,17 +10,17 @@
 
         </Style.Setters>
     </Style>
-    <Style x:Key="Login.Login.LoginButton" TargetType="Button">
+    <Style x:Key="Verification.Verification.VerifyButton" TargetType="Button">
         <Style.Setters>
-            <Setter Property="Background" Value="#E34A2B"></Setter>
+            <Setter Property="Background" Value="#37A274"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
                         <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
                             <Border Background="{TemplateBinding Background}" CornerRadius="15" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-
+                                
                             </Border>
-                            <Button IsHitTestVisible="False" Content="Login" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
+                            <Button IsHitTestVisible="False" Content="Verify" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
                         </Canvas>
                     </ControlTemplate>
                 </Setter.Value>
@@ -28,11 +28,11 @@
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#FF9C2B14"></Setter>
+                <Setter Property="Background" Value="#377276"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Login.Login.SetPasswordButton" TargetType="Button">
+    <Style x:Key="Verification.Verification.GoBackButton" TargetType="Button">
         <Style.Setters>
             <Setter Property="Background" Value="#E34A2B"></Setter>
             <Setter Property="Template">
@@ -42,7 +42,7 @@
                             <Border Background="{TemplateBinding Background}" CornerRadius="15" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
                                 
                             </Border>
-                            <Button IsHitTestVisible="False" Content="Let's Go!" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
+                            <Button IsHitTestVisible="False" Content="Go Back" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
                         </Canvas>
                     </ControlTemplate>
                 </Setter.Value>
@@ -54,29 +54,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Login.Login.RegisterButton" TargetType="Button">
-        <Style.Setters>
-            <Setter Property="Background" Value="#E34A2B"></Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="15" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-                                
-                            </Border>
-                            <Button IsHitTestVisible="False" Content="Register" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0"></Button>
-                        </Canvas>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style.Setters>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#FF9C2B14"></Setter>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-    <Style x:Key="Login.Login.CreateOne" TargetType="TextBlock">
+    <Style x:Key="Verification.Verification.Resend" TargetType="TextBlock">
         <Style.Setters>
             <Setter Property="Foreground" Value="#E34A2B"></Setter>
         </Style.Setters>
@@ -85,7 +63,7 @@
                 <Setter Property="Foreground" Value="#FF9C2B14"></Setter>
             </Trigger>
         </Style.Triggers>
-        
+
     </Style>
 
 </ResourceDictionary>
