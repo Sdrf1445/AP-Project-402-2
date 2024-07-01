@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Restaurant_Manager.Classes;
 using Restaurant_Manager.Windows;
 
 namespace Restaurant_Manager.Pages.Login
@@ -21,26 +22,33 @@ namespace Restaurant_Manager.Pages.Login
     /// </summary>
     public partial class Register : Page
     {
+        public static User user = new User("", "", "", "", "", "");
         public Register()
         {
             InitializeComponent();
+            this.DataContext = user;
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
+            // regex validation
 
+            // email verification
+            string emailAddress = EmailTextbox.Text;
+            string fullName = FirstnameTextbox.Text + LastnameTextbox.Text;
+            Email.SendEmail(emailAddress, fullName);
+            // go to verification page
+            NavigationService.Navigate(new Verification(user));
         }
 
         private void Login_Click(object sender, MouseButtonEventArgs e)
         {
-            foreach(var window in Application.Current.Windows)
-            {
-                if(window is LoginWindow)
-                {
-                    var loginWindow = (LoginWindow)window;
-                    loginWindow.LoginFrame.Source = new Uri("../Pages/Login/Login.xaml",UriKind.Relative);
-                }
-            }
+            NavigationService.Navigate(new Login());
+        }
+
+
+        private void CustomTextBox_Loaded(object sender, RoutedEventArgs e)
+        {
 
         }
     }

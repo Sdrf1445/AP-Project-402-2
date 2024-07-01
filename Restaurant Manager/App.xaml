@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Verification.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/Login.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/Error.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/GlobalStyles.xaml"></ResourceDictionary>

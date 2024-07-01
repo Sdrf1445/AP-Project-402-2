@@ -29,11 +29,11 @@
                    Foreground="#140F7B"
                    FontWeight="Bold">
             </TextBlock>
-            <controls:CustomTextBox Margin="0,40,0,0" HintText="First Name" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox Margin="0,10,0,0" HintText="Last Name" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox Margin="0,10,0,0" HintText="Mobile" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox Margin="0,10,0,0" HintText="Username" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox Margin="0,10,0,0" HintText="Email" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding FirstName}" Margin="0,40,0,0" HintText="First Name" Height="40" Width="273" x:Name="FirstnameTextbox"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding LastName}" Margin="0,10,0,0" HintText="Last Name" Height="40" Width="273" x:Name="LastnameTextbox"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding MobileNumber}" Margin="0,10,0,0" HintText="Mobile" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding Username}" Margin="0,10,0,0" HintText="Username" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding Email}" Margin="0,10,0,0" HintText="Email" Height="40" Width="273" Loaded="CustomTextBox_Loaded" x:Name ="EmailTextbox"></controls:CustomTextBox>
 
             <Button Margin="0,20,0,0" Click="Register_Click" Style="{StaticResource Login.Login.RegisterButton}"  Width="273" Height="40" Content="Login" Foreground="White" FontFamily="LilGrotesk" FontSize="17"></Button>
             <Canvas Height="15" Width="165" Margin="0,4,0,0">

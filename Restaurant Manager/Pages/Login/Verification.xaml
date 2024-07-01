@@ -1,0 +1,59 @@
+﻿<Page x:Class="Restaurant_Manager.Pages.Login.Verification"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant_Manager.Pages.Login" xmlns:controls="clr-namespace:Restaurant_Manager.Classes.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="980"
+      Title="Login"
+      Style="{StaticResource Verification.Verification}">
+
+
+
+    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="318">
+
+        <Border Height="318" Width="320"  Background="White" CornerRadius="29" HorizontalAlignment="Left"  VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.25"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <StackPanel Height="318" Width="320">
+
+            <TextBlock Text="Verification" 
+                   HorizontalAlignment="Center" 
+                   FontSize="40" 
+                   TextWrapping="Wrap" 
+                   Width="254" 
+                   TextAlignment="Center"
+                   Margin="0,52,0,0"
+                   FontFamily="LilGrotesk"
+                   Foreground="#140F7B"
+                   FontWeight="Bold">
+            </TextBlock>
+            <controls:CustomTextBox x:Name="VerificationCode_TextBox" Margin="0,42,0,0" HintText="Verification Code" Height="40" Width="273" Loaded="VerificationCodeTextBox_Loaded"></controls:CustomTextBox>
+            <Canvas Height="37" Width="273" Margin="0,13,0,0" HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="VerifyBtn_Click" Style="{StaticResource Verification.Verification.VerifyButton}"  Width="126" Height="37" Content="Verify"  Foreground="White" FontFamily="LilGrotesk" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+                <Button Grid.Column="1" Click="GoBackBtn_Click" Style="{StaticResource Verification.Verification.GoBackButton}"  Width="126" Height="37" Content="Verify" Foreground="White" FontFamily="LilGrotesk" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"></Button>
+                </Grid>
+
+            </Canvas> 
+            
+            <Canvas Height="15" Width="208" Margin="0,4,0,0">
+                <TextBlock Text="haven't received a code?" FontFamily="LilGrotesk"></TextBlock>
+                <TextBlock PreviewMouseDown="ResendTextBlock_PreviewMouseDown" Style="{StaticResource Verification.Verification.Resend}" FontFamily="LilGrotesk" TextAlignment="Right" Width="208">
+                    <Run Text="Resend Code">
+                        <Run.TextDecorations>
+                            <TextDecoration Location="Underline" />
+                        </Run.TextDecorations>
+                    </Run>
+                </TextBlock>
+            </Canvas>
+        </StackPanel>
+    </Canvas>
+</Page>
