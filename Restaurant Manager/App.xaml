@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Login.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Styles/Error.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/GlobalStyles.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
