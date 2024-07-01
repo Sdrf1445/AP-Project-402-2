@@ -22,7 +22,7 @@ namespace Restaurant_Manager.Pages.Login
     /// </summary>
     public partial class Register : Page
     {
-        public static User user = new User("", "", "", "", "", "");
+        public static User user = new User("", "", "", "", "");
         public Register()
         {
             InitializeComponent();

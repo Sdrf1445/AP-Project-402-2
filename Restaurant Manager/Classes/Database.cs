@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
 using System.Security.Permissions;
@@ -35,5 +36,14 @@ namespace Restaurant_Manager.Classes
         public string PhoneNumber {  get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
+        public User(string username, string name, string lastName, string phoneNumber, string email)
+        {
+            Username = username;
+            Name = name;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            PasswordHash = "";
+        }
     }
 }

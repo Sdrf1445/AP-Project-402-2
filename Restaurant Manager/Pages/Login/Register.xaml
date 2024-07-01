@@ -29,9 +29,9 @@
                    Foreground="#140F7B"
                    FontWeight="Bold">
             </TextBlock>
-            <controls:CustomTextBox Text="{Binding FirstName}" Margin="0,40,0,0" HintText="First Name" Height="40" Width="273" x:Name="FirstnameTextbox"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding Name}" Margin="0,40,0,0" HintText="First Name" Height="40" Width="273" x:Name="FirstnameTextbox"></controls:CustomTextBox>
             <controls:CustomTextBox Text="{Binding LastName}" Margin="0,10,0,0" HintText="Last Name" Height="40" Width="273" x:Name="LastnameTextbox"></controls:CustomTextBox>
-            <controls:CustomTextBox Text="{Binding MobileNumber}" Margin="0,10,0,0" HintText="Mobile" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox Text="{Binding PhoneNumber}" Margin="0,10,0,0" HintText="Mobile" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox Text="{Binding Username}" Margin="0,10,0,0" HintText="Username" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox Text="{Binding Email}" Margin="0,10,0,0" HintText="Email" Height="40" Width="273" Loaded="CustomTextBox_Loaded" x:Name ="EmailTextbox"></controls:CustomTextBox>
 
