@@ -33,7 +33,7 @@ namespace Restaurant_Manager.Pages.Login
             // regex check
 
             // create user in data base
-            user.Password = PasswordTextbox.Text;
+            user.PasswordHash = Security.CreateMD5(PasswordTextbox.Text);
 
         }
     }

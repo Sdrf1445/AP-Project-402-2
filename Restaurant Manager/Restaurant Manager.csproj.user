@@ -17,6 +17,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\ErrorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Login\SetPassword.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +43,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Error.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Login\SetPassword.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -54,6 +58,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Verification.xaml">
       <SubType>Designer</SubType>
     </Page>
