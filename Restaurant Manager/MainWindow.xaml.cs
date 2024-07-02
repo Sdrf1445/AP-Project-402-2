@@ -1,4 +1,5 @@
-﻿using Restaurant_Manager.Windows;
+﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Windows;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,7 @@ namespace Restaurant_Manager
             this.Hide();
             var LoginWindow = new LoginWindow();
             LoginWindow.ShowDialog();
+            Database.Instance.Dispose();
             this.Close();
         }
     }
