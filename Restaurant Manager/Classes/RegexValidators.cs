@@ -15,13 +15,14 @@ namespace Restaurant_Manager.Classes
         static string MobileRegexPattern = @"^09\d{9}$";
         static string PasswordRegexPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,32}$";
         static string VerificationCodeRegexPattern = @"^\d{4}$";
+        static string UserNameRegexPattern = @"^([A-Z]|[a-z]|\d)+$";
         public static bool IsEmailValid(string email)
         {
             return Regex.IsMatch(email, EmailRegexPattern,RegexOptions.IgnoreCase);
         }
         public static bool IsNameValid(string name)
         {
-            return Regex.IsMatch(name, EmailRegexPattern,RegexOptions.IgnoreCase);
+            return Regex.IsMatch(name, NameRegexPattern,RegexOptions.IgnoreCase);
         }
         public static bool IsMobileValid(string mobile)
         {
@@ -34,6 +35,10 @@ namespace Restaurant_Manager.Classes
         public static bool IsVerificationCodeValid(string verificationCode)
         {
             return Regex.IsMatch(verificationCode, VerificationCodeRegexPattern);
+        }
+        public static bool IsUsernameValid(string username)
+        {
+            return Regex.IsMatch(username, UserNameRegexPattern);
         }
     }
 }

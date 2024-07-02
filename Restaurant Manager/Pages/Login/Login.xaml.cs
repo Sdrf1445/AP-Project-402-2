@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Restaurant_Manager.Classes;
 
 namespace Restaurant_Manager.Pages.Login
 {
@@ -28,19 +29,29 @@ namespace Restaurant_Manager.Pages.Login
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (DatabaseFunctions.IsLoginCreditionalsValid(UsernameTextbox.Text, PasswordTextbox.Text))
+            {
+                //Login details later
+
+            }
+            else
+            {
+                new ErrorWindow("Wrong Creditionals").ShowDialog();
+            }
         }
 
         private void CreateOne_Click(object sender, MouseButtonEventArgs e)
         {
-            foreach(var window in Application.Current.Windows)
-            {
-                if(window is LoginWindow)
-                {
-                    var loginWindow = (LoginWindow)window;
-                    loginWindow.LoginFrame.Source = new Uri("../Pages/Login/Register.xaml",UriKind.Relative);
-                }
-            }
+            //foreach(var window in Application.Current.Windows)
+            //{
+            //    if(window is LoginWindow)
+            //    {
+            //        var loginWindow = (LoginWindow)window;
+            //        loginWindow.LoginFrame.Source = new Uri("../Pages/Login/Register.xaml",UriKind.Relative);
+            //    }
+            //}
+
+            NavigationService.Navigate(new Register());
         }
     }
 }

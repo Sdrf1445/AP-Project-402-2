@@ -22,6 +22,7 @@ namespace Restaurant_Manager
         {
             InitializeComponent();
             this.Hide();
+            new AdminWindow().ShowDialog();
             var LoginWindow = new LoginWindow();
             LoginWindow.ShowDialog();
             Database.Instance.Dispose();

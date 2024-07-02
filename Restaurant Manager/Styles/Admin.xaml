@@ -1,0 +1,103 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Restaurant_Manager.Classes">
+    <Style x:Key="Admin.Shared.NavigationBarButton" TargetType="RadioButton">
+        <Style.Setters>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="10" Background="{TemplateBinding Background}">
+                            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Center" FontFamily="LilGrotesk" FontSize="20"></TextBlock>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Background" Value="#140F7B30"></Setter>
+                </Trigger.Setters>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Background" Value="#140F7BCC"></Setter>
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Admin.Restaurants.SearchBox" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Canvas Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="20" Background="White">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Color="Black" Opacity="0.25"></DropShadowEffect>
+                                </Border.Effect>
+                            </Border>
+                            <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="20" Background="White">
+                                <TextBox BorderThickness="0" Width="460" Text="{TemplateBinding Text}" Height="30" FontSize="{TemplateBinding FontSize}"></TextBox>
+                            </Border>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Admin.Restaurants.SearchButton" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#140F7B"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Button BorderThickness="0" IsHitTestVisible="False" Foreground="{TemplateBinding Foreground}" Background="Transparent" Content="{TemplateBinding Content}" FontWeight="Bold"></Button>
+                        </Border>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Background" Value="Yellow"></Setter>
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Admin.Restaurants.FilterButton" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Background="White" CornerRadius="30" Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="4" ShadowDepth="4" Color="Black" Opacity="0.25" Direction="270"></DropShadowEffect>
+                                </Border.Effect>
+                            </Border>
+                            <Border Background="White" CornerRadius="30" Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}">
+                                        <Image Source="/Images/filter.png" Width="25"></Image>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+
+    </Style>
+
+</ResourceDictionary>

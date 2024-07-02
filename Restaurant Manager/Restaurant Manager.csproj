@@ -10,7 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\LilGrotesk-Bold.ttf" />
+    <None Remove="Fonts\LilGrotesk-Medium.ttf" />
+    <None Remove="Fonts\LilGrotesk-Regular.ttf" />
+    <None Remove="Images\adminprofile.png" />
     <None Remove="Images\background.jpg" />
+    <None Remove="Images\EmptyStar.png" />
+    <None Remove="Images\FilledStar.png" />
+    <None Remove="Images\filter.png" />
+    <None Remove="Images\RestaurantImage.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +38,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\LilGrotesk-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\LilGrotesk-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\LilGrotesk-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\adminprofile.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\background.jpg" />
+    <Resource Include="Images\EmptyStar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\FilledStar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\filter.png" />
+    <Resource Include="Images\RestaurantImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

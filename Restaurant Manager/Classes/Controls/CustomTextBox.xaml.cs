@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -19,13 +20,15 @@ namespace Restaurant_Manager.Classes.Controls
     /// <summary>
     /// Interaction logic for CustomTextBox.xaml
     /// </summary>
-    public partial class CustomTextBox : UserControl
+    public partial class CustomTextBox : UserControl , INotifyPropertyChanged
     {
         
         public static readonly DependencyProperty HintProperty=
             DependencyProperty.Register("Hint", typeof(string), typeof(CustomTextBox), new PropertyMetadata(""));
         public static readonly DependencyProperty TextProperty=
             DependencyProperty.Register("Text", typeof(string), typeof(CustomTextBox), new PropertyMetadata(""));
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public string HintText 
         {
@@ -61,6 +64,10 @@ namespace Restaurant_Manager.Classes.Controls
             else
             {
                 HintBlock.Visibility = Visibility.Hidden;
+            }
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this,new PropertyChangedEventArgs(Text));
             }
         }
     }

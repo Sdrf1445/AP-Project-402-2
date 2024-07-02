@@ -1,4 +1,5 @@
 ﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,17 @@ namespace Restaurant_Manager.Pages.Login
         private void LetsGoBtn_Click(object sender, RoutedEventArgs e)
         {
             // regex check
-
+            if (!RegexValidators.IsPasswordValid(PasswordTextbox.Text))
+            {
+                new ErrorWindow("Password is invalid").ShowDialog();
+            }
             // create user in data base
             user.PasswordHash = Security.CreateMD5(PasswordTextbox.Text);
+
+            Database.Instance.users.Add(user);
+            Database.Instance.SaveChanges();
+
+
 
         }
     }

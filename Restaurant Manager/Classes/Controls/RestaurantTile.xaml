@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Restaurant_Manager.Classes.Controls.RestaurantTile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restaurant_Manager.Classes.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="151" d:DesignWidth="608">
+    <Canvas Background="White">
+        <TextBlock x:Name="NameBlock" Text="Name" FontFamily="{StaticResource LilGroteskBold}" FontSize="25" FontWeight="Bold" Canvas.Left="22" Canvas.Top="21"></TextBlock>
+        <TextBlock x:Name="LocationBlock" Text="Location" Foreground="#8B8B8B" FontFamily="{StaticResource LilGroteskRegular}" Canvas.Left="22" Canvas.Top="50"></TextBlock>
+        <TextBlock x:Name="CommentsComplaintsBlock" Text="0 Comments , 0 Complaints" FontFamily="{StaticResource LilGroteskRegular}" Canvas.Left="22" Canvas.Bottom="32"></TextBlock>
+        <Image Height="104" Width="108" Canvas.Top="20" Canvas.Right="35" Source="/Images/RestaurantImage.png"></Image>
+        <TextBlock x:Name="UncheckedComplaintsBox" TextAlignment="Right" Canvas.Bottom="32" FontSize="10" Canvas.Right="260" Text="0 Unchecked Complaints" Foreground="#E34A2B"></TextBlock>
+        <TextBlock x:Name="CheckedComplaints" TextAlignment="Right" Canvas.Bottom="32" FontSize="10" Canvas.Right="151" Text="0 Checked Complaints" Foreground="#37A274"></TextBlock>
+        <Image x:Name="Star5" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="153" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star4" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="178" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star3" Source="/Images/FilledStar.png" Height="21" Canvas.Right="203" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star2" Source="/Images/FilledStar.png" Height="21" Canvas.Right="228" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star1" Source="/Images/FilledStar.png" Height="21" Canvas.Right="253" Canvas.Bottom="100"></Image>
+        <TextBlock x:Name="VoteCounter" Canvas.Bottom="100" Canvas.Right="278" Text="0 (27 Votes)" TextAlignment="Right"></TextBlock>
+
+
+    </Canvas>
+
+</UserControl>

@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="LilGroteskRegular">./Fonts/LilGrotesk-Regular.ttf</FontFamily>
+    <FontFamily x:Key="LilGroteskBold">./Fonts/LilGrotesk-Bold.ttf</FontFamily>
     <Style x:Key="WindowBase" TargetType="{x:Type Window}">
         <Style.Setters>
             <Setter Property="Height" Value="850"></Setter>
