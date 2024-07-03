@@ -85,6 +85,30 @@ namespace Restaurant_Manager.Classes.Controls
             this.CommentsComplaintsBlock.Text = $"{CommentsCountNumber} Comments , {UnCheckedComplaintsText + CheckedComplaintsText} Complaints";
             this.UncheckedComplaintsBox.Text = $"{UnCheckedComplaintsText} Unchecked Complaints";
             this.CheckedComplaints.Text = $"{CheckedComplaintsText} Checked Complaints";
+            this.VoteCounter.Text = $"{StarText} ({VotesCountText} Votes)";
+            int StarCount = int.Parse(StarText);
+            string FilledStarSource = "/Images/FilledStar.png";
+
+            if(StarCount > 4)
+            {
+                Star5.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
+            }
+            if(StarCount > 3)
+            {
+                Star4.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
+            }
+            if(StarCount > 2)
+            {
+                Star3.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
+            }
+            if(StarCount > 1)
+            {
+                Star2.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
+            }
+            if(StarCount > 0)
+            {
+                Star1.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
+            }
         }
     }
 }

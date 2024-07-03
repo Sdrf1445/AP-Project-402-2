@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:Restaurant_Manager.Classes.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="151" d:DesignWidth="608">
-    <Canvas Background="White">
+    <Canvas Background="Transparent" Width="608" Height="151">
+        <Border Background="White" CornerRadius="10" Width="608" Height="151">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Color="Black" Opacity="0.25"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
         <TextBlock x:Name="NameBlock" Text="Name" FontFamily="{StaticResource LilGroteskBold}" FontSize="25" FontWeight="Bold" Canvas.Left="22" Canvas.Top="21"></TextBlock>
         <TextBlock x:Name="LocationBlock" Text="Location" Foreground="#8B8B8B" FontFamily="{StaticResource LilGroteskRegular}" Canvas.Left="22" Canvas.Top="50"></TextBlock>
         <TextBlock x:Name="CommentsComplaintsBlock" Text="0 Comments , 0 Complaints" FontFamily="{StaticResource LilGroteskRegular}" Canvas.Left="22" Canvas.Bottom="32"></TextBlock>
@@ -15,9 +20,9 @@
         <TextBlock x:Name="CheckedComplaints" TextAlignment="Right" Canvas.Bottom="32" FontSize="10" Canvas.Right="151" Text="0 Checked Complaints" Foreground="#37A274"></TextBlock>
         <Image x:Name="Star5" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="153" Canvas.Bottom="100"></Image>
         <Image x:Name="Star4" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="178" Canvas.Bottom="100"></Image>
-        <Image x:Name="Star3" Source="/Images/FilledStar.png" Height="21" Canvas.Right="203" Canvas.Bottom="100"></Image>
-        <Image x:Name="Star2" Source="/Images/FilledStar.png" Height="21" Canvas.Right="228" Canvas.Bottom="100"></Image>
-        <Image x:Name="Star1" Source="/Images/FilledStar.png" Height="21" Canvas.Right="253" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star3" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="203" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star2" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="228" Canvas.Bottom="100"></Image>
+        <Image x:Name="Star1" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="253" Canvas.Bottom="100"></Image>
         <TextBlock x:Name="VoteCounter" Canvas.Bottom="100" Canvas.Right="278" Text="0 (27 Votes)" TextAlignment="Right"></TextBlock>
 
 

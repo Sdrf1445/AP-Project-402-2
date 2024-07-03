@@ -36,14 +36,15 @@ namespace Restaurant_Manager.Pages.Login
             {
                 new ErrorWindow("Password is invalid").ShowDialog();
             }
+            if (PasswordTextbox.Text == ConfirmPasswordTextBox.Text)
+            {
+                new ErrorWindow("Passwords does not match").ShowDialog();
+            }
             // create user in data base
             user.PasswordHash = Security.CreateMD5(PasswordTextbox.Text);
 
             Database.Instance.users.Add(user);
             Database.Instance.SaveChanges();
-
-
-
         }
     }
 }
