@@ -13,6 +13,9 @@
     <Compile Update="Classes\Controls\CustomTextBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\RestaurantFilterControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\RestaurantTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,12 +40,18 @@
     <Compile Update="Windows\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\RestaurantFilterWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Classes\Controls\CustomPasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\CustomTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\RestaurantFilterControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\RestaurantTile.xaml">
@@ -76,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RestaurantFilterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
