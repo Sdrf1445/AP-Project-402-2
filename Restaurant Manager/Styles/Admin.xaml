@@ -99,5 +99,19 @@
         </Style.Setters>
 
     </Style>
+    <Style x:Key="Admin.Shared.MessageBox" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="5">
+                            <Button Background="Transparent" BorderThickness="0" IsHitTestVisible="False" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"></Button>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+
+    </Style>
 
 </ResourceDictionary>

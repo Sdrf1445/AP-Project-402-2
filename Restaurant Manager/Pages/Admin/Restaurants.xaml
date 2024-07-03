@@ -29,7 +29,7 @@
         <Button Grid.Column="2" Grid.Row="1" Style="{StaticResource Admin.Restaurants.FilterButton}"></Button>
 
         <ListView x:Name="RestaurantTileList" BorderThickness="0" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent">
-            <controls:RestaurantTile TestText="DFSF" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+            <controls:RestaurantTile RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
             <controls:RestaurantTile Margin="0,23,0,0" Width="608" Height="151" RestaurantText="Nice"></controls:RestaurantTile>
 
         </ListView>

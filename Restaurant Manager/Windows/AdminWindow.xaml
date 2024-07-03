@@ -23,14 +23,15 @@
                     <Image Source="/Images/adminprofile.png"></Image>
                 </Border>
                 <TextBlock Margin="0,11,0,0" Text="Admin" TextAlignment="Center" FontWeight="Bold" FontFamily="LilGrotesk" FontSize="30"></TextBlock>
-                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Margin="0,55,0,0" GroupName="NavigationBar" Width="245" Height="49" IsChecked="True" Content="Restaurants"></RadioButton>
-                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" GroupName="NavigationBar" Width="245" Height="49" Content="Add Restaurants"></RadioButton>
+                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="RestaurantsNavButton_Checked" Margin="0,55,0,0" GroupName="NavigationBar" Width="245" Height="49" IsChecked="True" Content="Restaurants"></RadioButton>
+                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="AddRestaurantNavButton_Checked" GroupName="NavigationBar" Width="245" Height="49" Content="Add Restaurants"></RadioButton>
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" GroupName="NavigationBar" Width="245" Height="49" Content="Complaints"></RadioButton>
 
             </StackPanel>
         </Canvas>
 
-        <Frame x:Name="Frame" Grid.Column="1"></Frame>
+        <Frame x:Name="Frame" NavigationUIVisibility="Hidden" Grid.Column="1"></Frame>
+        <Button Name="MessageBoxBlock" Opacity="0" Style="{StaticResource Admin.Shared.MessageBox}" IsHitTestVisible="False" Grid.Column="1" Height="30" Width="500" Content="Message" Background="Green" Foreground="White" Margin="434,689,19,23"></Button>
 
 
     </Grid>

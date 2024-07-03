@@ -13,6 +13,9 @@
     <Compile Update="Classes\Controls\RestaurantTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Admin\AddRestaurant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +45,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Admin\AddRestaurant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Admin\Restaurants.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -52,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Login\SetPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Shared.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Login\Verification.xaml">

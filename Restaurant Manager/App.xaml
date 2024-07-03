@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles/Admin.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/Login.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/Error.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Styles/Shared.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/GlobalStyles.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
