@@ -33,6 +33,7 @@ namespace Restaurant_Manager.Pages.Login
         {
             // regex validation
 
+
             // email verification
             string emailAddress = EmailTextbox.Text;
             string fullName = FirstnameTextbox.Text + LastnameTextbox.Text;
