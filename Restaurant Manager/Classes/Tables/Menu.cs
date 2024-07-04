@@ -14,6 +14,7 @@ namespace Restaurant_Manager.Classes
         [Key]
         public int ID { get; set; }
         public int RestaurantID { get; set; }
+        public string Name { get; set; }
         public string FoodsJson { get; set; }
         [NotMapped]
         public List<Food> Foods

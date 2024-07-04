@@ -23,6 +23,72 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style x:Key="Shared.SmallButton" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#E34A2B"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+
+                            </Border>
+                            <Button IsHitTestVisible="False" Content="{TemplateBinding Content}" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF9C2B14"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Shared.SmallButton2" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#140F7B"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+
+                            </Border>
+                            <Button IsHitTestVisible="False" Content="{TemplateBinding Content}" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF9C2B14"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Shared.AddButton" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="Green"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+
+                            </Border>
+                            <Button IsHitTestVisible="False" Content="{TemplateBinding Content}" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"></Button>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF9C2B14"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <Style x:Key="Shared.RadioButton" TargetType="RadioButton">
         <Style.Setters>
             <Setter Property="Background" Value="White"></Setter>

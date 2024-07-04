@@ -7,10 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Classes\Controls\CustomComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\CustomPasswordBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Classes\Controls\CustomTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Classes\Controls\FoodAdminTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Classes\Controls\MenuAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Classes\Controls\RestaurantFilterControl.xaml.cs">
@@ -37,18 +46,33 @@
     <Compile Update="Pages\Login\Verification.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Restaurant\Main.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\RestaurantFilterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\RestaurantWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Classes\Controls\CustomComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\CustomPasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\CustomTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\FoodAdminTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\MenuAdminTile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\RestaurantFilterControl.xaml">
@@ -75,6 +99,9 @@
     <Page Update="Pages\Login\SetPassword.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Restaurant\Main.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Shared.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -88,6 +115,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\RestaurantFilterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RestaurantWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

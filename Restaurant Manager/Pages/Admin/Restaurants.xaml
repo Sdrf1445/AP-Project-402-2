@@ -40,7 +40,7 @@
 
             <StackPanel x:Name="TestPanel">
 
-                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                <controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
                 <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
                 <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
                 <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>

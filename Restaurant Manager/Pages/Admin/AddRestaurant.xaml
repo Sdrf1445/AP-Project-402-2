@@ -8,14 +8,14 @@
       d:DesignHeight="752" d:DesignWidth="953"
       Title="AddRestaurant">
 
-    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="387">
+    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="548">
 
-        <Border Height="387" Width="320"  Background="White" CornerRadius="29">
+        <Border Height="548" Width="320"  Background="White" CornerRadius="29">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.25"></DropShadowEffect>
             </Border.Effect>
         </Border>
-        <StackPanel Height="387" Width="320">
+        <StackPanel Height="548" Width="320">
 
             <TextBlock Text="Add Restaurant" 
                    HorizontalAlignment="Center" 
@@ -28,9 +28,13 @@
                    Foreground="#140F7B"
                    FontWeight="Bold">
             </TextBlock>
-            <controls:CustomTextBox x:Name="UsernameTextbox" Margin="0,60,0,0" HintText="Restaurant Username" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox x:Name="PasswordTextbox" Margin="0,10,0,0" HintText="Password" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomTextBox x:Name="FSfsfa" Margin="0,10,0,0" HintText="Repeat Password" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="UsernameTextbox" Margin="0,30,0,0" HintText="Restaurant Username" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="NameTextBox" Margin="0,10,0,0" HintText="Restaurant Name" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="LocationBox" Margin="0,10,0,0" HintText="City" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomComboBox x:Name="ReceptionType" Margin="0,10,0,0" HintText="Reception Type" Width="273" Height="40"></controls:CustomComboBox>
+            <controls:CustomTextBox x:Name="AddressBox" Margin="0,10,0,0" HintText="Address" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomPasswordBox x:Name="PasswordTextbox" Margin="0,10,0,0" HintText="Password" Height="40" Width="273"></controls:CustomPasswordBox>
+            <controls:CustomPasswordBox x:Name="RepeatPasswordBox" Margin="0,10,0,0" HintText="Repeat Password" Height="40" Width="273"></controls:CustomPasswordBox>
 
             <Button Click="Button_Click" Margin="0,20,0,0" Style="{StaticResource Shared.BigButton}"  Width="92" Height="40" Content="Add" Foreground="White" FontFamily="LilGrotesk" FontSize="17"></Button>
         </StackPanel>
