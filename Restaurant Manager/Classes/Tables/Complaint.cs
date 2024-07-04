@@ -12,10 +12,26 @@ namespace Restaurant_Manager.Classes
         [Key]
         public int ID { get; set; }
         public int RestaurantID { get; set; }
+        public DateTime Date { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string AuthorUsername { get; set; }
-        public bool Status { get; set; }
-        public Comment Reply { get; set; }
+        public bool Status { get; set; } = false;
+        public Comment Answer { get; set; }
+
+        public Complaint(int restaurantID, string title, string description, string authorUsername)
+        {
+            RestaurantID = restaurantID;
+            Title = title;
+            Description = description;
+            AuthorUsername = authorUsername;
+            Date = DateTime.Now;
+        }
+
+        public void AddAnswer(string answer)
+        {
+            Status = true;
+            Answer = new Comment(answer, AuthorUsername);
+        }
     }
 }

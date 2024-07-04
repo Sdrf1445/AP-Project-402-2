@@ -21,6 +21,7 @@ namespace Restaurant_Manager.Classes
         [AllowNull]
         public string ImageSource { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Rating> Ratings { get; set; }
 
         public Food(int menuID, int remaining, string name, string ingredients, double price)
         {
@@ -43,12 +44,7 @@ namespace Restaurant_Manager.Classes
         }
         public double Rating()
         {
-            if (Comments == null)
-            {
-                return 0;
-            }
-            return Comments.Select(x => x.Rating)
-                .Average();
+            throw new NotImplementedException();
         }
     }
 }
