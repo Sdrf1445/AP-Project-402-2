@@ -56,31 +56,31 @@ namespace Restaurant_Manager.Classes
 
         
         // search throw complaints 
-        public static List<Complaint> SearchByUsername(string username)
+        public static List<Complaint> SearchComplaintsByUsername(string username)
         {
             return Database.Instance.Complaints
                 .Where(x => x.AuthorUsername.Contains(username))
                 .ToList();
         }
-        public static List<Complaint> SearchByRestaurantName(string restaurantName)
+        public static List<Complaint> SearchComplaintsByRestaurantName(string restaurantName)
         {
             return Database.Instance.Complaints
                 .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName))
                 .ToList();
         }
-        public static List<Complaint> SearchByTitle(string title)
+        public static List<Complaint> SearchComplaintsByTitle(string title)
         {
             return Database.Instance.Complaints
                 .Where(x => x.Title.Contains(title))
                 .ToList();
         }
-        public static List<Complaint> SearchByFullName(string fullName)
+        public static List<Complaint> SearchComplaintsByFullName(string fullName)
         {
             return Database.Instance.Complaints
                 .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName))
                 .ToList();
         }
-        public static List<Complaint> SearchByStatus(bool status)
+        public static List<Complaint> SearchComplaintsByStatus(bool status)
         {
             return Database.Instance.Complaints
                 .Where(x => x.Status == status)
@@ -91,6 +91,57 @@ namespace Restaurant_Manager.Classes
             return Database.Instance.Complaints
                 .Where(x => x.Status == false)
                 .OrderByDescending(x => x.Date)
+                .ToList();
+        }
+
+        // search throw restaurant 
+        public static List<string> GetAllRestaurantCities()
+        {
+            return Database.Instance.Restaurants
+                .Select(x => x.City)
+                .Distinct()
+                .ToList();
+        }
+
+        public static List<Restaurant> SearchRestaurantByName(string name)
+        {
+            return Database.Instance.Restaurants
+                .Where(x => x.Name.Contains(name))
+                .ToList();
+        }
+
+        public static List<Restaurant> SearchRestaurantByCity(string city)
+        {
+            return Database.Instance.Restaurants
+                .Where(x => x.City == city)
+                .ToList ();
+        }
+
+        public static List<Restaurant> HaveUncheckedComplaints()
+        {
+            return Database.Instance.Restaurants
+                .Where(x => x.Complaints.Any(y => y.Status == false))
+                .ToList ();
+        }
+
+        public static List<Restaurant> RestaurantsRatingOrderByDescending()
+        {
+            return Database.Instance.Restaurants
+                .OrderByDescending(x => x.Rating)
+                .ToList();
+        }
+        
+        public static List<Restaurant> RestaurantsRatingOrderByAscending()
+        {
+            return Database.Instance.Restaurants
+                .OrderBy(x => x.Rating)
+                .ToList();
+        }
+
+        public static List<Restaurant> SearchRestaurantByReceptionType(ReceptionType receptionType)
+        {
+            return Database.Instance.Restaurants
+                .Where(x => x.ReceptionType == receptionType)
                 .ToList();
         }
 
