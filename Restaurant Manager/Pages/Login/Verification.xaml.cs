@@ -48,14 +48,14 @@ namespace Restaurant_Manager.Pages.Login
             }
             else
             {
-                // show a error message box to enter the code again
+                new ErrorWindow("Wrong code").ShowDialog();
+                return;
             }
         }
 
         private void GoBackBtn_Click(Object sender, RoutedEventArgs e)
         {
-            
-            NavigationService.Navigate(new Register());
+            NavigationService.GoBack();
         }
 
         private void VerificationCodeTextBox_Loaded(object sender, RoutedEventArgs e)

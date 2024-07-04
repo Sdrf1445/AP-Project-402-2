@@ -9,13 +9,13 @@
     <Grid>
         <Border Background="White" CornerRadius="15"></Border>
         <TextBlock Text="Ratings Order" TextAlignment="Center" Height="30" FontSize="20" FontWeight="Bold" Margin="24,23,439,98"/>
-        <RadioButton Style="{StaticResource Shared.RadioButton}" GroupName="RatingOrder" IsChecked="True" Content="Ascending" FontSize="12" Height="30" Margin="56,60,472,61"/>
-        <RadioButton Style="{StaticResource Shared.RadioButton}" GroupName="RatingOrder" Content="Descending" FontSize="12" Height="30" Margin="56,95,472,26"/>
+        <RadioButton Checked="Ascending_Click" Style="{StaticResource Shared.RadioButton}" GroupName="RatingOrder" IsChecked="True" Content="Ascending" FontSize="12" Height="30" Margin="56,60,472,61"/>
+        <RadioButton Checked="Descending_Click" Style="{StaticResource Shared.RadioButton}" GroupName="RatingOrder" Content="Descending" FontSize="12" Height="30" Margin="56,95,472,26"/>
 
         <TextBlock Text="Reception Type" TextAlignment="Center" Height="30" FontSize="20" FontWeight="Bold" Margin="232,23,232,98"/>
-        <RadioButton Style="{StaticResource Shared.RadioButton}" IsChecked="True" GroupName="ReceptionType" Content="Both" FontSize="12" Height="20" Margin="254,130,274,10"/>
-        <RadioButton Style="{StaticResource Shared.RadioButton}" GroupName="ReceptionType" Content="Dining" FontSize="12" Height="20" Margin="254,95,274,36"/>
-        <RadioButton Style="{StaticResource Shared.RadioButton}" GroupName="ReceptionType" Content="Take Away" FontSize="12" Height="20" Margin="254,65,274,66"/>
+        <RadioButton Checked="Both_Click" Style="{StaticResource Shared.RadioButton}" IsChecked="True" GroupName="ReceptionType" Content="Both" FontSize="12" Height="20" Margin="254,130,274,10"/>
+        <RadioButton Checked="Dining_Click" Style="{StaticResource Shared.RadioButton}" GroupName="ReceptionType" Content="Dining" FontSize="12" Height="20" Margin="254,95,274,36"/>
+        <RadioButton Checked="TakeAway_Click" Style="{StaticResource Shared.RadioButton}" GroupName="ReceptionType" Content="Take Away" FontSize="12" Height="20" Margin="254,65,274,66"/>
 
         <TextBlock Text="Location" TextAlignment="Center" Height="30" FontSize="20" FontWeight="Bold" Margin="427,28,37,102"/>
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" CanContentScroll="True" BorderThickness="0" Width="100" Margin="449,60,59,10" HorizontalContentAlignment="Center">

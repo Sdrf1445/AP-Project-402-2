@@ -21,9 +21,32 @@ namespace Restaurant_Manager.Pages.Admin
     /// </summary>
     public partial class Restaurants : Page
     {
+        bool IsFilterDisplayed { get; set; } = false;
+        RestaurantFilterControl filterControl;
         public Restaurants()
         {
             InitializeComponent();
+            filterControl = new RestaurantFilterControl(new List<string> {"fsfas" , "fasf"});
+            filterControl.FilterChanged += FilterControl_FilterChanged;
+        }
+
+        private void FilterControl_FilterChanged(object? sender, EventArgs e)
+        {
+
+        }
+
+        private void DisplayFilter_Click(object sender, RoutedEventArgs e)
+        {
+            if(!IsFilterDisplayed)
+            {
+                RestaurantTileList.Children.Insert(0, filterControl);
+                IsFilterDisplayed = true;
+            }
+            else
+            {
+                RestaurantTileList.Children.RemoveAt(0);
+                IsFilterDisplayed = false;
+            }
         }
     }
 }

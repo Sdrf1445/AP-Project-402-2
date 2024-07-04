@@ -31,7 +31,7 @@
             <controls:CustomTextBox x:Name="UsernameTextbox" Margin="0,30,0,0" HintText="Restaurant Username" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox x:Name="NameTextBox" Margin="0,10,0,0" HintText="Restaurant Name" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox x:Name="LocationBox" Margin="0,10,0,0" HintText="City" Height="40" Width="273"></controls:CustomTextBox>
-            <controls:CustomComboBox x:Name="ReceptionType" Margin="0,10,0,0" HintText="Reception Type" Width="273" Height="40"></controls:CustomComboBox>
+            <controls:CustomComboBox x:Name="ReceptionTypeBox" Margin="0,10,0,0" HintText="Reception Type" Width="273" Height="40"></controls:CustomComboBox>
             <controls:CustomTextBox x:Name="AddressBox" Margin="0,10,0,0" HintText="Address" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomPasswordBox x:Name="PasswordTextbox" Margin="0,10,0,0" HintText="Password" Height="40" Width="273"></controls:CustomPasswordBox>
             <controls:CustomPasswordBox x:Name="RepeatPasswordBox" Margin="0,10,0,0" HintText="Repeat Password" Height="40" Width="273"></controls:CustomPasswordBox>

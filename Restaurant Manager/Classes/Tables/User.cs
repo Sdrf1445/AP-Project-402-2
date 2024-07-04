@@ -59,6 +59,7 @@ namespace Restaurant_Manager.Classes
             PhoneNumber = phoneNumber;
             Email = email;
             PasswordHash = "";
+            Orders = new List<Order>();
         }
 
         public static string GetFullNameByUsername(string username)

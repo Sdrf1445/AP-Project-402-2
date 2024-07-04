@@ -35,10 +35,12 @@ namespace Restaurant_Manager.Pages.Login
             if (!RegexValidators.IsPasswordValid(PasswordTextbox.Text))
             {
                 new ErrorWindow("Password is invalid").ShowDialog();
+                return;
             }
-            if (PasswordTextbox.Text == ConfirmPasswordTextBox.Text)
+            if (PasswordTextbox.Text != ConfirmPasswordTextBox.Text)
             {
                 new ErrorWindow("Passwords does not match").ShowDialog();
+                return;
             }
             // create user in data base
             user.PasswordHash = Security.CreateMD5(PasswordTextbox.Text);

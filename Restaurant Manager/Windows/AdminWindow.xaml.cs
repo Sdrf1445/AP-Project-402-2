@@ -47,6 +47,7 @@ namespace Restaurant_Manager.Windows
         {
 
             MessageBoxBlock.Content = message;
+            MessageBoxBlock.Opacity = 1;
             Task.Factory.StartNew(async () =>
             {
                 await Task.Delay(4000);

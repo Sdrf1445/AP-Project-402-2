@@ -15,11 +15,12 @@ namespace Restaurant_Manager.Classes
         }
         public static bool IsMobilePhoneUniqe(string mobilephone)
         {
-            return !Database.Instance.Users.Any(user => user.PhoneNumber == mobilephone);
+            return !Database.Instance.Users.Any(user => user.PhoneNumber == mobilephone); 
+
         }
         public static bool IsUserNameUniqe(string username)
         {
-            return !Database.Instance.Users.Any(user => user.Username == username);
+            return !Database.Instance.Users.Any(user => user.Username == username) && !Database.Instance.Restaurants.Any(restaurant => restaurant.Username == username);
         }
     }
 }

@@ -33,17 +33,65 @@ namespace Restaurant_Manager.Classes.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            foreach(var i in Locations)
+            var radioButton = new RadioButton();
+            radioButton.Style = Application.Current.FindResource("Shared.RadioButton") as Style;
+            radioButton.FontSize = 12;
+            radioButton.Margin = new Thickness(0, 10, 0, 0);
+            radioButton.Content = "No Filter";
+            radioButton.Height = 20;
+            radioButton.GroupName = "LocationGroup";
+            radioButton.IsChecked = true;
+            LocationBox.Children.Add(radioButton);
+            foreach (var i in Locations)
             {
-                var radioButton = new RadioButton();
+                radioButton = new RadioButton();
                 radioButton.Style = Application.Current.FindResource("Shared.RadioButton") as Style;
                 radioButton.FontSize = 12;
-                radioButton.Margin = new Thickness(0,10,0,0);
+                radioButton.Margin = new Thickness(0, 10, 0, 0);
                 radioButton.Content = i;
                 radioButton.Height = 20;
                 radioButton.GroupName = "LocationGroup";
                 LocationBox.Children.Add(radioButton);
+
+                radioButton.Checked += RadioButton_Checked;
+
             }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            Location = (sender as RadioButton).Content as string;
+        }
+
+        private void Ascending_Click(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            RatingsOrder = RatingsOrder.Ascending;
+        }
+
+        private void Descending_Click(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            RatingsOrder = RatingsOrder.Descending;
+        }
+
+        private void Both_Click(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            ReceptionType = ReceptionType.BOTH;
+        }
+
+        private void Dining_Click(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            ReceptionType = ReceptionType.DINEIN;
+        }
+
+        private void TakeAway_Click(object sender, RoutedEventArgs e)
+        {
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+            ReceptionType = ReceptionType.DELIVERY;
         }
     }
     public enum RatingsOrder

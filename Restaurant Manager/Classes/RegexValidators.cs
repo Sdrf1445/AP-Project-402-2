@@ -16,6 +16,7 @@ namespace Restaurant_Manager.Classes
         static string PasswordRegexPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,32}$";
         static string VerificationCodeRegexPattern = @"^\d{4}$";
         static string UserNameRegexPattern = @"^([A-Z]|[a-z]|\d)+$";
+        static string RestaurantPasswordRegexPattern = @"\d{8}";
         public static bool IsEmailValid(string email)
         {
             return Regex.IsMatch(email, EmailRegexPattern,RegexOptions.IgnoreCase);
@@ -31,6 +32,10 @@ namespace Restaurant_Manager.Classes
         public static bool IsPasswordValid(string password)
         {
             return Regex.IsMatch(password, PasswordRegexPattern);
+        }
+        public static bool IsRestaurantPasswordValid(string password)
+        {
+            return Regex.IsMatch(password, RestaurantPasswordRegexPattern);
         }
         public static bool IsVerificationCodeValid(string verificationCode)
         {
