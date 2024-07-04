@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Restaurant_Manager.Classes;
 
@@ -10,9 +11,11 @@ using Restaurant_Manager.Classes;
 namespace Restaurant_Manager.Migrations
 {
     [DbContext(typeof(Database))]
-    partial class DatabaseModelSnapshot : ModelSnapshot
+    [Migration("20240704111419_update3")]
+    partial class update3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
@@ -82,7 +85,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasIndex("ReplyID");
 
-                    b.ToTable("complaints");
+                    b.ToTable("Complaints");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.Food", b =>
@@ -137,7 +140,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("menus");
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.Order", b =>
@@ -198,7 +201,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("restaurants");
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.User", b =>
@@ -238,7 +241,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("Username");
 
-                    b.ToTable("users");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.Comment", b =>

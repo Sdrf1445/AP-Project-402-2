@@ -12,6 +12,7 @@ namespace Restaurant_Manager.Classes
         public List<Food> Foods { get; set; }
         public DateTime Time { get; set; }
         public Comment Comment { get; set; }
+        public Rating Rating { get; set; }
 
     }
 }

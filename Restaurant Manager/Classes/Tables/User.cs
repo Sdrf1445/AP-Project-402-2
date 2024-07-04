@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,21 @@ namespace Restaurant_Manager.Classes
     public enum Gender { MALE, FEMALE}
     public class User
     {
+        public static string CurrentUser { get; set; }
+
+
         [Key]
         public string Username { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
+        [NotMapped]
+        public string FullName
+        {
+            get
+            {
+                return Name.Trim() + " " + LastName.Trim();
+            }
+        }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
@@ -46,6 +58,14 @@ namespace Restaurant_Manager.Classes
             PhoneNumber = phoneNumber;
             Email = email;
             PasswordHash = "";
+        }
+
+        public static string GetFullNameByUsername(string username)
+        {
+            return Database.Instance.users
+                .Where(x => x.Username == username)
+                .Select(x => x.FullName)
+                .First();
         }
         
     }

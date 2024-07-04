@@ -16,10 +16,10 @@ namespace Restaurant_Manager.Classes
     {
         public static Database Instance = new Database();
         string dbPath = "";
-        public DbSet<User> users {  get; set; }
+        public DbSet<User> users {  get; set; } 
         public DbSet<Menu> menus { get; set; }
         public DbSet<Restaurant> restaurants { get; set; }
-        public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<Complaint> complaints { get; set; }
         public Database()
         {
             var folderPath = Environment.CurrentDirectory;
