@@ -22,7 +22,6 @@ namespace Restaurant_Manager.Windows
         public RestaurantWindow()
         {
             InitializeComponent();
-            Frame.Navigate(new Restaurant_Manager.Pages.Restaurant.Main(new Classes.Restaurant { Name = "Nice" }));
         }
     }
 }

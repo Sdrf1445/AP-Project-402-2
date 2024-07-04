@@ -16,10 +16,10 @@ namespace Restaurant_Manager.Classes
     {
         public static Database Instance = new Database();
         string dbPath = "";
-        public DbSet<User> users {  get; set; } 
-        public DbSet<Menu> menus { get; set; }
-        public DbSet<Restaurant> restaurants { get; set; }
-        public DbSet<Complaint> complaints { get; set; }
+        public DbSet<User> Users {  get; set; } 
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Complaint> Complaints { get; set; }
         public Database()
         {
             var folderPath = Environment.CurrentDirectory;
@@ -29,7 +29,7 @@ namespace Restaurant_Manager.Classes
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlite($"Data Source={dbPath}");
-            optionsBuilder.UseSqlite(@"Data Source=D:\Restaurant MAnager - Copy\Restaurant Manager\Data\database.db");
+            optionsBuilder.UseSqlite(@"Data Source=D:\Restaurant MAnager - Copysssfsfsfsfsfsfsfsfsfsf\Restaurant Manager\Data\database.db");
         }
     } 
 }

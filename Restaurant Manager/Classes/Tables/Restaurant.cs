@@ -35,7 +35,7 @@ namespace Restaurant_Manager.Classes
 
         public static string GetNameByID(int id)
         {
-            return Database.Instance.restaurants
+            return Database.Instance.Restaurants
                 .Where(x => x.ID == id)
                 .Select(x => x.Name)
                 .First();

@@ -43,7 +43,7 @@ namespace Restaurant_Manager.Pages.Login
             // create user in data base
             user.PasswordHash = Security.CreateMD5(PasswordTextbox.Text);
 
-            Database.Instance.users.Add(user);
+            Database.Instance.Users.Add(user);
             Database.Instance.SaveChanges();
         }
     }

@@ -17,56 +17,25 @@ namespace Restaurant_Manager.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("Restaurant_Manager.Classes.Comment", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("CommentID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("FoodID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("IsEdited")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Rating")
-                        .HasColumnType("REAL");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CommentID");
-
-                    b.HasIndex("FoodID");
-
-                    b.ToTable("Comment");
-                });
-
             modelBuilder.Entity("Restaurant_Manager.Classes.Complaint", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("AnswerJson")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("AuthorUsername")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("ReplyID")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("RestaurantID")
                         .HasColumnType("INTEGER");
@@ -80,46 +49,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ReplyID");
-
-                    b.ToTable("complaints");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Food", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ImageSource")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Ingredients")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("MenuID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("OrderID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("Remaining")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("OrderID");
-
-                    b.ToTable("Food");
+                    b.ToTable("Complaints");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.Menu", b =>
@@ -132,36 +62,16 @@ namespace Restaurant_Manager.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("RestaurantID")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
-                    b.ToTable("menus");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Order", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CommentID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CommentID");
-
-                    b.HasIndex("Username");
-
-                    b.ToTable("Order");
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.Restaurant", b =>
@@ -177,6 +87,9 @@ namespace Restaurant_Manager.Migrations
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("CurrentRestaurantID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("HaveReserveService")
                         .HasColumnType("INTEGER");
@@ -198,7 +111,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("restaurants");
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("Restaurant_Manager.Classes.User", b =>
@@ -238,71 +151,7 @@ namespace Restaurant_Manager.Migrations
 
                     b.HasKey("Username");
 
-                    b.ToTable("users");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Comment", b =>
-                {
-                    b.HasOne("Restaurant_Manager.Classes.Comment", null)
-                        .WithMany("Replies")
-                        .HasForeignKey("CommentID");
-
-                    b.HasOne("Restaurant_Manager.Classes.Food", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("FoodID");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Complaint", b =>
-                {
-                    b.HasOne("Restaurant_Manager.Classes.Comment", "Reply")
-                        .WithMany()
-                        .HasForeignKey("ReplyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reply");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Food", b =>
-                {
-                    b.HasOne("Restaurant_Manager.Classes.Order", null)
-                        .WithMany("Foods")
-                        .HasForeignKey("OrderID");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Order", b =>
-                {
-                    b.HasOne("Restaurant_Manager.Classes.Comment", "Comment")
-                        .WithMany()
-                        .HasForeignKey("CommentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Restaurant_Manager.Classes.User", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("Username");
-
-                    b.Navigation("Comment");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Comment", b =>
-                {
-                    b.Navigation("Replies");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Food", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.Order", b =>
-                {
-                    b.Navigation("Foods");
-                });
-
-            modelBuilder.Entity("Restaurant_Manager.Classes.User", b =>
-                {
-                    b.Navigation("Orders");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

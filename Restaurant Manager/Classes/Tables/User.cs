@@ -34,6 +34,7 @@ namespace Restaurant_Manager.Classes
         public int? PostalCode { get; set; }
         public Gender? Gender { get; set; }
         public string OrdersJson { get; set; }
+        [NotMapped]
         public List<Order> Orders
         {
             get
@@ -62,7 +63,7 @@ namespace Restaurant_Manager.Classes
 
         public static string GetFullNameByUsername(string username)
         {
-            return Database.Instance.users
+            return Database.Instance.Users
                 .Where(x => x.Username == username)
                 .Select(x => x.FullName)
                 .First();
