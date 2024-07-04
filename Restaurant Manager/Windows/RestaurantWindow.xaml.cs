@@ -1,5 +1,4 @@
-﻿using Restaurant_Manager.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Restaurant_Manager.Pages.Admin
+namespace Restaurant_Manager.Windows
 {
     /// <summary>
-    /// Interaction logic for AddRestaurant.xaml
+    /// Interaction logic for RestaurantWindow.xaml
     /// </summary>
-    public partial class AddRestaurant : Page
+    public partial class RestaurantWindow : Window
     {
-        public AddRestaurant()
+        public RestaurantWindow()
         {
             InitializeComponent();
-            ReceptionType.ItemList = new List<string> { "Take Away" , "Dining",  "Both" };
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+            Frame.Navigate(new Restaurant_Manager.Pages.Restaurant.Main(new Classes.Restaurant { Name = "Nice" }));
         }
     }
 }

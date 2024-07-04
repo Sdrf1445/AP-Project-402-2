@@ -28,10 +28,24 @@
         </Canvas>
         <Button Grid.Column="2" Grid.Row="1" Width="45" Height="45" Style="{StaticResource Admin.Restaurants.FilterButton}"></Button>
 
-        <ListView x:Name="RestaurantTileList" BorderThickness="0" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent">
+        <!--<ListView x:Name="RestaurantTileList" BorderThickness="0" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent">
             <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
 
-        </ListView>
+            <ListView.Resources>
+                <SolidColorBrush x:Key="ItemBackgroundHover" Color="Transparent" />
+                <SolidColorBrush x:Key="ItemBackgroundSelected" Color="Transparent" />
+            </ListView.Resources>
+        </ListView> -->
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="0,30,0,0">
+
+            <StackPanel x:Name="TestPanel">
+
+                <controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Page>
