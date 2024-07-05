@@ -1,6 +1,4 @@
-﻿using Restaurant_Manager.Pages.Admin;
-using Restaurant_Manager.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,16 +16,14 @@ using System.Windows.Shapes;
 namespace Restaurant_Manager.Classes.Controls
 {
     /// <summary>
-    /// Interaction logic for ComplaintAdminTile.xaml
+    /// Interaction logic for ComplaintAnsweredAdminTile.xaml
     /// </summary>
-    public partial class ComplaintAdminTile : UserControl
+    public partial class ComplaintAnsweredAdminTile : UserControl
     {
         public Complaint Complaint {  get; set; }
-        public Complaints Page { get; set; }
-        public ComplaintAdminTile(Complaint complaint,Complaints page)
+        public ComplaintAnsweredAdminTile(Complaint complaint)
         {
             Complaint = complaint;
-            Page = page;
             InitializeComponent();
         }
         public override void OnApplyTemplate()
@@ -37,15 +33,8 @@ namespace Restaurant_Manager.Classes.Controls
             ByBlock.Text = $"By @{Complaint.AuthorUsername}";
             TextBox.Text = Complaint.Description;
             DateBlock.Text = Complaint.Date.ToString("MM/dd/yyyy");
-        }
-
-        private void Answer_Click(object sender, RoutedEventArgs e)
-        {
-            bool? result = new AnswerComplaintWindow(Complaint).ShowDialog();
-            if(result == true)
-            {
-                Page.Rerender();
-            }
+            AnswerDateBlock.Text = Complaint.Answer!.Date.ToString("MM/dd/yyyy");
+            AnswerTextBox.Text = Complaint.Answer!.Message;
         }
     }
 }

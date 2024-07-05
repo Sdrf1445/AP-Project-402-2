@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Restaurant_Manager.Classes.Controls.CommentTile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restaurant_Manager.Classes.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="194" d:DesignWidth="669">
+    <Canvas>
+        <Border Width="669" Height="194" Background="White">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Color="Black" Opacity="0.25"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <TextBlock x:Name="UsernameBlock" Text="@Username" FontSize="25" FontWeight="Bold" Canvas.Left="10" Canvas.Top="10"></TextBlock>
+        <TextBlock x:Name="DescriptionBox" Text="This isnice" TextWrapping="Wrap" FontSize="15" Canvas.Left="13" Canvas.Top="48" Height="105" Width="646" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
+        <TextBlock x:Name="DateBlock" Foreground="Gray" FontSize="15" FontWeight="Bold" Text="0/0/2015" Canvas.Left="591" Canvas.Top="17" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="EditedBlock" Foreground="Gray" FontSize="15" FontWeight="Bold" Text="Edited" Canvas.Left="525" Canvas.Top="17" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        <Button x:Name="ReplyButton" Width="88" Height="29" Style="{StaticResource Shared.SmallButton}" Content="↩️ Reply" Foreground="White" Canvas.Left="571" Canvas.Top="158" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+        <Button x:Name="EditButton" Width="88" Height="29" Style="{StaticResource Shared.SmallButton}" Content="Edit ✏️" Foreground="White" Canvas.Left="468" Canvas.Top="158" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+    </Canvas>
+</UserControl>

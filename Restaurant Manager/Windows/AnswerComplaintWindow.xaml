@@ -1,0 +1,14 @@
+﻿<Window x:Class="Restaurant_Manager.Windows.AnswerComplaintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant_Manager.Windows" xmlns:controls="clr-namespace:Restaurant_Manager.Classes.Controls"
+        mc:Ignorable="d"
+        Title="AnswerComplaintWindow" Height="150" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Canvas>
+        <controls:CustomTextBox x:Name="TextBox" HintText="Message" Width="272" Height="40" Canvas.Left="14" Canvas.Top="26"></controls:CustomTextBox>
+        <Button Width="100" Height="30" Foreground="White" Style="{StaticResource Shared.BigButton3}" Content="Submit" Click="Submit_Click" Canvas.Left="190" Canvas.Top="110"></Button>
+        <Button Width="100" Height="30" Foreground="White" Style="{StaticResource Shared.BigButton}" Content="Cancel" Click="Cancel_Click" Canvas.Left="10" Canvas.Top="110"></Button>
+    </Canvas>
+</Window>

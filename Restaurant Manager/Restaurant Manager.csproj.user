@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Classes\Controls\CommentTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\ComplaintAdminTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Classes\Controls\ComplaintAnsweredAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Classes\Controls\ComplaintFilterTile.xaml.cs">
@@ -43,6 +49,9 @@
     <Compile Update="Pages\Admin\AddRestaurant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Admin\Complaints.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -58,13 +67,22 @@
     <Compile Update="Pages\Login\Verification.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Restaurant\FoodRestaurant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Restaurant\Main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\AnswerComplaintWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\ChangePasswordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EditCommentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\FoodEditWindow.xaml.cs">
@@ -81,7 +99,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Classes\Controls\CommentTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\ComplaintAdminTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\ComplaintAnsweredAdminTile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\ComplaintFilterTile.xaml">
@@ -120,6 +144,9 @@
     <Page Update="Pages\Admin\AddRestaurant.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Admin\Complaints.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Admin\Restaurants.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -130,6 +157,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Login\SetPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restaurant\FoodRestaurant.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Restaurant\Main.xaml">
@@ -147,7 +177,13 @@
     <Page Update="Windows\AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\AnswerComplaintWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EditCommentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\FoodEditWindow.xaml">

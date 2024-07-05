@@ -18,7 +18,7 @@ namespace Restaurant_Manager.Classes
         {
             Restaurant restaurant = new Restaurant(username, password, name, city, receptionType, address);
             Database.Instance.Restaurants.Add(restaurant);
-            Database.Instance.SaveChanges();            
+            Database.Instance.SaveChanges();
         }
 
         public static bool CheckOldPassword(int restaurantID, string oldPassword)
@@ -31,14 +31,14 @@ namespace Restaurant_Manager.Classes
                 return false;
             }
             return true;
-            
+
         }
         public static void ChangeRestaurantPassword(int restaurantID, string newPassword)
         {
             Database.Instance.Restaurants
                 .Where(x => x.ID == restaurantID)
                 .First().Password = newPassword;
-            Database.Instance.SaveChanges();   
+            Database.Instance.SaveChanges();
         }
 
         public static void AnswerComplaint(int complaintID, string answer)
@@ -55,31 +55,96 @@ namespace Restaurant_Manager.Classes
             return Database.Instance.Complaints.ToList();
         }
 
-        
+
         // search throw complaints 
-        public static List<Complaint> SearchComplaintsByUsername(string username)
+        public static List<Complaint> SearchComplaintsByUsername(string usernamem, ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            return Database.Instance.Complaints
-                .Where(x => x.AuthorUsername.Contains(username))
-                .ToList();
+            IQueryable<Complaint> result;
+            if (complaintStatus == ComplaintStatus.NoFilter)
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => x.AuthorUsername.Contains(username));
+            }
+            else
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => x.AuthorUsername.Contains(username) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+            }
+            if(timeOrder == TimeOrder.Ascending)
+            {
+                return result.OrderBy(x => x.Date).ToList();
+            }
+            else
+            {
+                return result.OrderByDescending(x => x.Date).ToList();
+            }
         }
-        public static List<Complaint> SearchComplaintsByRestaurantName(string restaurantName)
+        public static List<Complaint> SearchComplaintsByRestaurantName(string restaurantName,ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            return Database.Instance.Complaints
-                .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName))
-                .ToList();
+            IQueryable<Complaint> result;
+            if (complaintStatus == ComplaintStatus.NoFilter)
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName));
+            }
+            else
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+            }
+            if(timeOrder == TimeOrder.Ascending)
+            {
+                return result.OrderBy(x => x.Date).ToList();
+            }
+            else
+            {
+                return result.OrderByDescending(x => x.Date).ToList();
+            }
         }
-        public static List<Complaint> SearchComplaintsByTitle(string title)
+        public static List<Complaint> SearchComplaintsByTitle(string title, ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            return Database.Instance.Complaints
-                .Where(x => x.Title.Contains(title))
-                .ToList();
+            IQueryable<Complaint> result;
+            if (complaintStatus == ComplaintStatus.NoFilter)
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => x.Title.Contains(title));
+            }
+            else
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => x.Title.Contains(title) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+            }
+            if(timeOrder == TimeOrder.Ascending)
+            {
+                return result.OrderBy(x => x.Date).ToList();
+            }
+            else
+            {
+                return result.OrderByDescending(x => x.Date).ToList();
+            }
+
         }
-        public static List<Complaint> SearchComplaintsByFullName(string fullName)
+        public static List<Complaint> SearchComplaintsByFullName(string fullName,ComplaintStatus complaintStatus,TimeOrder timeOrder)
         {
-            return Database.Instance.Complaints
-                .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName))
-                .ToList();
+            IQueryable<Complaint> result;
+            if (complaintStatus == ComplaintStatus.NoFilter)
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName));
+            }
+            else
+            {
+                result = Database.Instance.Complaints
+                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+            }
+            if(timeOrder == TimeOrder.Ascending)
+            {
+                return result.OrderBy(x => x.Date).ToList();
+            }
+            else
+            {
+                return result.OrderByDescending(x => x.Date).ToList();
+            }
         }
         public static List<Complaint> SearchComplaintsByStatus(bool status)
         {
@@ -119,25 +184,25 @@ namespace Restaurant_Manager.Classes
         {
             return Database.Instance.Restaurants
                 .Where(x => x.City == city)
-                .ToList ();
+                .ToList();
         }
-        public static List<Restaurant> FilterRestaurants(ReceptionType type ,RatingsOrder order,string city = null,string name = null)
+        public static List<Restaurant> FilterRestaurants(ReceptionType type, RatingsOrder order, string city = null, string name = null)
         {
             var result = Database.Instance.Restaurants.AsQueryable();
-            if(type != ReceptionType.NoFilter)
+            if (type != ReceptionType.NoFilter)
             {
                 result = result.Where(x => x.ReceptionType == type);
             }
-            if(name != null && name != "")
+            if (name != null && name != "")
             {
                 result = result.Where(x => x.Name.ToLower().Contains(name.ToLower()));
             }
-            if(city != null && city != "")
+            if (city != null && city != "")
             {
                 result = result.Where(x => x.City == city);
             }
-            var list  = result.ToList();
-            if(order == RatingsOrder.Ascending)
+            var list = result.ToList();
+            if (order == RatingsOrder.Ascending)
             {
                 return list.OrderBy(x => x.Rating).ToList();
             }
@@ -153,7 +218,7 @@ namespace Restaurant_Manager.Classes
         {
             return Database.Instance.Restaurants
                 .Where(x => x.Complaints.Any(y => y.Status == false))
-                .ToList ();
+                .ToList();
         }
 
         public static List<Restaurant> RestaurantsRatingOrderByDescending()
@@ -162,7 +227,7 @@ namespace Restaurant_Manager.Classes
                 .OrderByDescending(x => x.Rating)
                 .ToList();
         }
-        
+
         public static List<Restaurant> RestaurantsRatingOrderByAscending()
         {
             return Database.Instance.Restaurants
