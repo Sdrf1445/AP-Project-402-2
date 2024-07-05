@@ -36,7 +36,7 @@
                 <SolidColorBrush x:Key="ItemBackgroundSelected" Color="Transparent" />
             </ListView.Resources>
         </ListView> -->
-        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="0,30,0,0">
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CanContentScroll="False">
 
             <StackPanel x:Name="RestaurantTileList">
 
