@@ -123,7 +123,11 @@ namespace Restaurant_Manager.Classes
         }
         public static List<Restaurant> FilterRestaurants(ReceptionType type ,RatingsOrder order,string city = null,string name = null)
         {
-            var result = Database.Instance.Restaurants.Where(x => x.ReceptionType == type);
+            var result = Database.Instance.Restaurants.AsQueryable();
+            if(type != ReceptionType.NoFilter)
+            {
+                result = result.Where(x => x.ReceptionType == type);
+            }
             if(name != null && name != "")
             {
                 result = result.Where(x => x.Name.ToLower().Contains(name.ToLower()));

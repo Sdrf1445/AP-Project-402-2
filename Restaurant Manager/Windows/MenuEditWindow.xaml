@@ -10,7 +10,7 @@
         <TextBlock Text="Menu Information" FontSize="25" FontWeight="Bold" Height="35" Margin="16,0,68,128"/>
         <Button Margin="257,6,10,128" Content="🗑️" Foreground="Red" BorderThickness="0" FontWeight="Bold" FontSize="20" Background="Transparent"></Button>
         <controls:CustomTextBox x:Name="NameBox" HintText="Name" Width="273" Height="40"></controls:CustomTextBox>
-        <Button Margin="30,117,170,27" Width="100" Height="20" Foreground="White" Style="{StaticResource Shared.SmallButton}" Content="Discard"></Button>
+        <Button Margin="30,117,170,27" Width="100" Height="20" Foreground="White" Style="{StaticResource Shared.SmallButton}" Content="Discard" Click="Cancel_Click"></Button>
         <Button Margin="168,117,37,26" Width="100" Height="20" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Content="Save" Click="Save_Click"></Button>
 
     </Grid>

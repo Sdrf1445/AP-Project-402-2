@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant_Manager.Classes
 {
-    public enum ReceptionType { DELIVERY = 0, DINEIN = 1, BOTH = 2 }
+    public enum ReceptionType { DELIVERY = 0, DINEIN = 1, BOTH = 2 , NoFilter = 3}
     public class Restaurant
     {
         public int CurrentRestaurantID { get; set; }

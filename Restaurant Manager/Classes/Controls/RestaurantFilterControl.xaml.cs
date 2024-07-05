@@ -21,7 +21,7 @@ namespace Restaurant_Manager.Classes.Controls
     public partial class RestaurantFilterControl : UserControl
     {
         public event EventHandler FilterChanged;
-        public ReceptionType ReceptionType { get; set; } = ReceptionType.BOTH;
+        public ReceptionType ReceptionType { get; set; } = ReceptionType.NoFilter;
         public RatingsOrder RatingsOrder { get; set; } = RatingsOrder.Ascending;
         public string Location { get; set; } = "";
         public List<string> Locations { get; set; }
@@ -42,6 +42,7 @@ namespace Restaurant_Manager.Classes.Controls
             radioButton.GroupName = "LocationGroup";
             radioButton.IsChecked = true;
             LocationBox.Children.Add(radioButton);
+            radioButton.Checked += RadioButton_Checked;
             foreach (var i in Locations)
             {
                 radioButton = new RadioButton();
@@ -91,6 +92,12 @@ namespace Restaurant_Manager.Classes.Controls
         private void TakeAway_Click(object sender, RoutedEventArgs e)
         {
             ReceptionType = ReceptionType.DELIVERY;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void NoFilter_Click(object sender, RoutedEventArgs e)
+        {
+            ReceptionType = ReceptionType.NoFilter;
             FilterChanged?.Invoke(this, EventArgs.Empty);
         }
     }

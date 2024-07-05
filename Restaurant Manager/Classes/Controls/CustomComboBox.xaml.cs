@@ -40,6 +40,14 @@ namespace Restaurant_Manager.Classes.Controls
         {
             this.SelectedIndex = ComboBox.SelectedIndex;
             SelectedValue = ComboBox.SelectedItem as string;
+            if(this.SelectedIndex == -1)
+            {
+                HintBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                HintBlock.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

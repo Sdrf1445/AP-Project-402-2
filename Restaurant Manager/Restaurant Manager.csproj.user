@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Classes\Controls\ComplaintAdminTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\CustomComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Classes\Controls\CustomNumbericUpDown.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Classes\Controls\CustomPasswordBox.xaml.cs">
@@ -58,6 +64,9 @@
     <Compile Update="Windows\ChangePasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\FoodEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\MenuEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -69,7 +78,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Classes\Controls\ComplaintAdminTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\CustomComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\CustomNumbericUpDown.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\CustomPasswordBox.xaml">
@@ -127,6 +142,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\FoodEditWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MenuEditWindow.xaml">

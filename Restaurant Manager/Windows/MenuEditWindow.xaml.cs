@@ -32,5 +32,11 @@ namespace Restaurant_Manager.Windows
         {
             this.DialogResult = true;
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

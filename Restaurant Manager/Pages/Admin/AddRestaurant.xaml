@@ -23,12 +23,12 @@
                    TextWrapping="Wrap" 
                    Width="254" 
                    TextAlignment="Center"
-                   Margin="0,52,0,0"
+                   Margin="0,32,0,0"
                    FontFamily="LilGrotesk"
                    Foreground="#140F7B"
                    FontWeight="Bold">
             </TextBlock>
-            <controls:CustomTextBox x:Name="UsernameTextbox" Margin="0,30,0,0" HintText="Restaurant Username" Height="40" Width="273"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="UsernameTextbox" Margin="0,20,0,0" HintText="Restaurant Username" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox x:Name="NameTextBox" Margin="0,10,0,0" HintText="Restaurant Name" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomTextBox x:Name="LocationBox" Margin="0,10,0,0" HintText="City" Height="40" Width="273"></controls:CustomTextBox>
             <controls:CustomComboBox x:Name="ReceptionTypeBox" Margin="0,10,0,0" HintText="Reception Type" Width="273" Height="40"></controls:CustomComboBox>
@@ -36,6 +36,7 @@
             <controls:CustomPasswordBox x:Name="PasswordTextbox" Margin="0,10,0,0" HintText="Password" Height="40" Width="273"></controls:CustomPasswordBox>
             <controls:CustomPasswordBox x:Name="RepeatPasswordBox" Margin="0,10,0,0" HintText="Repeat Password" Height="40" Width="273"></controls:CustomPasswordBox>
 
+            <TextBlock Margin="0,20,0,0" Text="Password must be exactly 8 digits" TextWrapping="Wrap" Width="303" TextAlignment="Center" Foreground="Gray"></TextBlock>
             <Button Click="Button_Click" Margin="0,20,0,0" Style="{StaticResource Shared.BigButton}"  Width="92" Height="40" Content="Add" Foreground="White" FontFamily="LilGrotesk" FontSize="17"></Button>
         </StackPanel>
     </Canvas>

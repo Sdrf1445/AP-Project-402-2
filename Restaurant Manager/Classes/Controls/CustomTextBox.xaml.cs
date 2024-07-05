@@ -50,6 +50,14 @@ namespace Restaurant_Manager.Classes.Controls
             base.OnApplyTemplate();
             HintBlock.Text = HintText;
             TextBox.TextChanged += TextBox_TextChanged;
+            if(Width != null && Width != 0)
+            {
+                CanvasBox.Width = Width;
+                TextBox.Width = Width - 20;
+                HintBlock.Width = Width - 20;
+                Border.Width = Width;
+                GridBox.Width = Width;
+            }
 
         }
 
