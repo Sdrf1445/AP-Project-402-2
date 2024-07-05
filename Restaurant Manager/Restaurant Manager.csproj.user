@@ -10,6 +10,9 @@
     <Compile Update="Classes\Controls\ComplaintAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\ComplaintFilterTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\CustomComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Classes\Controls\ComplaintAdminTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\ComplaintFilterTile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\CustomComboBox.xaml">
