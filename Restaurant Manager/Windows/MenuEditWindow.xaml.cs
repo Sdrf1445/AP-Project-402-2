@@ -31,7 +31,6 @@ namespace Restaurant_Manager.Windows
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-
         }
     }
 }

@@ -11,7 +11,7 @@
         <StackPanel>
             <Canvas Height="100">
                 <TextBlock x:Name="NameBlock" Text="Pizza" FontSize="25" FontWeight="Bold"></TextBlock>
-                <Image Source="/Images/menuedit.png" Width="32" Height="32" Canvas.Left="202" Canvas.Top="1"></Image>
+                <Image Source="/Images/menuedit.png" Width="32" Height="32" Canvas.Left="202" Canvas.Top="1" MouseDown="Edit_Click"></Image>
                 <Border Width="234" Height="10" Background="Black" HorizontalAlignment="Center" Canvas.Top="50" VerticalAlignment="Top"></Border>
             </Canvas>
             <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="0,0,0,0" Height="382" Width="234">
