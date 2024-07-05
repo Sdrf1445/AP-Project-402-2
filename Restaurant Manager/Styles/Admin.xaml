@@ -40,7 +40,8 @@
                                 </Border.Effect>
                             </Border>
                             <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="20" Background="White">
-                                <TextBox BorderThickness="0" Width="460" Text="{TemplateBinding Text}" Height="30" FontSize="{TemplateBinding FontSize}"></TextBox>
+                                <!--<TextBox BorderThickness="0" Width="460" Text="{TemplateBinding Text}" Height="30" FontSize="{TemplateBinding FontSize}"></TextBox>-->
+                                <TextBox BorderThickness="0" Width="460" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text, UpdateSourceTrigger=PropertyChanged}" Height="30" FontSize="{TemplateBinding FontSize}"></TextBox>
                             </Border>
                         </Canvas>
                     </ControlTemplate>

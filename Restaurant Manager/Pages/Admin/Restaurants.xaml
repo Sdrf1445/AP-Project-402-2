@@ -23,8 +23,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Canvas Grid.Row="1" Grid.Column="1" Width="548" Height="43" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox Text="safas" FontSize="20" Style="{StaticResource Admin.Restaurants.SearchBox}" Width="548" HorizontalAlignment="Center" VerticalAlignment="Center" Height="43"></TextBox>
-            <Button Foreground="White" Content="Search" Width="79" Height="29" Style="{StaticResource Admin.Restaurants.SearchButton}" Canvas.Left="459" Canvas.Top="7"></Button>
+            <TextBox x:Name="SearchBox2"  FontSize="20" Style="{StaticResource Admin.Restaurants.SearchBox}" Width="548" HorizontalAlignment="Center" VerticalAlignment="Center" Height="43"></TextBox>
+            <Button Click="Search_Click" Foreground="White" Content="Search" Width="79" Height="29" Style="{StaticResource Admin.Restaurants.SearchButton}" Canvas.Left="459" Canvas.Top="7"></Button>
         </Canvas>
         <Button Click="DisplayFilter_Click" Grid.Column="2" Grid.Row="1" Width="45" Height="45" Style="{StaticResource Admin.Restaurants.FilterButton}"></Button>
 
@@ -36,14 +36,10 @@
                 <SolidColorBrush x:Key="ItemBackgroundSelected" Color="Transparent" />
             </ListView.Resources>
         </ListView> -->
-        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="0,30,0,0">
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CanContentScroll="False" VerticalScrollBarVisibility="Visible" Margin="0,30,0,0">
 
             <StackPanel x:Name="RestaurantTileList">
 
-                <controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
-                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
-                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
-                <controls:RestaurantTile StarText="3" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
             </StackPanel>
         </ScrollViewer>
 

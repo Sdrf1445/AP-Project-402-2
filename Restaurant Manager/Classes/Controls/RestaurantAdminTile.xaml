@@ -24,7 +24,7 @@
         <Image x:Name="Star2" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="228" Canvas.Bottom="100"></Image>
         <Image x:Name="Star1" Source="/Images/EmptyStar.png" Height="21" Canvas.Right="253" Canvas.Bottom="100"></Image>
         <TextBlock x:Name="VoteCounter" Canvas.Bottom="100" Canvas.Right="278" Text="0 (27 Votes)" TextAlignment="Right"></TextBlock>
-        <Button Width="119" Height="24" Style="{StaticResource Shared.BigButton2}" Content="Change Password" FontSize="10" Foreground="White" Canvas.Left="22" Canvas.Top="103" HorizontalAlignment="Center" VerticalAlignment="Top" ></Button>
+        <Button x:Name="ChangePasswordButton" Click="ChangePassword_Click" Width="119" Height="24" Style="{StaticResource Shared.BigButton2}" Content="Change Password" FontSize="10" Foreground="White" Canvas.Left="22" Canvas.Top="103" HorizontalAlignment="Center" VerticalAlignment="Top" ></Button>
 
 
     </Canvas>

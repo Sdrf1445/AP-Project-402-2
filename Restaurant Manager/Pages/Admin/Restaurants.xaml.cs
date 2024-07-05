@@ -1,6 +1,8 @@
-﻿using Restaurant_Manager.Classes.Controls;
+﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Classes.Controls;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +28,47 @@ namespace Restaurant_Manager.Pages.Admin
         public Restaurants()
         {
             InitializeComponent();
-            filterControl = new RestaurantFilterControl(new List<string> {"fsfas" , "fasf"});
+            filterControl = new RestaurantFilterControl(Classes.Admin.GetAllRestaurantCities());
             filterControl.FilterChanged += FilterControl_FilterChanged;
+            var list = Classes.Admin.GetAllRestaurants();
+            foreach(var item in list )
+            {
+                //<controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                var restaurantadminTile = new RestaurantAdminTile(item);
+                restaurantadminTile.Margin = new Thickness(0,23,0,0);
+                restaurantadminTile.Width = 608;
+                restaurantadminTile.Height = 151;
+                RestaurantTileList.Children.Add(restaurantadminTile);
+            }
+            
         }
 
         private void FilterControl_FilterChanged(object? sender, EventArgs e)
         {
+            List<Classes.Restaurant> list;
+            RestaurantTileList.Children.Clear();
+            if(filterControl.Location == "No Filter")
+            {
+               list = Classes.Admin.FilterRestaurants(filterControl.ReceptionType, filterControl.RatingsOrder,null,SearchBox2.Text);
 
+            }
+            else
+            {
+               list = Classes.Admin.FilterRestaurants(filterControl.ReceptionType, filterControl.RatingsOrder,filterControl.Location,SearchBox2.Text);
+            }
+            foreach(var item in list )
+            {
+                //<controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                var restaurantadminTile = new RestaurantAdminTile(item);
+                restaurantadminTile.Margin = new Thickness(0,23,0,0);
+                restaurantadminTile.Width = 608;
+                restaurantadminTile.Height = 151;
+                RestaurantTileList.Children.Add(restaurantadminTile);
+            }
+            if(IsFilterDisplayed)
+            {
+                RestaurantTileList.Children.Insert(0, filterControl);
+            }
         }
 
         private void DisplayFilter_Click(object sender, RoutedEventArgs e)
@@ -48,5 +84,35 @@ namespace Restaurant_Manager.Pages.Admin
                 IsFilterDisplayed = false;
             }
         }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            List<Classes.Restaurant> list;
+            RestaurantTileList.Children.Clear();
+            if(filterControl.Location == "No Filter")
+            {
+               list = Classes.Admin.FilterRestaurants(filterControl.ReceptionType, filterControl.RatingsOrder,null,SearchBox2.Text);
+
+            }
+            else
+            {
+               list = Classes.Admin.FilterRestaurants(filterControl.ReceptionType, filterControl.RatingsOrder,filterControl.Location,SearchBox2.Text);
+            }
+            foreach(var item in list )
+            {
+                //<controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
+                var restaurantadminTile = new RestaurantAdminTile(item);
+                restaurantadminTile.Margin = new Thickness(0,23,0,0);
+                restaurantadminTile.Width = 608;
+                restaurantadminTile.Height = 151;
+                RestaurantTileList.Children.Add(restaurantadminTile);
+            }
+            if(IsFilterDisplayed)
+            {
+                RestaurantTileList.Children.Insert(0, filterControl);
+            }
+            
+        }
+
     }
 }

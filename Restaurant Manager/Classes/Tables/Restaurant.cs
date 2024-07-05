@@ -71,6 +71,8 @@ namespace Restaurant_Manager.Classes
             City = city;
             Address = address;
             ReceptionType = receptionType;
+            Orders = new List<Order>();
+            Complaints = new List<Complaint>();
         }
 
         public static string GetNameByID(int id)

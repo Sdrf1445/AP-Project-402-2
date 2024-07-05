@@ -32,28 +32,34 @@ namespace Restaurant_Manager.Pages.Admin
         {
             if (!RegexValidators.IsUsernameValid(UsernameTextbox.Text))
             {
-                new ErrorWindow("Invaild username format");
+                new ErrorWindow("Invaild username format").ShowDialog();
                 return;
             }
             if(ReceptionTypeBox.SelectedIndex == -1)
             {
-                new ErrorWindow("Select Reception type");
+                new ErrorWindow("Select Reception type").ShowDialog();;
                 return;
             }
-            if(!RegexValidators.IsPasswordValid(PasswordTextbox.Text))
+            if(!RegexValidators.IsRestaurantPasswordValid(PasswordTextbox.Text))
             {
-                new ErrorWindow("Invalid Password Format");
+                new ErrorWindow("Invalid Password Format").ShowDialog();;
                 return;
             }
             if (PasswordTextbox.Text != RepeatPasswordBox.Text)
             {
-                new ErrorWindow("Password does not match");
+                new ErrorWindow("Password does not match").ShowDialog();;
                 return;
             }
             if(!DatabaseFunctions.IsUserNameUniqe(UsernameTextbox.Text))
             {
-                new ErrorWindow("Username taken");
+                new ErrorWindow("Username taken").ShowDialog();;
                 return;
+            }
+            if(LocationBox.Text == "")
+            {
+                new ErrorWindow("City cannot be empty").ShowDialog();;
+                return;
+
             }
             Classes.Admin.AddRestaurant(UsernameTextbox.Text,PasswordTextbox.Text,NameTextBox.Text,LocationBox.Text,(ReceptionType)ReceptionTypeBox.SelectedIndex,AddressBox.Text);
             var window = Window.GetWindow(this);

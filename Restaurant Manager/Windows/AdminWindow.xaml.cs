@@ -69,5 +69,10 @@ namespace Restaurant_Manager.Windows
             */
 
         }
+
+        private void Exit_Checked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

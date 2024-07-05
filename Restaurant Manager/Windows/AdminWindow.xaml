@@ -26,6 +26,7 @@
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="RestaurantsNavButton_Checked" Margin="0,55,0,0" GroupName="NavigationBar" Width="245" Height="49" IsChecked="True" Content="Restaurants"></RadioButton>
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="AddRestaurantNavButton_Checked" GroupName="NavigationBar" Width="245" Height="49" Content="Add Restaurants"></RadioButton>
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" GroupName="NavigationBar" Width="245" Height="49" Content="Complaints"></RadioButton>
+                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="Exit_Checked" GroupName="NavigationBar" Width="245" Height="49" Content="Exit"></RadioButton>
 
             </StackPanel>
         </Canvas>

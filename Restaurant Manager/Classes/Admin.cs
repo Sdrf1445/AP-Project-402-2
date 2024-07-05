@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurant_Manager.Classes.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace Restaurant_Manager.Classes
             return true;
             
         }
-        public static void ChangeRestaurantPassword(int restaurantID, string oldPasswrod, string newPassword)
+        public static void ChangeRestaurantPassword(int restaurantID, string newPassword)
         {
             Database.Instance.Restaurants
                 .Where(x => x.ID == restaurantID)
@@ -102,6 +103,10 @@ namespace Restaurant_Manager.Classes
                 .Distinct()
                 .ToList();
         }
+        public static List<Restaurant> GetAllRestaurants()
+        {
+            return Database.Instance.Restaurants.ToList();
+        }
 
         public static List<Restaurant> SearchRestaurantByName(string name)
         {
@@ -115,6 +120,29 @@ namespace Restaurant_Manager.Classes
             return Database.Instance.Restaurants
                 .Where(x => x.City == city)
                 .ToList ();
+        }
+        public static List<Restaurant> FilterRestaurants(ReceptionType type ,RatingsOrder order,string city = null,string name = null)
+        {
+            var result = Database.Instance.Restaurants.Where(x => x.ReceptionType == type);
+            if(name != null && name != "")
+            {
+                result = result.Where(x => x.Name.ToLower().Contains(name.ToLower()));
+            }
+            if(city != null && city != "")
+            {
+                result = result.Where(x => x.City == city);
+            }
+            var list  = result.ToList();
+            if(order == RatingsOrder.Ascending)
+            {
+                return list.OrderBy(x => x.Rating).ToList();
+            }
+            else
+            {
+                return list.OrderByDescending(x => x.Rating).ToList();
+            }
+
+
         }
 
         public static List<Restaurant> HaveUncheckedComplaints()

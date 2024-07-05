@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,14 @@ namespace Restaurant_Manager.Classes.Controls
         public string UnCheckedComplaintsText { get;set;} = "0";
         public string VotesCountText { get; set; } = "0";
         public string StarText { get; set; } = "0";
-        public RestaurantAdminTile()
+        public Restaurant Restaurant { get; set; }
+        public RestaurantAdminTile(Restaurant restaurant)
         {
             InitializeComponent();
+            this.Restaurant = restaurant;
+            this.RestaurantText = restaurant.Name;
+            this.LocationText = restaurant.City;
+            this.CommentsCountNumber = "0";
         }
         
         public override void OnApplyTemplate()
@@ -64,6 +70,11 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 Star1.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
             }
+        }
+
+        private void ChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            new ChangePasswordWindow(Restaurant).ShowDialog();
         }
     }
 }

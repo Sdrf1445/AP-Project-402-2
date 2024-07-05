@@ -60,38 +60,38 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             Location = (sender as RadioButton).Content as string;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Ascending_Click(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             RatingsOrder = RatingsOrder.Ascending;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Descending_Click(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             RatingsOrder = RatingsOrder.Descending;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Both_Click(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             ReceptionType = ReceptionType.BOTH;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Dining_Click(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             ReceptionType = ReceptionType.DINEIN;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void TakeAway_Click(object sender, RoutedEventArgs e)
         {
-            FilterChanged?.Invoke(this, EventArgs.Empty);
             ReceptionType = ReceptionType.DELIVERY;
+            FilterChanged?.Invoke(this, EventArgs.Empty);
         }
     }
     public enum RatingsOrder
