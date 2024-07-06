@@ -1,6 +1,4 @@
-﻿using Restaurant_Manager.Classes;
-using Restaurant_Manager.Classes.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,15 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Restaurant_Manager.Pages.Restaurant
+namespace Restaurant_Manager.Pages.Food
 {
     /// <summary>
-    /// Interaction logic for FoodRestaurant.xaml
+    /// Interaction logic for FoodUser.xaml
     /// </summary>
-    public partial class FoodRestaurant : Page
+    public partial class FoodUser : Page
     {
         public Classes.Food Food { get; set; }
-        public FoodRestaurant(Classes.Food food)
+        public FoodUser(Classes.Food food)
         {
             InitializeComponent();
             Food = food;

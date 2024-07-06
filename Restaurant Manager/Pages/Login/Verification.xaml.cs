@@ -23,8 +23,8 @@ namespace Restaurant_Manager.Pages.Login
     /// </summary>
     public partial class Verification : Page
     {
-        User user;
-        public Verification(User user)
+        Classes.User user;
+        public Verification(Classes.User user)
         {
             InitializeComponent();
             this.user = user;

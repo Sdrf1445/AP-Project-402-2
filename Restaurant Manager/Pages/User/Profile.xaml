@@ -1,0 +1,31 @@
+﻿<Page x:Class="Restaurant_Manager.Pages.User.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant_Manager.Pages.User" xmlns:controls="clr-namespace:Restaurant_Manager.Classes.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="752" d:DesignWidth="953"
+      Title="Profile">
+
+    <Grid>
+        <Canvas Width="637" Height="342">
+            <Border Width="637" Height="342" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Opacity="0.25" Color="Black"></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+            <TextBlock Text="Edit Profile Info" FontWeight="Bold" FontSize="25" Canvas.Left="10" Canvas.Top="10"></TextBlock>
+            <controls:CustomTextBox x:Name="FirstNameBox" IsHitTestVisible="False" Width="273" Height="40" Canvas.Left="10" Canvas.Top="48" HintText="First name"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="LastNameBox" IsHitTestVisible="False" Width="273" Height="40" Canvas.Left="340" Canvas.Top="48" HintText="Last name"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="MoblieBox" IsHitTestVisible="False" Width="273" Height="40" Canvas.Left="10" Canvas.Top="110" HintText="Mobile" HorizontalAlignment="Center" VerticalAlignment="Top"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="UsernameBox" IsHitTestVisible="False" Width="273" Height="40" Canvas.Left="340" Canvas.Top="110" HintText="Username" HorizontalAlignment="Left" VerticalAlignment="Center"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="PostalCodeBox" Width="273" Height="40" Canvas.Left="10" Canvas.Top="171" HintText="Postal Code" HorizontalAlignment="Left" VerticalAlignment="Top"></controls:CustomTextBox>
+            <controls:CustomTextBox x:Name="EmailBox" Width="273" Height="40" Canvas.Left="340" Canvas.Top="171" HintText="Email" HorizontalAlignment="Left" VerticalAlignment="Center"></controls:CustomTextBox>
+            <controls:CustomComboBox x:Name="GenderBox" Width="273" Height="40" Canvas.Left="182" Canvas.Top="231" HintText="Gender"></controls:CustomComboBox>
+            <Button Width="100" Height="30" Click="Submit_Click" Foreground="White" Style="{StaticResource Shared.BigButton3}" Content="Submit"  Canvas.Left="396" Canvas.Top="297"></Button>
+            <Button Width="100" Height="30" Click="Cancel_Click" Foreground="White" Style="{StaticResource Shared.BigButton}" Content="Cancel" Canvas.Left="136" Canvas.Top="302"></Button>
+        </Canvas>
+
+    </Grid>
+</Page>

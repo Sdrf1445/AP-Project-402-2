@@ -22,8 +22,8 @@ namespace Restaurant_Manager.Pages.Login
     /// </summary>
     public partial class SetPassword : Page
     {
-        User user;
-        public SetPassword(User user)
+        Classes.User user;
+        public SetPassword(Classes.User user)
         {
             InitializeComponent();
             this.user = user;

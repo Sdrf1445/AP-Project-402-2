@@ -34,6 +34,9 @@
     <Compile Update="Classes\Controls\FoodAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\FoodTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\MenuAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\User\FoodUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Login\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -71,6 +77,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Restaurant\Main.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddToCartWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\AdminWindow.xaml.cs">
@@ -126,6 +138,9 @@
     <Page Update="Classes\Controls\FoodAdminTile.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Classes\Controls\FoodTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\MenuAdminTile.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -150,6 +165,9 @@
     <Page Update="Pages\Admin\Restaurants.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\User\FoodUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Login\Login.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -165,6 +183,9 @@
     <Page Update="Pages\Restaurant\Main.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\User\Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Shared.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -172,6 +193,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddToCartWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AdminWindow.xaml">

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Restaurant_Manager.Pages.Restaurant;
+using Restaurant_Manager.Windows;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,10 +24,12 @@ namespace Restaurant_Manager.Classes.Controls
     public partial class FoodAdminTile : UserControl
     {
         public Food Food { get; set; }
-        public FoodAdminTile(Food food)
+        public Page Page { get;set; }
+        public FoodAdminTile(Food food,Page page)
         {
             InitializeComponent();
             Food = food;
+            Page = page;
         }
         public override void OnApplyTemplate()
         {
@@ -37,6 +41,22 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 ImageBox.Source = new BitmapImage(new Uri(filepath,UriKind.Absolute));
             }
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            bool? dialogresult = new FoodEditWindow(Food).ShowDialog();
+            if(dialogresult != true)
+            {
+                return;
+            }
+            Page.NavigationService.Refresh();
+        }
+
+        private void View_Click(object sender, RoutedEventArgs e)
+        {
+            Page.NavigationService.Navigate(new FoodRestaurant(Food));
+
         }
     }
 }

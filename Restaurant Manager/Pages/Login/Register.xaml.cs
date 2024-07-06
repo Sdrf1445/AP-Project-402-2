@@ -22,7 +22,7 @@ namespace Restaurant_Manager.Pages.Login
     /// </summary>
     public partial class Register : Page
     {
-        public User user;
+        public Classes.User user;
         public Register()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Restaurant_Manager.Pages.Login
         {
 
             // regex validation
-            user = new User(UsernameBox.Text,NameBox.Text,LastNameBox.Text,MobileBox.Text,EmailBox.Text);
+            user = new Classes.User(UsernameBox.Text,NameBox.Text,LastNameBox.Text,MobileBox.Text,EmailBox.Text);
 
             if(!RegexValidators.IsNameValid(user.Name))
             {
