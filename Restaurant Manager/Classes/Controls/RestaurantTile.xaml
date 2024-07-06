@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Restaurant_Manager.Classes.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="151" d:DesignWidth="608">
-    <Canvas Background="Transparent" Width="608" Height="151">
+    <Canvas Background="Transparent" Width="608" Height="151" MouseDown="UserControl_Click">
         <Border Background="White" CornerRadius="10" Width="608" Height="151">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="4" ShadowDepth="4" Direction="270" Color="Black" Opacity="0.25"></DropShadowEffect>
