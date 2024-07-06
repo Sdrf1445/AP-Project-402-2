@@ -105,6 +105,8 @@ namespace Restaurant_Manager.Classes
         public static void AddMenu(string name)
         {
             Menu menu = new Menu(name, CurrentRestaurantID);
+            Database.Instance.Menus.Add(menu);
+            Database.Instance.SaveChanges();
         }
         
         public static void RemoveMenu(int menuID)
@@ -117,12 +119,17 @@ namespace Restaurant_Manager.Classes
             Database.Instance.SaveChanges();
         }
 
-        public static void AddFoodToMenu(int menuID, string name, int remaining, string ingrediants, double price)
+        public static void AddFoodToMenu(int menuID, string name, int remaining, string ingrediants, double price,string? ImagePath)
         {
             Food newFood = new Food(menuID, remaining, name, ingrediants, price);
             var foods = Database.Instance.Menus
                 .Where(x => x.ID == menuID)
                 .First().Foods;
+            if(ImagePath != null)
+            {
+                Food.UploadImage(menuID,newFood.ID, ImagePath);
+                newFood.ImageSource = ImagePath;
+            }
             foods.Add(newFood);
             Database.Instance.Menus
                 .Where(x => x.ID == menuID)

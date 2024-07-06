@@ -32,5 +32,6 @@
             <StackPanel x:Name="MenuList" Orientation="Horizontal">
             </StackPanel>
         </ScrollViewer>
+        <Button Click="NewMenu_Click" Width="30" Height="30" Margin="854,274,69,448"></Button>
     </Grid>
 </Page>

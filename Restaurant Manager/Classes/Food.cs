@@ -66,7 +66,7 @@ namespace Restaurant_Manager.Classes
             string exeDirectory = $"./Images/{restaurantID}/{menuID}/{foodID}.data";
             FileInfo file = new FileInfo(exeDirectory);
             file.Directory.Create();
-            File.Copy(imageSource, file.FullName );
+            File.Copy(imageSource, file.FullName,true );
         }
 
         public static BitmapImage ReadImage(int menuID, int foodID)

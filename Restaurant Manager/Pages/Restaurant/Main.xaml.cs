@@ -1,5 +1,6 @@
 ﻿using Restaurant_Manager.Classes;
 using Restaurant_Manager.Classes.Controls;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Restaurant_Manager.Pages.Restaurant
             NameBlock.Text = restaurant.Name;
             LocationBlock.Text = restaurant.City;
             AddressBlock.Text = restaurant.Address;
-            UsernameBlock.Text = $"Username : {restaurant.Username}"
+            UsernameBlock.Text = $"Username : {restaurant.Username}";
 
             foreach(var menu in Classes.Restaurant.GetAllMenus(Restaurant.ID))
             {
@@ -47,6 +48,15 @@ namespace Restaurant_Manager.Pages.Restaurant
         private void RightArrow_Click(object sender, RoutedEventArgs e)
         {
             MenuListScroll.ScrollToHorizontalOffset(MenuListScroll.HorizontalOffset + 1);
+        }
+
+        private void NewMenu_Click(object sender, RoutedEventArgs e)
+        {
+            bool? result = new MenuAddWindow().ShowDialog();
+            if(result == true)
+            {
+                NavigationService.Refresh();
+            }
         }
     }
 }

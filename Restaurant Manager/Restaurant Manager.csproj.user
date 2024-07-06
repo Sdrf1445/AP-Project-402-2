@@ -64,6 +64,9 @@
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\User\ComplaintsUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\User\FoodUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,7 +112,13 @@
     <Compile Update="Windows\EditCommentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\FoodAddWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\FoodEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\MenuAddWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\MenuEditWindow.xaml.cs">
@@ -189,6 +198,9 @@
     <Page Update="Pages\Admin\Restaurants.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\User\ComplaintsUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\User\FoodUser.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -240,7 +252,13 @@
     <Page Update="Windows\EditCommentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\FoodAddWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\FoodEditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\MenuAddWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MenuEditWindow.xaml">

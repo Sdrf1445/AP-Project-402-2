@@ -39,8 +39,19 @@ namespace Restaurant_Manager.Classes.Controls
             });
             //<Button Height="40" BorderBrush="Green" BorderThickness="2" Content="Add" FontWeight="Bold" FontSize="15" Background="LightGreen"></Button>
             Button button = new Button { BorderBrush = Brushes.Green, BorderThickness = new Thickness(2),Content = "Add" , FontWeight=  FontWeights.Bold , FontSize = 15 , Background = Brushes.LightGreen };
+            button.Click += Button_Click;
             FoodTileList.Children.Add(button);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            bool? result = new FoodAddWindow(Menu).ShowDialog();
+            if(result == true)
+            {
+                Page.NavigationService.Refresh();
+            }
+        }
+
         private void Edit_Click(object sender, MouseButtonEventArgs e)
         {
             bool? result = new MenuEditWindow(this.Menu).ShowDialog();

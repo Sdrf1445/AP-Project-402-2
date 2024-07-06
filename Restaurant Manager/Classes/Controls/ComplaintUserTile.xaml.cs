@@ -33,6 +33,14 @@ namespace Restaurant_Manager.Classes.Controls
             ByBlock.Text = $"By @{Complaint.AuthorUsername}";
             TextBox.Text = Complaint.Description;
             DateBlock.Text = Complaint.Date.ToString("MM/dd/yyyy");
+            if(Complaint.Status)
+            {
+                CheckedBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                UncheckedBlock.Visibility = Visibility.Visible;
+            }
         }
 
     }

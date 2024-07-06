@@ -15,7 +15,8 @@
         <TextBlock Text="Title" x:Name="TitleBlock" FontWeight="Bold" FontSize="25" Canvas.Left="10" Canvas.Top="10"></TextBlock>
         <TextBlock Text="By @User" x:Name="ByBlock" FontWeight="Bold" FontSize="15" Canvas.Left="10" Canvas.Top="43" HorizontalAlignment="Center" Foreground="LightGray"  VerticalAlignment="Top"></TextBlock>
         <TextBlock x:Name="DateBlock" Text="0/0/2012" FontSize="15" FontWeight="Bold" Foreground="Gray" Canvas.Right="48" Canvas.Top="17"></TextBlock>
-        <TextBlock Text="❌ Unchecked" TextAlignment="Right" FontSize="15" Foreground="#E34A2B" Canvas.Right="48" Canvas.Top="17" HorizontalAlignment="Left" Canvas.Left="381" VerticalAlignment="Center" Width="107"></TextBlock>
+        <TextBlock Visibility="Collapsed" x:Name="UncheckedBlock" Text="❌ Unchecked" TextAlignment="Right" FontSize="15" Foreground="#E34A2B" Canvas.Right="48" Canvas.Top="17" HorizontalAlignment="Left" Canvas.Left="381" VerticalAlignment="Center" Width="107"></TextBlock>
+        <TextBlock Text="✔️ Checked" Visibility="Collapsed" x:Name="CheckedBlock" TextAlignment="Right" FontSize="15" Foreground="Green" Canvas.Right="48" Canvas.Top="17" HorizontalAlignment="Left" Canvas.Left="381" VerticalAlignment="Center" Width="107"></TextBlock>
         <TextBlock Text="Fasdfasfsaf" x:Name="TextBox" FontWeight="Bold" FontSize="15" Canvas.Left="10" Canvas.Top="68" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="588" Height="91"></TextBlock>
     </Canvas>
 </UserControl>
