@@ -85,6 +85,9 @@
     <Compile Update="Pages\User\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\User\RestaurantsUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AddToCartWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -104,6 +107,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\MenuEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\ReplyCommentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\RestaurantFilterWindow.xaml.cs">
@@ -192,6 +198,9 @@
     <Page Update="Pages\User\Profile.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\User\RestaurantsUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Shared.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -220,6 +229,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MenuEditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ReplyCommentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\RestaurantFilterWindow.xaml">

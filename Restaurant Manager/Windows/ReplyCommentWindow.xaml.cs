@@ -16,23 +16,28 @@ using System.Windows.Shapes;
 namespace Restaurant_Manager.Windows
 {
     /// <summary>
-    /// Interaction logic for EditCommentWindow.xaml
+    /// Interaction logic for ReplyCommentWindow.xaml
     /// </summary>
-    public partial class EditCommentWindow : Window
+    public partial class ReplyCommentWindow : Window
     {
         public Comment Comment { get; set; }
-        public EditCommentWindow(Comment comment)
+        public ReplyCommentWindow(Comment comment)
         {
             InitializeComponent();
             Comment = comment;
-            CommentBox.Text = Comment.Message;
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            //later
+            this.Close();
 
+
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

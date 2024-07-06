@@ -74,5 +74,15 @@ namespace Restaurant_Manager.Windows
         {
             this.Close();
         }
+
+        private void Complaints_Checked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Complaints());
+        }
+
+        private void Logout_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

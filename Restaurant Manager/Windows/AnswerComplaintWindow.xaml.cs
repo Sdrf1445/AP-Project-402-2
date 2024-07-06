@@ -41,7 +41,7 @@ namespace Restaurant_Manager.Windows
                 return;
             }
             this.DialogResult = true;
-            Admin.AnswerComplaint(Complaint.ID, TextBox.Text);
+            Admin.AnswerComplaint(TextBox.Text, Complaint.ID);
         }
     }
 }

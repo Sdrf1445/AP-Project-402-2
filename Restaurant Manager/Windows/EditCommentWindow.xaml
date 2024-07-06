@@ -8,7 +8,7 @@
         Title="EditCommentWindow" Height="100" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Canvas>
         <controls:CustomTextBox x:Name="CommentBox" HintText="Comment" Width="432" Height="40" Canvas.Left="37" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center"></controls:CustomTextBox>
-        <Button Width="100" Height="30" Foreground="White" Style="{StaticResource Shared.BigButton3}" Content="Submit"  Canvas.Left="347" Canvas.Top="60"></Button>
+        <Button Click="Submit_Click" Width="100" Height="30" Foreground="White" Style="{StaticResource Shared.BigButton3}" Content="Submit"  Canvas.Left="347" Canvas.Top="60"></Button>
         <Button Width="100" Height="30" Foreground="White" Style="{StaticResource Shared.BigButton}" Content="Cancel" Canvas.Left="57" Canvas.Top="60"></Button>
     </Canvas>
 </Window>

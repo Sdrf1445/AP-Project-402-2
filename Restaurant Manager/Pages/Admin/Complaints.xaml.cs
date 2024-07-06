@@ -72,7 +72,7 @@ namespace Restaurant_Manager.Pages.Admin
 
             foreach(var item in complaints)
             {
-                if(item.Status)
+                if(!item.Status)
                 {
                     var complaintadminTile = new ComplaintAdminTile(item, this);
                     complaintadminTile.Margin = new Thickness(0, 23, 0, 0);
@@ -90,7 +90,7 @@ namespace Restaurant_Manager.Pages.Admin
                 }
             }
 
-            if (IsFilterDisplayed)
+            if (!IsFilterDisplayed)
             {
                 ComplaintsTileList.Children.Insert(0, filterControl);
             }
@@ -132,7 +132,7 @@ namespace Restaurant_Manager.Pages.Admin
 
             foreach(var item in complaints)
             {
-                if(item.Status)
+                if(!item.Status)
                 {
                     var complaintadminTile = new ComplaintAdminTile(item,this);
                     complaintadminTile.Margin = new Thickness(0, 23, 0, 0);
@@ -149,7 +149,7 @@ namespace Restaurant_Manager.Pages.Admin
                     ComplaintsTileList.Children.Add(complaintadminTile);
                 }
             }
-            if (IsFilterDisplayed)
+            if (!IsFilterDisplayed)
             {
                 ComplaintsTileList.Children.Insert(0, filterControl);
             }
@@ -178,7 +178,7 @@ namespace Restaurant_Manager.Pages.Admin
 
             foreach(var item in complaints)
             {
-                if(item.Status)
+                if(!item.Status)
                 {
                     var complaintadminTile = new ComplaintAdminTile(item,this);
                     complaintadminTile.Margin = new Thickness(0, 23, 0, 0);
@@ -195,7 +195,7 @@ namespace Restaurant_Manager.Pages.Admin
                     ComplaintsTileList.Children.Add(complaintadminTile);
                 }
             }
-            if (IsFilterDisplayed)
+            if (!IsFilterDisplayed)
             {
                 ComplaintsTileList.Children.Insert(0, filterControl);
             }

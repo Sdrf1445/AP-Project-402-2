@@ -25,12 +25,13 @@ namespace Restaurant_Manager.Windows
         {
             InitializeComponent();
             Menu = menu;
+            NameBox.Text = Menu.Name;
         }
-
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+            Restaurant.EditMenuInformation(Menu.ID,NameBox.Text);
+            this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

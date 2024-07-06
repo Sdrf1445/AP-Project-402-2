@@ -350,9 +350,9 @@ namespace Restaurant_Manager.Classes
                 .First().HaveReserveService = false;
             Database.Instance.SaveChanges();
         }
-
-
-
-
+        public static Restaurant GetRestaurantById(int restaurantID)
+        {
+            return Database.Instance.Restaurants.First(x => x.ID==restaurantID);
+        } 
     }
 }

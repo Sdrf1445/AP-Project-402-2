@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace Restaurant_Manager.Windows
     /// </summary>
     public partial class RestaurantWindow : Window
     {
+        public Restaurant Restaurant { get; set; } 
         public RestaurantWindow()
         {
             InitializeComponent();
+            Restaurant = Classes.Restaurant.GetRestaurantById(Classes.Restaurant.CurrentRestaurantID);
+            Frame.Navigate(new Pages.Restaurant.Main(Restaurant));
         }
     }
 }

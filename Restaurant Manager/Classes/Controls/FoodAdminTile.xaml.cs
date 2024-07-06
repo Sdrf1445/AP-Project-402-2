@@ -36,11 +36,7 @@ namespace Restaurant_Manager.Classes.Controls
             base.OnApplyTemplate();
             NameBox.Text = Food.Name;
             DescBox.Text = Food.Ingredients;
-            var filepath = System.IO.Path.Join(Environment.CurrentDirectory,Food.ImageSource);
-            if(File.Exists(filepath))
-            {
-                ImageBox.Source = new BitmapImage(new Uri(filepath,UriKind.Absolute));
-            }
+            ImageBox.Source = Food.ReadImage(Food.MenuID, Food.ID);
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)

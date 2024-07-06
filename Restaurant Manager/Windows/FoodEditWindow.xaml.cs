@@ -23,12 +23,13 @@ namespace Restaurant_Manager.Windows
     public partial class FoodEditWindow : Window
     {
         public Food Food { get; set; }
+        public string? ImagePath { get; set; } = null;
         public FoodEditWindow(Food food)
         {
             InitializeComponent();
             Food = food;
             NameBox.Text = food.Name;
-            RemainingBox.Number= food.Remaining;
+            RemainingBox.Number = food.Remaining;
             IngrediantsBox.Text = food.Ingredients;
             PriceBox.Text = food.Price.ToString();
         }
@@ -36,19 +37,29 @@ namespace Restaurant_Manager.Windows
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+            try
+            {
+                Restaurant.EditFoodInformation(Food.MenuID, Food.ID, NameBox.Text, IngrediantsBox.Text, double.Parse(PriceBox.Text),RemainingBox.Number,ImagePath);
+                this.Close();
+            }
+            catch
+            {
+                new ErrorWindow("Price must be a number").ShowDialog();
+            }
         }
 
         private void ChooseImage_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
             bool? dialogresult = dialog.ShowDialog();
-            if(dialogresult != true)
+            if (dialogresult != true)
             {
                 return;
             }
 
             var path = dialog.FileName;
-            ImageBox.Source = new BitmapImage(new Uri(path,UriKind.Absolute));
+            ImageBox.Source = new BitmapImage(new Uri(path, UriKind.Absolute));
+            ImagePath = path;
 
         }
 

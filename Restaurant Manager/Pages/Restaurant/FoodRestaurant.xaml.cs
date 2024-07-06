@@ -32,10 +32,26 @@ namespace Restaurant_Manager.Pages.Restaurant
             RemainingBlock.Text = $"Remaning: {Food.Remaining}";
             RatingBlock.Text = $"{Food.Rating} (30 Votes)";
             Ingridients.Text = $"Ingridients: {Food.Ingredients}";
-            foreach(var item in Food.Comments)
+            foreach (var item in Food.Comments)
             {
-                //do stuff fo the comment section
+                var commenttile = new CommentTile(item, allowEdit: item.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
+                commenttile.Margin = new Thickness(0, 10, 0, 0);
+                commenttile.HorizontalAlignment = HorizontalAlignment.Left;
+                CommentListBox.Children.Add(commenttile);
+                foreach (var reply in item.Replies)
+                {
+                    var replytile = new CommentTile(reply, false, reply.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
+                    replytile.Margin = new Thickness(0, 10, 0, 0);
+                    replytile.HorizontalAlignment = HorizontalAlignment.Right;
+                    CommentListBox.Children.Add(replytile);
+
+                }
             }
+        }
+
+        private void AddComment_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

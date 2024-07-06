@@ -55,16 +55,16 @@ namespace Restaurant_Manager.Classes
         // search throw complaints 
         public static List<Complaint> SearchComplaintsByUsername(string usernamem, ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            IQueryable<Complaint> result;
+            List<Complaint> result;
             if (complaintStatus == ComplaintStatus.NoFilter)
             {
-                result = Database.Instance.Complaints
-                    .Where(x => x.AuthorUsername.Contains(username));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => x.AuthorUsername.Contains(username)).ToList();
             }
             else
             {
-                result = Database.Instance.Complaints
-                    .Where(x => x.AuthorUsername.Contains(username) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => x.AuthorUsername.Contains(username) && x.Status == (complaintStatus == ComplaintStatus.Checked)).ToList();
             }
             if(timeOrder == TimeOrder.Ascending)
             {
@@ -77,16 +77,16 @@ namespace Restaurant_Manager.Classes
         }
         public static List<Complaint> SearchComplaintsByRestaurantName(string restaurantName,ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            IQueryable<Complaint> result;
+            List<Complaint> result;
             if (complaintStatus == ComplaintStatus.NoFilter)
             {
-                result = Database.Instance.Complaints
-                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName)).ToList();
             }
             else
             {
-                result = Database.Instance.Complaints
-                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => Restaurant.GetNameByID(x.RestaurantID).Contains(restaurantName) && x.Status == (complaintStatus == ComplaintStatus.Checked)).ToList();
             }
             if(timeOrder == TimeOrder.Ascending)
             {
@@ -99,16 +99,16 @@ namespace Restaurant_Manager.Classes
         }
         public static List<Complaint> SearchComplaintsByTitle(string title, ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
-            IQueryable<Complaint> result;
+            List<Complaint> result;
             if (complaintStatus == ComplaintStatus.NoFilter)
             {
-                result = Database.Instance.Complaints
-                    .Where(x => x.Title.Contains(title));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => x.Title.Contains(title)).ToList();
             }
             else
             {
-                result = Database.Instance.Complaints
-                    .Where(x => x.Title.Contains(title) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => x.Title.Contains(title) && x.Status == (complaintStatus == ComplaintStatus.Checked)).ToList();
             }
             if(timeOrder == TimeOrder.Ascending)
             {
@@ -122,16 +122,16 @@ namespace Restaurant_Manager.Classes
         }
         public static List<Complaint> SearchComplaintsByFullName(string fullName,ComplaintStatus complaintStatus,TimeOrder timeOrder)
         {
-            IQueryable<Complaint> result;
+            List<Complaint> result;
             if (complaintStatus == ComplaintStatus.NoFilter)
             {
-                result = Database.Instance.Complaints
-                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName)).ToList();
             }
             else
             {
-                result = Database.Instance.Complaints
-                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName) && x.Status == (complaintStatus == ComplaintStatus.Checked));
+                result = Database.Instance.Complaints.ToList()
+                    .Where(x => User.GetFullNameByUsername(x.AuthorUsername).Contains(fullName) && x.Status == (complaintStatus == ComplaintStatus.Checked)).ToList();
             }
             if(timeOrder == TimeOrder.Ascending)
             {

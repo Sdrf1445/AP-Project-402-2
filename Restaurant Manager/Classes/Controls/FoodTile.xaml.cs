@@ -39,7 +39,7 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            //add to cart stuff
+            
         }
     }
 }

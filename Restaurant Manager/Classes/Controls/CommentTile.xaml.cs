@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,17 @@ namespace Restaurant_Manager.Classes.Controls
             }
             DescriptionBox.Text = Comment.Message;
             DateBlock.Text = Comment.Date.ToString("MM/dd/yyyy");
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            var editcomment = new EditCommentWindow(Comment);
+            bool? dialogresult = editcomment.ShowDialog();
+            if(dialogresult != true)
+            {
+                
+            }
+
         }
     }
 }

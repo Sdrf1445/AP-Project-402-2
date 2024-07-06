@@ -73,10 +73,18 @@ namespace Restaurant_Manager.Classes.Controls
             get { return (string)GetValue(StarProperty); } 
             set { SetValue(StarProperty, value); }
         }
-        public RestaurantTile()
+        public Restaurant Restaurant { get; set; }
+        public Page Page { get; set; }
+        public RestaurantTile(Restaurant restaurant,Page page)
         {
             InitializeComponent();
+            this.Page = page;
+            this.Restaurant = restaurant;
+            this.RestaurantText = restaurant.Name;
+            this.LocationText = restaurant.City;
+            this.CommentsCountNumber = "0";
         }
+        
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -109,6 +117,11 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 Star1.Source = new BitmapImage(new Uri(FilledStarSource,UriKind.Relative));
             }
+        }
+
+        private void UserControl_Click(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
