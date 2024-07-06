@@ -53,10 +53,21 @@ namespace Restaurant_Manager.Classes
             Date = DateTime.Now;
         }
 
-        public void AddAnswer(string answer)
+        public static void AddAnswer(string answer, int complaintID)
         {
-            Status = true;
-            Answer = new Comment(answer, AuthorUsername);
+            Database.Instance.Complaints
+                .Where(x => x.ID == complaintID)
+                .First()
+                .Status = true;
+            string username = Database.Instance.Complaints
+                .Where(x => x.ID == complaintID)
+                .Select(x => x.AuthorUsername)
+                .First();
+            Database.Instance.Complaints
+                .Where(x => x.ID == complaintID)
+                .First().Answer = new Comment(answer, username);
+            Database.Instance.SaveChanges();
         }
+
     }
 }

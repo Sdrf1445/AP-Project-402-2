@@ -41,13 +41,9 @@ namespace Restaurant_Manager.Classes
             Database.Instance.SaveChanges();   
         }
 
-        public static void AnswerComplaint(int complaintID, string answer)
+        public static void AnswerComplaint(string answer, int complaintID)
         {
-
-            Database.Instance.Complaints
-                .Where(x => x.ID == complaintID)
-                .First().AddAnswer(answer);
-            Database.Instance.SaveChanges();
+            Complaint.AddAnswer(answer, complaintID);
         }
 
         public static List<Complaint> GetAllComplaints()
