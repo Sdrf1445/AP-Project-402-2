@@ -13,7 +13,7 @@ namespace Restaurant_Manager.Classes
     public enum Gender { MALE, FEMALE}
     public class User
     {
-        public static string CurrentUser { get; set; }
+        public static string CurrentUsername { get; set; }
 
 
         [Key]
@@ -67,6 +67,14 @@ namespace Restaurant_Manager.Classes
             return Database.Instance.Users
                 .Where(x => x.Username == username)
                 .Select(x => x.FullName)
+                .First();
+        }
+
+        public static string GetMobileNumberByUsername(string username)
+        {
+            return Database.Instance.Users
+                .Where(x => x.Username == username)
+                .Select(x => x.PhoneNumber)
                 .First();
         }
         

@@ -33,5 +33,13 @@ namespace Restaurant_Manager.Classes
             }
 
         }
+
+        public Menu(string name, int restaurantID)
+        {
+            RestaurantID = restaurantID;
+            Name = name;
+        }
     }
+
+    
 }
