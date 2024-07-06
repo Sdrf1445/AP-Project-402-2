@@ -1,7 +1,5 @@
-﻿using Restaurant_Manager.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,29 +16,24 @@ using System.Windows.Shapes;
 namespace Restaurant_Manager.Classes.Controls
 {
     /// <summary>
-    /// Interaction logic for FoodTile.xaml
+    /// Interaction logic for ComplaintUserTile.xaml
     /// </summary>
-    public partial class FoodTile : UserControl
+    public partial class ComplaintUserTile : UserControl
     {
-        public Food Food { get; set; }
-        public Page Page { get;set; }
-        public FoodTile(Food food,Page page)
+        public Complaint Complaint {  get; set; }
+        public ComplaintUserTile(Complaint complaint)
         {
+            Complaint = complaint;
             InitializeComponent();
-            Food = food;
-            Page = page;
         }
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            NameBox.Text = Food.Name;
-            DescBox.Text = Food.Ingredients;
-            ImageBox.Source = Food.ReadImage(Food.MenuID, Food.ID);
+            TitleBlock.Text = Complaint.Title;
+            ByBlock.Text = $"By @{Complaint.AuthorUsername}";
+            TextBox.Text = Complaint.Description;
+            DateBlock.Text = Complaint.Date.ToString("MM/dd/yyyy");
         }
 
-        private void AddToCart_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

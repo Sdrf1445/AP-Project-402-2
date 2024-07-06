@@ -8,7 +8,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
                         <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="10" Background="{TemplateBinding Background}">
-                            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Center" FontFamily="LilGrotesk" FontSize="20"></TextBlock>
+                            <TextBlock Text="{TemplateBinding Content}" FontWeight="Bold" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Center" FontFamily="LilGrotesk" FontSize="20"></TextBlock>
                         </Border>
 
                     </ControlTemplate>

@@ -37,9 +37,13 @@ namespace Restaurant_Manager.Windows
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+            if (ImagePath != null)
+            {
+                Food.UploadImage(Food.MenuID, Food.ID, ImagePath);
+            }
             try
             {
-                Restaurant.EditFoodInformation(Food.MenuID, Food.ID, NameBox.Text, IngrediantsBox.Text, double.Parse(PriceBox.Text),RemainingBox.Number,ImagePath);
+                Restaurant.EditFoodInformation(Food.MenuID, Food.ID, NameBox.Text, IngrediantsBox.Text, double.Parse(PriceBox.Text), RemainingBox.Number, ImagePath);
                 this.Close();
             }
             catch

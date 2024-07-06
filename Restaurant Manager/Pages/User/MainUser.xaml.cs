@@ -1,5 +1,4 @@
-﻿using Restaurant_Manager.Classes;
-using Restaurant_Manager.Classes.Controls;
+﻿using Restaurant_Manager.Classes.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,26 +14,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Restaurant_Manager.Pages.Restaurant
+namespace Restaurant_Manager.Pages.User
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for MainUser.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class MainUser : Page
     {
         public Restaurant_Manager.Classes.Restaurant Restaurant { get; set; }
-        public Main(Restaurant_Manager.Classes.Restaurant restaurant)
+        public MainUser(Restaurant_Manager.Classes.Restaurant restaurant)
         {
             InitializeComponent();
             Restaurant = restaurant;
             NameBlock.Text = restaurant.Name;
             LocationBlock.Text = restaurant.City;
             AddressBlock.Text = restaurant.Address;
-            UsernameBlock.Text = $"Username : {restaurant.Username}"
-
+            UsernameBlock.Text = $"Username: {restaurant.Username}";
             foreach(var menu in Classes.Restaurant.GetAllMenus(Restaurant.ID))
             {
-                var menuadmintile = new MenuAdminTile(menu, this);
+                var menuadmintile = new MenuTile(menu, this);
                 MenuList.Children.Add(menuadmintile);
             }
         }

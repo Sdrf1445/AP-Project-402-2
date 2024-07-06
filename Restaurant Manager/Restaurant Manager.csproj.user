@@ -19,6 +19,9 @@
     <Compile Update="Classes\Controls\ComplaintFilterTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\ComplaintUserTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\CustomComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +85,9 @@
     <Compile Update="Pages\Restaurant\Main.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\User\MainUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\User\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Update="Windows\RestaurantWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\UserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Classes\Controls\CommentTile.xaml">
@@ -130,6 +139,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\ComplaintFilterTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\ComplaintUserTile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\CustomComboBox.xaml">
@@ -195,6 +207,9 @@
     <Page Update="Pages\Restaurant\Main.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\User\MainUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\User\Profile.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -238,6 +253,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\RestaurantWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\UserWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
