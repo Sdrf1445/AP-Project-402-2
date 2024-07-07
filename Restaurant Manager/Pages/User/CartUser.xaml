@@ -25,6 +25,7 @@
 
             <RadioButton Content="Cash" IsChecked="True" FontWeight="Bold" Canvas.Left="33" Canvas.Top="114"></RadioButton>
             <RadioButton Content="Online" FontWeight="Bold" Canvas.Left="33" Canvas.Top="134" HorizontalAlignment="Center" VerticalAlignment="Top"></RadioButton>
+            <Button Content="Pay" Height="40" Width="100" Foreground="White" Style="{StaticResource Shared.SmallButton}" Canvas.Left="42" Canvas.Top="179"></Button>
         </Canvas>
 
 

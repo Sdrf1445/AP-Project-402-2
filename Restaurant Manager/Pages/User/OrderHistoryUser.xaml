@@ -9,6 +9,7 @@
       Title="OrderHistoryUser">
 
     <Grid>
+        <ScrollViewer Width="700" Height="600"></ScrollViewer>
         
     </Grid>
 </Page>

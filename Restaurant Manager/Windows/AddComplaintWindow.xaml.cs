@@ -10,25 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Restaurant_Manager.Classes.Controls
+namespace Restaurant_Manager.Windows
 {
     /// <summary>
-    /// Interaction logic for CartFoodTile.xaml
+    /// Interaction logic for AddComplaintWindow.xaml
     /// </summary>
-    public partial class CartFoodTile : UserControl
+    public partial class AddComplaintWindow : Window
     {
-        public Food Food { get; set; }
-        public CartFoodTile(Food food)
+        public AddComplaintWindow()
         {
             InitializeComponent();
-            Food = food;
         }
 
-        private void Update_Click(object sender, RoutedEventArgs e)
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = true;
+
+        }
+
+        private void Discard_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
 
         }
     }

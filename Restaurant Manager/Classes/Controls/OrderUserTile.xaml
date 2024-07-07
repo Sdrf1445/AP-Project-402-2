@@ -16,6 +16,6 @@
         <TextBlock Text="Your Given Score:" Foreground="#140F7B" FontSize="15" FontWeight="Bold" Width="140" Height="30" Margin="304,76,164,77"></TextBlock>
         <TextBox Width="30" Height="30" Margin="449,76,129,77"></TextBox>
         <Button Content="Submit" Width="80" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton}" Margin="508,72,20,81"></Button>
-        <Button Content="Add Comment" Width="120" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Margin="488,133,20,20"></Button>
+        <Button Content="Add Comment" Width="120" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Margin="464,133,24,20"></Button>
     </Grid>
 </UserControl>
