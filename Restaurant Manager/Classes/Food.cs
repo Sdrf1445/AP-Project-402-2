@@ -87,10 +87,60 @@ namespace Restaurant_Manager.Classes
             return lastUserID++;
         }
 
-        
 
-        
-        
+        public static void EditComment(string newMessage, int commentID, int foodID, int restaurantID)
+        {
+            var foods = Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods;
+            Comment comment = foods
+                .Where(y => y.ID == foodID)
+                .First().Comments!
+                .Where(x => x.ID == commentID).First();
+            comment.Message = newMessage;
+            comment.Date = DateTime.Now;
+            comment.IsEdited = true;
+            Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods = foods;
+            Database.Instance.SaveChanges();
+        }
+
+        public static void DeleteComment(int commentID, int foodID, int restaurantID)
+        {
+            var foods = Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods;
+            var comments = foods
+                .Where(y => y.ID == foodID)
+                .First().Comments!;
+            var comment = comments.Where(x => x.ID == commentID).First();
+
+            comments.Remove(comment);
+            Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods = foods;
+            Database.Instance.SaveChanges();
+        }
+
+        public static void ReplyComment(string replyMessage, int commentID, int foodID, int restaurantID)
+        {
+            var foods = Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods;
+            var comments = foods
+                .Where(y => y.ID == foodID)
+                .First().Comments!;
+            var comment = comments.Where(x => x.ID == commentID).First();
+            comment.Replies.Add(new Comment(replyMessage, User.CurrentUsername));
+
+            Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods = foods;
+            Database.Instance.SaveChanges();
+        }
+
+
         public static void UploadImage(int menuID, int foodID, string imageSource)
         {
             int restaurantID = Database.Instance.Menus

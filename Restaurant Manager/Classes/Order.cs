@@ -94,6 +94,26 @@ namespace Restaurant_Manager.Classes
             Database.Instance.SaveChanges();
         }
 
+        public static void EditComment(string newMessage, int commentID)
+        {
+            var orders = Database.Instance.Users
+                .Where(x => x.Username == User.CurrentUsername)
+                .First().Orders;
+            Comment comment = orders
+                .Where(y => y.Comment!.ID == commentID)
+                .Select(y => y.Comment)
+                .First()!;
+            comment.Message = newMessage;
+            comment.Date = DateTime.Now;
+            comment.IsEdited = true;
+            Database.Instance.Users
+                .Where(x => x.Username == User.CurrentUsername)
+                .First().Orders = orders;
+            Database.Instance.SaveChanges();
+        }
+
+        
+
 
 
 
