@@ -378,5 +378,7 @@ namespace Restaurant_Manager.Classes
         {
             return Database.Instance.Restaurants.First(x => x.ID==restaurantID);
         } 
+
+        
     }
 }

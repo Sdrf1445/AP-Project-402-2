@@ -179,7 +179,7 @@ namespace Restaurant_Manager.Classes
 
         }
         
-        public static void RemoveFromCart(int foodID, int restaurantID)
+        public static void RemoveFromCart(int foodID)
         {
             var food = Cart.Foods
                 .Where(x => x.ID == foodID)
@@ -231,7 +231,16 @@ namespace Restaurant_Manager.Classes
             return true;
         }
 
-        
+        public static void AddComplaint(string restaurantUsername, string title, string description)
+        {
+            int restaurantID = Database.Instance.Restaurants
+                .Where(x => x.Username == restaurantUsername)
+                .First().ID;
+            Complaint complaint = new Complaint(restaurantID, title, description, CurrentUsername);
+
+            Database.Instance.Complaints.Add(complaint);
+            Database.Instance.SaveChanges();
+        }
 
 
 
