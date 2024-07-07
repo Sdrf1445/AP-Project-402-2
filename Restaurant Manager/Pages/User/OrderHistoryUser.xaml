@@ -9,7 +9,9 @@
       Title="OrderHistoryUser">
 
     <Grid>
-        <ScrollViewer Width="700" Height="600"></ScrollViewer>
+        <ScrollViewer Width="700" Height="600">
+            <StackPanel x:Name="OrderListBox"></StackPanel>
+        </ScrollViewer>
         
     </Grid>
 </Page>

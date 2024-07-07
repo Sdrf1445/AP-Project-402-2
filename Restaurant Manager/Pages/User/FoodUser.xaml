@@ -21,13 +21,13 @@
         <Image Source="/Images/EmptyStar.png" x:Name="Star5" Canvas.Left="866" Canvas.Top="55" Height="21" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
         <TextBlock x:Name="Ingridients" Text="Ingredients: " TextWrapping="Wrap" FontSize="15" Canvas.Left="68" Canvas.Top="224" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" Width="821"></TextBlock>
         <TextBlock Text="Comments" FontSize="15" FontWeight="Bold" Canvas.Left="68" Canvas.Top="356" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
-        <Button Width="114" Height="24" Style="{StaticResource Shared.SmallButton3}" Content="Add Comment" Foreground="White" Canvas.Left="794" Canvas.Top="354"></Button>
+        <Button Click="AddComment_Click" Width="114" Height="24" Style="{StaticResource Shared.SmallButton3}" Content="Add Comment" Foreground="White" Canvas.Left="794" Canvas.Top="354"></Button>
         <ScrollViewer Width="875" Canvas.Left="68" Canvas.Top="381" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalScrollBarVisibility="Hidden" Height="273">
             <StackPanel x:Name="CommentListBox"></StackPanel>
         </ScrollViewer>
         <TextBlock Text="Your Given Score:" FontSize="15" FontWeight="Bold" Foreground="#140F7B" Canvas.Left="670" Canvas.Top="130"></TextBlock>
         <TextBox x:Name="RatingBox" Width="30" Canvas.Left="820" Canvas.Top="131" TextAlignment="Center"></TextBox>
-        <Button Width="114" Height="24" Style="{StaticResource Shared.SmallButton3}" Content="Submit" Foreground="White" Canvas.Left="737" Canvas.Top="175"></Button>
+        <Button Width="114" Height="24" Style="{StaticResource Shared.SmallButton3}" Click="Submit_Click" Content="Submit" Foreground="White" Canvas.Left="737" Canvas.Top="175"></Button>
         <Button Content="Add To Cart" Width="953" Height="80" Background="Green" FontSize="30" Foreground="White" Canvas.Bottom="0"></Button>
     </Canvas>
 </Page>

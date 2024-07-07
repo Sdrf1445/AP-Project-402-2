@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace Restaurant_Manager.Pages.User
     /// </summary>
     public partial class OrderHistoryUser : Page
     {
-        public OrderHistoryUser()
+        public Classes.User User { get; set; }
+        public OrderHistoryUser(Classes.User user)
         {
             InitializeComponent();
+            User = user;
+
+            foreach(var item in User.Orders)
+            {
+                var ordertile = new OrderUserTile(this,item);
+                ordertile.Margin = new Thickness(0, 10, 0, 0);
+                OrderListBox.Children.Add(ordertile);
+            }
         }
     }
 }

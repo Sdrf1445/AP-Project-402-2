@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +27,7 @@ namespace Restaurant_Manager.Pages.User
         public Profile(Classes.User user)
         {
             InitializeComponent();
-            GenderBox.ItemList = new List<string> { "Male" , "Female"};
+            GenderBox.ItemList = new List<string> { "Male", "Female" };
             User = user;
             UsernameBox.Text = user.Username;
             FirstNameBox.Text = user.Name;
@@ -33,11 +36,11 @@ namespace Restaurant_Manager.Pages.User
             PostalCodeBox.Text = user.PostalCode?.ToString();
             EmailBox.Text = user.Email;
 
-            if(User.Gender == Classes.Gender.MALE)
+            if (User.Gender == Classes.Gender.MALE)
             {
                 GenderBox.SelectedIndex = 0;
             }
-            else if(User.Gender== Classes.Gender.FEMALE)
+            else if (User.Gender == Classes.Gender.FEMALE)
             {
                 GenderBox.SelectedIndex = 1;
             }
@@ -52,6 +55,21 @@ namespace Restaurant_Manager.Pages.User
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             var window = Window.GetWindow(this);
+            if(!RegexValidators.IsEmailValid(EmailBox.Text))
+            {
+                new ErrorWindow("Email is invaild").ShowDialog();
+                return;
+            }
+            try
+            {
+                int postcode = int.Parse(PostalCodeBox.Text);
+                Classes.User.EditUserInfo((Gender)GenderBox.SelectedIndex, postcode, EmailBox.Text);
+            }
+            catch
+            {
+                new ErrorWindow("Postal Code is not a number").ShowDialog();
+                return;
+            }
 
         }
     }
