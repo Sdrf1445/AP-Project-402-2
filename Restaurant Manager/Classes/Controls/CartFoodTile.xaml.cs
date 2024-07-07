@@ -25,6 +25,10 @@ namespace Restaurant_Manager.Classes.Controls
         {
             InitializeComponent();
             Food = food;
+            FoodNameBlock.Text = Food.Name;
+            RemaningBlock.Text = $"Remaning: {Food.Remaining}";
+            PriceBlock.Text = $"{Food.Price}$";
+            //NumericUpDown.Number = Food.
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
