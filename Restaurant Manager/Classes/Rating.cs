@@ -10,5 +10,11 @@ namespace Restaurant_Manager.Classes
     {
         public string Username { get; set; }
         public double Value { get; set; }
+
+        public Rating(string username, double value)
+        {
+            Username = username;
+            Value = value;
+        }
     }
 }

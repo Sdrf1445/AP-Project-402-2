@@ -60,12 +60,12 @@ namespace Restaurant_Manager.Pages.Login
                 return;
             }
             //database verification
-            if(!DatabaseFunctions.IsUserNameUniqe(user.Username))
+            if(!Restaurant_Manager.Classes.Login.IsUsernameUnique(user.Username))
             {
                 new ErrorWindow("Username taken").ShowDialog();
                 return;
             }
-            if(!DatabaseFunctions.IsMobilePhoneUniqe(user.PhoneNumber))
+            if(!Restaurant_Manager.Classes.Login.IsMobilePhoneUniqe(user.PhoneNumber))
             {
                 new ErrorWindow("Phone number taken").ShowDialog();
                 return;

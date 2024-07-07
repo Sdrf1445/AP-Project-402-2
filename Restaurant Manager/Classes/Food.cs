@@ -12,11 +12,14 @@ using System.Windows.Media;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Windows.Media.Imaging;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Restaurant_Manager.Classes
 {
     public class Food
     {
+        private static int lastUserID = 0;
+
         public int ID { get; set; }
         public int MenuID { get; set; }
         public int Remaining { get; set; }
@@ -24,8 +27,39 @@ namespace Restaurant_Manager.Classes
         public string Name { get; set; }
         public string Ingredients { get; set; }
         public string? ImageSource { get; set; }
-        public List<Comment> Comments { get; set; }
-        public List<Rating> Ratings { get; set; }
+        public List<Comment>? Comments { get; set; }
+        public List<Rating>? Ratings { get; set; }
+        // fix this part if you could
+        private int? numberOrdered;
+        public int? NumberOrdered
+        {
+            get
+            {
+                return numberOrdered;
+            }
+            set
+            {
+                if (value > Remaining || value < 0)
+                {
+                    throw new Exception("There is not that much food remaining!");
+                }
+                numberOrdered = value;
+                
+            }
+        }
+
+        public int Rating
+        {
+            get
+            {
+                if (Ratings == null)
+                {
+                    return 0;
+                }
+                double average = Ratings.Select(x => x.Value).Average();
+                return (int)Math.Round(average);
+            }
+        }
 
         public Food(int menuID, int remaining, string name, string ingredients, double price)
         {
@@ -35,6 +69,7 @@ namespace Restaurant_Manager.Classes
             Ingredients = ingredients;
             Comments = new List<Comment>();
             Price = price;
+            ID = UniqueIdGenerator();
         }
         public Food(int menuID, int remaining, string name, string? imageSource, string ingredients, double price)
         {
@@ -45,15 +80,14 @@ namespace Restaurant_Manager.Classes
             Ingredients = ingredients;
             Comments = new List<Comment>();
             Price = price;
+            ID = UniqueIdGenerator();
         }
         public static int UniqueIdGenerator()
         {
-            throw new NotImplementedException();
+            return lastUserID++;
         }
-        public double Rating()
-        {
-            throw new NotImplementedException();
-        }
+
+        
 
         
         
@@ -85,9 +119,49 @@ namespace Restaurant_Manager.Classes
             return new BitmapImage(new Uri(filePath));
         }
 
-        public static void AddComment()
+        public static void AddComment(string message, int foodID, int restaurantID)
         {
-            throw new NotImplementedException();
+            Comment newComment = new Comment(message, User.CurrentUsername);
+
+            var foods = Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods;
+
+            
+            var comments = foods.Where(x => x.ID == foodID).First().Comments;
+            if (comments == null)
+            {
+                comments = new List<Comment>();
+            }
+            comments.Add(newComment);
+
+            Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods = foods;
+            Database.Instance.SaveChanges();
+        }
+        public static void AddRating(double rating, int foodID, int restaurantID)
+        {
+            var foods = Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods;
+
+            var food = foods.Where(x => x.ID == foodID).First();
+            if (food.Ratings == null)
+            {
+                food.Ratings = [new Rating(User.CurrentUsername, rating)];
+            }
+            else
+            {
+                food.Ratings.Add(new Classes.Rating(User.CurrentUsername, rating));
+            }
+
+            Database.Instance.Menus
+                .Where(x => x.RestaurantID == restaurantID)
+                .First().Foods = foods;
+            Database.Instance.SaveChanges();
+            
+
         }
     }
 }

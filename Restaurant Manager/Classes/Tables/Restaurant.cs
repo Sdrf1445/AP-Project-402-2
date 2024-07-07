@@ -17,7 +17,7 @@ namespace Restaurant_Manager.Classes
     public class Restaurant
     {
         public static int CurrentRestaurantID { get; set; }
-        public static double MinimumRating { get; set; }
+        public static double MinimumRating { get; set; } = 4.5;
 
         [Key]
         public int ID { get; set; }
@@ -29,11 +29,22 @@ namespace Restaurant_Manager.Classes
         public string Address { get; set; }
         public ReceptionType ReceptionType { get; set; }
         [NotMapped]
-        public double Rating { get; set; }
+        public int Rating
+        {
+            get
+            {
+                var foodRatings = Database.Instance.Menus
+                    .Where(x => x.RestaurantID == CurrentRestaurantID)
+                    .First().Foods
+                    .Select(y => y.Rating);
+                var orderRatings = Orders.Select(x => x.Rating.Value);
+                return (int)((foodRatings.Sum() + orderRatings.Sum()) / (foodRatings.Count() + orderRatings.Count()));
+            }
+        }
 
 
-        public string OrdersJson { get; set; }
-        public string ComplaintsJson {  get; set; }
+        public string? OrdersJson { get; set; }
+        public string? ComplaintsJson {  get; set; }
         [NotMapped]
         public List<Order> Orders
         {
@@ -85,6 +96,12 @@ namespace Restaurant_Manager.Classes
                 .Where(x => x.Username == username)
                 .Select(x => x.ID)
                 .First();
+        }
+        public static int GetRestaurantIDByUsername(string username)
+        {
+            return Database.Instance.Restaurants
+                .Where(x => x.Username == username)
+                .First().ID;
         }
 
         public static List<Menu> GetAllMenus(int restaurantID)
@@ -187,10 +204,10 @@ namespace Restaurant_Manager.Classes
 
         // filter orders
 
-        public static List<Order> GetAllOrders(int restaurantID)
+        public static List<Order> GetAllOrders()
         {
             return Database.Instance.Restaurants
-                .Where(x => x.ID ==  restaurantID)
+                .Where(x => x.ID ==  CurrentRestaurantID)
                 .First().Orders;
         }
 
