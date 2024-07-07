@@ -37,13 +37,13 @@ namespace Restaurant_Manager.Pages.Restaurant
             Ingridients.Text = $"Ingridients: {Food.Ingredients}";
             foreach (var item in Food.Comments)
             {
-                var commenttile = new CommentTile(this,item, allowEdit: item.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
+                var commenttile = new CommentTile(Food,Restaurant,this,item, allowEdit: item.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
                 commenttile.Margin = new Thickness(0, 10, 0, 0);
                 commenttile.HorizontalAlignment = HorizontalAlignment.Left;
                 CommentListBox.Children.Add(commenttile);
                 foreach (var reply in item.Replies)
                 {
-                    var replytile = new CommentTile(this,reply, false, reply.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
+                    var replytile = new CommentTile(Food,Restaurant,this,reply, false, reply.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
                     replytile.Margin = new Thickness(0, 10, 0, 0);
                     replytile.HorizontalAlignment = HorizontalAlignment.Right;
                     CommentListBox.Children.Add(replytile);

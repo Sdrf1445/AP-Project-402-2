@@ -47,6 +47,8 @@ namespace Restaurant_Manager.Pages.Login
 
             Database.Instance.Users.Add(user);
             Database.Instance.SaveChanges();
+
+            NavigationService.Navigate(new Login());
         }
     }
 }

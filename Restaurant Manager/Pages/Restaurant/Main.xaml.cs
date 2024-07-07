@@ -35,7 +35,7 @@ namespace Restaurant_Manager.Pages.Restaurant
 
             foreach(var menu in Classes.Restaurant.GetAllMenus(Restaurant.ID))
             {
-                var menuadmintile = new MenuAdminTile(menu, this);
+                var menuadmintile = new MenuAdminTile(menu, this, Restaurant);
                 MenuList.Children.Add(menuadmintile);
             }
         }

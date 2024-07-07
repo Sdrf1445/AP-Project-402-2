@@ -25,11 +25,13 @@ namespace Restaurant_Manager.Classes.Controls
     {
         public Food Food { get; set; }
         public Page Page { get;set; }
-        public FoodAdminTile(Food food,Page page)
+        public Restaurant Restaurant { get; set; }
+        public FoodAdminTile(Food food,Page page,Restaurant restaurant)
         {
             InitializeComponent();
             Food = food;
             Page = page;
+            Restaurant = restaurant;
         }
         public override void OnApplyTemplate()
         {
@@ -51,7 +53,7 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void View_Click(object sender, RoutedEventArgs e)
         {
-            Page.NavigationService.Navigate(new FoodRestaurant(Food));
+            Page.NavigationService.Navigate(new FoodRestaurant(Food,Restaurant));
         }
     }
 }

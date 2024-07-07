@@ -22,10 +22,12 @@ namespace Restaurant_Manager.Classes.Controls
     {
         public Page Page { get; set; }
         public Menu Menu{ get; set; }
-        public MenuTile(Menu menu,Page page)
+        public Restaurant Restaurant { get; set; }
+        public MenuTile(Menu menu,Page page,Restaurant restaurant)
         {
             Menu = menu;
             Page = page;
+            Restaurant = restaurant;
             InitializeComponent();
         }
         public override void OnApplyTemplate()
@@ -34,7 +36,7 @@ namespace Restaurant_Manager.Classes.Controls
             NameBlock.Text = Menu.Name;
             Menu.Foods.ForEach(food =>
             {
-                FoodTileList.Children.Add(new FoodTile(food,Page));
+                FoodTileList.Children.Add(new FoodTile(food,Page,Restaurant));
             });
             //<Button Height="40" BorderBrush="Green" BorderThickness="2" Content="Add" FontWeight="Bold" FontSize="15" Background="LightGreen"></Button>
             Button button = new Button { BorderBrush = Brushes.Green, BorderThickness = new Thickness(2),Content = "Add" , FontWeight=  FontWeights.Bold , FontSize = 15 , Background = Brushes.LightGreen };

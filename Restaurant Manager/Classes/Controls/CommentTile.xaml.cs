@@ -23,11 +23,15 @@ namespace Restaurant_Manager.Classes.Controls
     {
         public Comment Comment { get; set; }
         public Page Page { get; set; }
-        public CommentTile(Page page,Comment comment,bool allowReply = true , bool allowEdit = false)
+        public Restaurant Restaurant { get; set; }
+        public Food Food { get; set; }
+        public CommentTile(Food food,Restaurant restaurant,Page page,Comment comment,bool allowReply = true , bool allowEdit = false)
         {
             InitializeComponent();
             Comment = comment;
             Page = page;
+            Restaurant = restaurant;
+            Food = food;
             if (!allowReply)
             {
                 ReplyButton.Visibility = Visibility.Collapsed;
@@ -47,7 +51,7 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            var editcomment = new EditCommentWindow(Comment);
+            var editcomment = new EditCommentWindow(Comment,Restaurant,Food);
             bool? dialogresult = editcomment.ShowDialog();
             if(dialogresult == true)
             {

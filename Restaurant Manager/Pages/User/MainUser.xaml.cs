@@ -32,7 +32,7 @@ namespace Restaurant_Manager.Pages.User
             UsernameBlock.Text = $"Username: {restaurant.Username}";
             foreach(var menu in Classes.Restaurant.GetAllMenus(Restaurant.ID))
             {
-                var menuadmintile = new MenuTile(menu, this);
+                var menuadmintile = new MenuTile(menu, this,Restaurant);
                 MenuList.Children.Add(menuadmintile);
             }
         }

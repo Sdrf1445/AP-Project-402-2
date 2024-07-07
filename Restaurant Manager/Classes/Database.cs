@@ -29,7 +29,7 @@ namespace Restaurant_Manager.Classes
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlite($"Data Source={dbPath}");
-            optionsBuilder.UseSqlite(@"Data Source=D:\RES\Restaurant Manager\Data\database.db");
+            optionsBuilder.UseSqlite(@"Data Source=D:\Restaurant MAnager - Copysssfsfsfsfsfsfsfsfsfsf\Restaurant Manager\Data\database.db");
         }
     } 
 }

@@ -37,13 +37,13 @@ namespace Restaurant_Manager.Pages.Food
             foreach (var item in Food.Comments)
             {
                 var editAllowed = item.AuthorUsername == Classes.User.CurrentUsername;
-                var commentTile = new CommentTile(this, item, allowEdit: editAllowed);
+                var commentTile = new CommentTile(Food,Restaurant,this, item, allowEdit: editAllowed);
                 commentTile.HorizontalAlignment = HorizontalAlignment.Left;
                 CommentListBox.Children.Add(commentTile);
                 foreach (var reply in item.Replies)
                 {
                     editAllowed = reply.AuthorUsername == Classes.User.CurrentUsername;
-                    var replyTile = new CommentTile(this, reply, false, allowEdit: editAllowed);
+                    var replyTile = new CommentTile(Food,Restaurant,this, reply, false, allowEdit: editAllowed);
                     commentTile.HorizontalAlignment = HorizontalAlignment.Right;
                     CommentListBox.Children.Add(commentTile);
                 }
