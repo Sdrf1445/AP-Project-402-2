@@ -24,11 +24,13 @@ namespace Restaurant_Manager.Classes.Controls
     {
         public Food Food { get; set; }
         public Page Page { get;set; }
-        public FoodTile(Food food,Page page)
+        public Restaurant Restaurant { get; set; }
+        public FoodTile(Food food,Page page,Restaurant restaurant)
         {
             InitializeComponent();
             Food = food;
             Page = page;
+            Restaurant = restaurant;
         }
         public override void OnApplyTemplate()
         {
@@ -40,13 +42,19 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            var window = new AddToCartWindow(Food);
-            bool? dialogresult = window.ShowDialog();
-            if(dialogresult  == true)
+            /*            var window = new AddToCartWindow(Food);
+                        bool? dialogresult = window.ShowDialog();
+                        if(dialogresult  == true)
+                        {
+                            Page.NavigationService.Refresh();
+                        }
+            */
+            bool result = Classes.User.AddToCart(Food.ID, Restaurant.ID);
+            if(!result)
             {
-                Page.NavigationService.Refresh();
+                new ErrorWindow("Cannot do that").ShowDialog();
+
             }
-            
         }
     }
 }

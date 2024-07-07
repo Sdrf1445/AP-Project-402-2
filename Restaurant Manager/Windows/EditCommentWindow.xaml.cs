@@ -21,17 +21,22 @@ namespace Restaurant_Manager.Windows
     public partial class EditCommentWindow : Window
     {
         public Comment Comment { get; set; }
-        public EditCommentWindow(Comment comment)
+        public Restaurant Restaurant { get; set; }
+        public Food Food { get; set; }
+        public EditCommentWindow(Comment comment,Restaurant restaurant,Food food)
         {
             InitializeComponent();
             Comment = comment;
             CommentBox.Text = Comment.Message;
+            Restaurant = restaurant;
+            Food = food;
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            //later
+            Classes.Comment.EditComment(CommentBox.Text, Comment.ID,Food.ID ,Restaurant.ID);
+            this.Close();
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,21 +21,24 @@ namespace Restaurant_Manager.Windows
     public partial class AddToCartWindow : Window
     {
         public Classes.Food Food { get; set; }
-        public AddToCartWindow(Classes.Food food)
+        public Classes.Restaurant Restaurant { get; set; }
+        public AddToCartWindow(Classes.Food food,Classes.Restaurant restaurant)
         {
             InitializeComponent();
             Food = food;
-
+            Restaurant = restaurant;
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            //add to cart
+            Classes.User.AddToCart(Food.ID,Restaurant.ID);
+            this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
 
         }
     }
