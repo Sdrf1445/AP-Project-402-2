@@ -15,7 +15,7 @@
         <Image x:Name="ImageBox" Source="/Images/defaultfood.png" Width="111" Height="111" Margin="26,10,26,84"></Image>
         <TextBlock x:Name="NameBox" Text="Classic Burger" FontWeight="Bold" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="0,126,0,63"></TextBlock>
         <TextBlock x:Name="DescBox" Text="Some description right here and this is what we need and even ebtter" FontSize="5" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,142,0,47" Width="130" Height="12"/>
-        <Button x:Name="EditButton" Width="100" Content="Add to Cart" FontSize="8" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Height="16" Margin="21,179,26,10"/>
+        <Button x:Name="EditButton" Width="100" Click="AddToCart_Click" Content="Add to Cart" FontSize="8" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Height="16" Margin="21,179,26,10"/>
 
 
     </Grid>

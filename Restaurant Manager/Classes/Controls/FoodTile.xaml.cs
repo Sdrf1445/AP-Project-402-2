@@ -40,6 +40,12 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
+            var window = new AddToCartWindow(Food);
+            bool? dialogresult = window.ShowDialog();
+            if(dialogresult  == true)
+            {
+                Page.NavigationService.Refresh();
+            }
             
         }
     }

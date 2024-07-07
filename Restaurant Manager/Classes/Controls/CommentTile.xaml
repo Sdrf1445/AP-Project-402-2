@@ -16,7 +16,7 @@
         <TextBlock x:Name="DescriptionBox" Text="This isnice" TextWrapping="Wrap" FontSize="15" Canvas.Left="13" Canvas.Top="48" Height="105" Width="646" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
         <TextBlock x:Name="DateBlock" Foreground="Gray" FontSize="15" FontWeight="Bold" Text="0/0/2015" Canvas.Left="591" Canvas.Top="17" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="EditedBlock" Foreground="Gray" FontSize="15" FontWeight="Bold" Text="Edited" Canvas.Left="525" Canvas.Top="17" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
-        <Button x:Name="ReplyButton" Width="88" Height="29" Style="{StaticResource Shared.SmallButton}" Content="↩️ Reply" Foreground="White" Canvas.Left="571" Canvas.Top="158" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+        <Button x:Name="ReplyButton" Click="Reply_Click" Width="88" Height="29" Style="{StaticResource Shared.SmallButton}" Content="↩️ Reply" Foreground="White" Canvas.Left="571" Canvas.Top="158" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
         <Button x:Name="EditButton" Click="Edit_Click" Width="88" Height="29" Style="{StaticResource Shared.SmallButton}" Content="Edit ✏️" Foreground="White" Canvas.Left="468" Canvas.Top="158" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
         <TextBlock x:Name="VotingCountBlock" Text="3" FontSize="15" Canvas.Left="185" Canvas.Top="24"></TextBlock>
 

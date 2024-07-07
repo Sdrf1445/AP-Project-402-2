@@ -178,6 +178,14 @@ namespace Restaurant_Manager.Classes
             return true;
 
         }
+        
+        public static void RemoveFromCart(int foodID, int restaurantID)
+        {
+            var food = Cart.Foods
+                .Where(x => x.ID == foodID)
+                .First();
+            Cart.Foods.Remove(food);
+        }
 
         public static void PayOrder(PaymentMethod paymentMethod, int restaurantID)
         {
@@ -222,6 +230,8 @@ namespace Restaurant_Manager.Classes
             
             return true;
         }
+
+        
 
 
 

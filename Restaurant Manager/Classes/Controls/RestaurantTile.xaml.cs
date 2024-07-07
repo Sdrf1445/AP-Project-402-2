@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Pages.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -121,6 +122,7 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void UserControl_Click(object sender, MouseButtonEventArgs e)
         {
+            Page.NavigationService.Navigate(new MainUser(Restaurant));
 
         }
     }

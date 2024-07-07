@@ -19,9 +19,9 @@
 
 
 
-        <TextBlock Text="🗑️" Foreground="Orange" FontSize="20" Height="30" Width="30" Margin="263,85,212,26"></TextBlock>
-        <local:CustomNumbericUpDown x:Name="" Width="90" Height="40" Margin="305,77,110,24"></local:CustomNumbericUpDown>
-        <Button Content="Update" Width="100" Height="40" Style="{StaticResource Shared.SmallButton3}" Foreground="White" Margin="400,80,5,21"></Button>
+        <TextBlock MouseDown="Delete_Clicked" Text="🗑️" Foreground="Orange" FontSize="20" Height="30" Width="30" Margin="263,85,212,26"></TextBlock>
+        <local:CustomNumbericUpDown x:Name="NumericUpdown" Width="90" Height="40" Margin="305,77,110,24"></local:CustomNumbericUpDown>
+        <Button Content="Update" Click="Update_Click" Width="100" Height="40" Style="{StaticResource Shared.SmallButton3}" Foreground="White" Margin="400,80,5,21"></Button>
 
 
     </Grid>

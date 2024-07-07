@@ -9,13 +9,13 @@
     <Grid>
         <Border Background="White"></Border>
 
-        <TextBlock Text="By @Username(You)" FontSize="25" FontWeight="Bold" Width="300" Height="50" Margin="10,10,298,123"></TextBlock>
-        <TextBlock Text="From Restaurant" Foreground="#595D6C" FontSize="12" Margin="10,42,468,123"/>
-        <TextBlock Text="13.99$" FontSize="25" FontWeight="Bold" Height="50" Margin="10,123,505,10"/>
-        <TextBlock Width="100" Height="30" Text="0/0/2020" Foreground="Gray" FontSize="15" FontWeight="Bold" Margin="508,20,0,133"></TextBlock>
+        <TextBlock x:Name="UsernameBox" Text="By @Username(You)" FontSize="25" FontWeight="Bold" Width="300" Height="50" Margin="10,10,298,123"></TextBlock>
+        <TextBlock x:Name="RestaurantBox" Text="From Restaurant" Foreground="#595D6C" FontSize="12" Margin="10,42,468,123"/>
+        <TextBlock x:Name="PriceBox" Text="13.99$" FontSize="25" FontWeight="Bold" Height="50" Margin="10,123,505,10"/>
+        <TextBlock x:Name="DateBox" Width="100" Height="30" Text="0/0/2020" Foreground="Gray" FontSize="15" FontWeight="Bold" Margin="508,20,0,133"></TextBlock>
         <TextBlock Text="Your Given Score:" Foreground="#140F7B" FontSize="15" FontWeight="Bold" Width="140" Height="30" Margin="304,76,164,77"></TextBlock>
-        <TextBox Width="30" Height="30" Margin="449,76,129,77"></TextBox>
-        <Button Content="Submit" Width="80" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton}" Margin="508,72,20,81"></Button>
-        <Button Content="Add Comment" Width="120" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Margin="464,133,24,20"></Button>
+        <TextBox x:Name="ScoreBox" Width="30" Height="30" Margin="449,76,129,77"></TextBox>
+        <Button Click="Submit_Click" Content="Submit" Width="80" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton}" Margin="508,72,20,81"></Button>
+        <Button Click="AddComment_Click" Content="Add Comment" Width="120" Height="30" Foreground="White" Style="{StaticResource Shared.SmallButton3}" Margin="464,133,24,20"></Button>
     </Grid>
 </UserControl>

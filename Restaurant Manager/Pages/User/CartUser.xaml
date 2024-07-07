@@ -10,7 +10,7 @@
 
     <Grid>
         <ScrollViewer Width="500" Height="600" Margin="102,71,351,71">
-            <StackPanel></StackPanel>
+            <StackPanel x:Name="FoodOrderTileList"></StackPanel>
         </ScrollViewer>
 
         <Canvas Width="186" Height="242" Background="White" Margin="707,231,60,269">

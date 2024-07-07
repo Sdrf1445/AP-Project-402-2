@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,13 @@ namespace Restaurant_Manager.Pages.User
         {
             InitializeComponent();
             User = user;
+            var list = Classes.User.GetAllComplaints();
+            foreach(var item in list)
+            {
+                var tile = new ComplaintUserTile(item);
+                tile.Margin = new Thickness(0,10,0,0);
+                ComplaintsTileList.Children.Add(tile);
+            }
         }
     }
 }

@@ -112,6 +112,12 @@
     <Compile Update="Pages\User\RestaurantsUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\AddCommentFood.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddCommentOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AddComplaintWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -268,6 +274,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddCommentFood.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddCommentOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AddComplaintWindow.xaml">

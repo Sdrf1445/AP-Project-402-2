@@ -52,7 +52,6 @@ namespace Restaurant_Manager.Classes.Controls
         private void View_Click(object sender, RoutedEventArgs e)
         {
             Page.NavigationService.Navigate(new FoodRestaurant(Food));
-
         }
     }
 }

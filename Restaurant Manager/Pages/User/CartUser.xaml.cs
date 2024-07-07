@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace Restaurant_Manager.Pages.User
         public CartUser()
         {
             InitializeComponent();
+            foreach(var item in Classes.User.Cart.Foods)
+            {
+                //var carttile = new CartFoodTile(item,)
+
+            }
         }
     }
 }

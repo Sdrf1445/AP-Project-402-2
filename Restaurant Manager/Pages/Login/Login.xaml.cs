@@ -31,8 +31,21 @@ namespace Restaurant_Manager.Pages.Login
         {
             if (Restaurant_Manager.Classes.Login.DoesUserExist(UsernameTextbox.Text, PasswordTextbox.Text))
             {
-                //Login details later
-
+                var logintype = Classes.Login.DeterminUserTypeAndLogin(UsernameTextbox.Text, PasswordTextbox.Text);
+                if (logintype == UserType.ADMIN)
+                {
+                    new AdminWindow().Show();
+                }
+                else if(logintype == UserType.RESTAURANT)
+                {
+                    new RestaurantWindow().Show();
+                }
+                else
+                {
+                    new UserWindow().Show();
+                }
+                var window = Window.GetWindow(this);
+                window.Close();
             }
             else
             {

@@ -22,10 +22,12 @@ namespace Restaurant_Manager.Classes.Controls
     public partial class CommentTile : UserControl
     {
         public Comment Comment { get; set; }
-        public CommentTile(Comment comment,bool allowReply = true , bool allowEdit = false)
+        public Page Page { get; set; }
+        public CommentTile(Page page,Comment comment,bool allowReply = true , bool allowEdit = false)
         {
             InitializeComponent();
             Comment = comment;
+            Page = page;
             if (!allowReply)
             {
                 ReplyButton.Visibility = Visibility.Collapsed;
@@ -47,9 +49,20 @@ namespace Restaurant_Manager.Classes.Controls
         {
             var editcomment = new EditCommentWindow(Comment);
             bool? dialogresult = editcomment.ShowDialog();
-            if(dialogresult != true)
+            if(dialogresult == true)
             {
-                
+                Page.NavigationService.Refresh();
+            }
+
+        }
+
+        private void Reply_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ReplyCommentWindow(Comment);
+            bool? dialogresult = window.ShowDialog();
+            if(dialogresult == true)
+            {
+                Page.NavigationService.Refresh();
             }
 
         }
