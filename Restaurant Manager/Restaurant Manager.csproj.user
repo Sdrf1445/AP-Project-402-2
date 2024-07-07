@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Classes\Controls\CartFoodTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\CommentTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
     <Compile Update="Classes\Controls\MenuTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\OrderUserTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\RestaurantAdminTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +68,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\Cart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\CartUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\User\ComplaintsUser.xaml.cs">
@@ -89,6 +101,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\User\MainUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\User\OrderHistoryUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\User\Profile.xaml.cs">
@@ -138,6 +153,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Classes\Controls\CartFoodTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\CommentTile.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -177,6 +195,9 @@
     <Page Update="Classes\Controls\MenuTile.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Classes\Controls\OrderUserTile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Classes\Controls\RestaurantAdminTile.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -196,6 +217,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Admin\Restaurants.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\Cart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\CartUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\User\ComplaintsUser.xaml">
@@ -220,6 +247,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\User\MainUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\User\OrderHistoryUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\User\Profile.xaml">

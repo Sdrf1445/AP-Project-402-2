@@ -55,5 +55,10 @@ namespace Restaurant_Manager.Windows
             Frame.Navigate(new Profile(User));
 
         }
+
+        private void Complaints_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
