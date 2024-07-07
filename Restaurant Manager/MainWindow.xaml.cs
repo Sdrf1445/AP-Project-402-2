@@ -22,11 +22,11 @@ namespace Restaurant_Manager
         {
             InitializeComponent();
             this.Hide();
-            //new AdminWindow().ShowDialog();
+            new AdminWindow().ShowDialog();
             Food food = new Food(45, 74, "fsfa", "fasdfasf", 4.5);
             new FoodEditWindow(food).ShowDialog();
-            //var LoginWindow = new LoginWindow();
-            //LoginWindow.ShowDialog();
+            var LoginWindow = new LoginWindow();
+            LoginWindow.ShowDialog();
             Database.Instance.Dispose();
             this.Close();
         }

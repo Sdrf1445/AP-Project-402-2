@@ -50,7 +50,7 @@ namespace Restaurant_Manager.Pages.Admin
                 new ErrorWindow("Password does not match").ShowDialog();;
                 return;
             }
-            if(!DatabaseFunctions.IsUserNameUniqe(UsernameTextbox.Text))
+            if(!Restaurant_Manager.Classes.Login.IsUsernameUnique(UsernameTextbox.Text))
             {
                 new ErrorWindow("Username taken").ShowDialog();;
                 return;

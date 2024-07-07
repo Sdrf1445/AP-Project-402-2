@@ -20,7 +20,7 @@ namespace Restaurant_Manager.Pages.User
     /// </summary>
     public partial class Profile : Page
     {
-        public Classes.User User { get; set; };
+        public Classes.User User { get; set; }
         public Profile(Classes.User user)
         {
             InitializeComponent();

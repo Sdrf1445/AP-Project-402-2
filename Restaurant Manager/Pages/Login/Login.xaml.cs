@@ -29,7 +29,7 @@ namespace Restaurant_Manager.Pages.Login
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            if (DatabaseFunctions.IsLoginCreditionalsValid(UsernameTextbox.Text, PasswordTextbox.Text))
+            if (Restaurant_Manager.Classes.Login.DoesUserExist(UsernameTextbox.Text, PasswordTextbox.Text))
             {
                 //Login details later
 

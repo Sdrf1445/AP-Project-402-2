@@ -14,6 +14,15 @@ namespace Restaurant_Manager.Classes
         private static string username = "sadramin";
         private static string password = "12345";
 
+        public static bool IsUserAdmin(string Username)
+        {
+            return username == Username;
+        }
+        public static bool PasswordCheck(string Password)
+        {
+            return password == Password;
+        }
+
         public static void AddRestaurant(string username, string password, string name, string city, ReceptionType receptionType, string address)
         {
             Restaurant restaurant = new Restaurant(username, password, name, city, receptionType, address);
@@ -53,7 +62,7 @@ namespace Restaurant_Manager.Classes
 
 
         // search throw complaints 
-        public static List<Complaint> SearchComplaintsByUsername(string usernamem, ComplaintStatus complaintStatus, TimeOrder timeOrder)
+        public static List<Complaint> SearchComplaintsByUsername(string username, ComplaintStatus complaintStatus, TimeOrder timeOrder)
         {
             IQueryable<Complaint> result;
             if (complaintStatus == ComplaintStatus.NoFilter)
