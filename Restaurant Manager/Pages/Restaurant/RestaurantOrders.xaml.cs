@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Manager.Classes.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Restaurant_Manager.Pages.Restaurant
         public RestaurantOrders()
         {
             InitializeComponent();
+            foreach(var item in Classes.Restaurant.GetAllOrders())
+            {
+                var tile = new RestaurantOrderTile(this,item);
+                this.Margin = new Thickness(0,200,0, 0);
+                ComplaintsTileList.Children.Add(tile);
+            }
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)

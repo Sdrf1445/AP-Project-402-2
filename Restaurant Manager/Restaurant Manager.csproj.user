@@ -58,6 +58,9 @@
     <Compile Update="Classes\Controls\RestaurantFilterControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Classes\Controls\RestaurantOrderTile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Classes\Controls\RestaurantTile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -214,6 +217,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\RestaurantFilterControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Classes\Controls\RestaurantOrderTile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Classes\Controls\RestaurantTile.xaml">
