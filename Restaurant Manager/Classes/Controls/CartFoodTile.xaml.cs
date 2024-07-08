@@ -44,7 +44,10 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 NumericUpdown.Number = Food.NumberOrdered!.Value;
                 new ErrorWindow("Not enough remaning").ShowDialog();
+                return;
             }
+
+            Page.NavigationService.Navigate(new CartUser());
         }
 
         private void Delete_Clicked(object sender, MouseButtonEventArgs e)

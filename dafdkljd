@@ -1,0 +1,168 @@
+[33mcommit bee2e2f5308602642d9f5b1320b5f8e37fdbd1c4[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/sadra[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32msadra[m[33m)[m
+Merge: 11ce289 00b42f2
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Fri Jul 5 15:53:34 2024 +0330
+
+    Merged amin and sadra
+
+[33mcommit 11ce289c10699c742864f27ecdd7ab8d3fcde15a[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Fri Jul 5 15:50:44 2024 +0330
+
+    Fixed Some UI elements of Menus
+
+[33mcommit 00b42f2774da41b823450e1f54c2e7b8cb2f885f[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Fri Jul 5 15:50:23 2024 +0330
+
+    finished food information and menu information and fixed scroll
+
+[33mcommit e9efa3c332ec26c70fb67079e56e19c61ec2a00a[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Fri Jul 5 03:50:30 2024 +0330
+
+    Added filtering functionality for admin , Fixed Add Restaurant , Added change password functionality for admin
+
+[33mcommit d1c7c4f9e097e9f17e9075602a01213fc95f83b7[m
+Merge: 8975726 5c6907e
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 21:33:03 2024 +0330
+
+    Merge branch 'amin' into develop
+
+[33mcommit 89757269decec2c55dd75a97b12e80ae7b35eeb4[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 21:31:19 2024 +0330
+
+    Fixed RestaurantFilterControl, Added RestaurantAdminTile , Fixed Register Logic
+
+[33mcommit 5c6907edad768666cef8a17cff4f1e5aafb2a17c[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Thu Jul 4 20:12:17 2024 +0330
+
+    added orders and complaints list to Restaurant class and completed search filter for restaurants in admin page
+
+[33mcommit 1ba55cfdd0ffcd7ec6421b9060b985ad15702ce2[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 18:34:27 2024 +0330
+
+    Fixed Database
+
+[33mcommit c455b9e40812f58c60fd43efd4e4c8687489b637[m
+Merge: 2c9b3ec 96a0703
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 18:09:12 2024 +0330
+
+    Merge branch 'amin' into develop
+
+[33mcommit 2c9b3ec190bf556ce952306a4b27aa6b54612274[m
+Merge: 506b202 02e0169
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 18:09:08 2024 +0330
+
+    Merge branch 'sadra' into develop
+
+[33mcommit 02e01695d0897d5fb7af728c781f423594c3349e[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 17:41:45 2024 +0330
+
+    Added FoodAdminTile , MenuAdminTile and foudation for Restaurant Main View Page , Fixed AddRestaurant View
+
+[33mcommit 96a07032bcf51e17662fc2514de85a23d3bd2a0a[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Thu Jul 4 17:39:08 2024 +0330
+
+    finished Admin page backend
+
+[33mcommit 373ecfdbbfe599679efc6d31346ddf42e3ab216f[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Thu Jul 4 01:50:26 2024 +0330
+
+    Added RestaurantFilterControl , Updated Restaurants Page
+    
+    Using ScrollViewer and Stack Panel instead of ListView
+
+[33mcommit 8e23daecb504579732e4be8b18c117115077f0a5[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Wed Jul 3 17:46:04 2024 +0330
+
+    finished restaurant page design
+
+[33mcommit 506b202c57bb7b277e6d43b92bbf513bd050f36b[m
+Merge: e8a6318 eb9c025
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Wed Jul 3 15:14:31 2024 +0330
+
+    Fixed merged again
+
+[33mcommit eb9c02510ec95613c54e6a12299bad0a25d70dc4[m
+Merge: f840940 d9c45c5
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Wed Jul 3 15:11:57 2024 +0330
+
+    Fixed Merge
+
+[33mcommit e8a6318ac6bbffb7135824d0a9cafa7c5921a5a4[m
+Merge: f840940 d9c45c5
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Wed Jul 3 15:04:13 2024 +0330
+
+    Merged into Develop
+
+[33mcommit f8409403f91165f947d6ce3f6af717ce17252929[m
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Wed Jul 3 14:45:07 2024 +0330
+
+    Added CustomPasswordBox and updated Login and SetPassword pages , Updated RestaurantTile
+    
+    Added star count functionality for RestaurantTile
+
+[33mcommit d9c45c5e0cae4619c56371d272f9070497917afa[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Wed Jul 3 12:20:04 2024 +0330
+
+    Added tables to Database
+    
+    added User , Restaurant, Menu, Complaint tables
+
+[33mcommit 2376c5a217e64cbc2ac533247a1ef8cf55a088d0[m
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Wed Jul 3 10:19:41 2024 +0330
+
+    Added message show in AdminWindow , Fixed RestaurantTile
+
+[33mcommit 25c3fd0339166c19d427f4f2e23ba76367e6409f[m
+Author: Sadra <sadrasefidgari@gmail.com>
+Date:   Tue Jul 2 23:03:38 2024 +0330
+
+    Added foundation for AdminWindow and Restaurants View
+    
+    Added RestaurantTile User Control and AdminWindow
+
+[33mcommit 8872f885c814ee62020d88beb9324e8dc5afdf80[m
+Merge: 48ed3f8 324f514
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Tue Jul 2 12:21:56 2024 +0330
+
+    fixed merging amin and develop
+    
+    set password button function was the problem
+
+[33mcommit 48ed3f8aadaf0aedce51229f2b2771c67735af7a[m
+Merge: e37a0a0 e4b6c4a
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Tue Jul 2 11:42:44 2024 +0330
+
+    Merge branch 'develop' of https://github.com/Sdrf1445/AP-Project-402-2 into amin
+
+[33mcommit e37a0a045278b1c1e187ca810b453b13dc96f010[m
+Author: MohammadAminBahari <bahariamin.1384@gmail.com>
+Date:   Tue Jul 2 11:40:42 2024 +0330
+
+    finished Restaurants and add restaurant page design
+
+[33mcommit 324f514f3508a6575450898ea3ede9e64f14f2f4[m
+Author: Sadra Sefidgari <sadrasefidgari@gmail.com>
+Date:   Mon Jul 1 13:59:01 2024 +0330
+
+    Fixed previous merge

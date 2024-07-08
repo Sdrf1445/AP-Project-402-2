@@ -82,7 +82,10 @@ namespace Restaurant_Manager.Windows
 
         private void Logout_Checked(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            var loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
+            this.Close();
         }
     }
 }

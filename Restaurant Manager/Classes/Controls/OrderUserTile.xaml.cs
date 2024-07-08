@@ -31,6 +31,8 @@ namespace Restaurant_Manager.Classes.Controls
             Page = page;
 
             UsernameBox.Text = $"By @{order.Username}";
+            PriceBox.Text = $"{order.SumPrice}$";
+            ScoreBox.Text = $"{order.Rating?.Value}";
             //RestaurantBox.Text = $"From {order.}";
         }
 

@@ -210,12 +210,52 @@ namespace Restaurant_Manager.Classes
             var foods = Database.Instance.Menus
                 .Where(x => x.RestaurantID == restaurantID)
                 .First().Foods;
+
+            // add order to user orders and restaurant orders
+            var userOrders = Database.Instance.Users
+                .Where(x => x.Username == CurrentUsername)
+                .First().Orders;
+            userOrders.Add(Cart);
+            Database.Instance.Users
+                .Where(x => x.Username == CurrentUsername)
+                .First().Orders = userOrders;
+            Database.Instance.SaveChanges();
+
+            var restaurantOrders = Database.Instance.Restaurants
+                .Where(x => x.ID == restaurantID)
+                .First().Orders;
+            restaurantOrders.Add(Cart);
+            Database.Instance.Restaurants
+                .Where(x => x.ID == restaurantID)
+                .First().Orders = restaurantOrders;
+            Database.Instance.SaveChanges ();
+            // -----------------------------------------------
+            double totalCost = Cart.SumPrice;
             foreach(var food in Cart.Foods)
             {
                 food.Remaining -= (int)food.NumberOrdered!;
                 food.NumberOrdered = 0;
             }
+            userOrders = Database.Instance.Users
+                .Where(x => x.Username == CurrentUsername)
+                .First().Orders;
+            userOrders.Add(Cart);
 
+            Database.Instance.Users
+                .Where(x => x.Username == CurrentUsername)
+                .First().Orders = userOrders;
+
+
+            restaurantOrders = Database.Instance.Restaurants
+                .Where(x => x.ID ==  restaurantID)
+                .First().Orders;
+
+            restaurantOrders.Add(Cart);
+            Database.Instance.Restaurants
+                .Where(x => x.ID == restaurantID)
+                .First().Orders = restaurantOrders;
+
+            Database.Instance.SaveChanges();
             Database.Instance.Menus
                 .Where(x => x.RestaurantID == restaurantID)
                 .First().Foods = foods;
@@ -224,7 +264,7 @@ namespace Restaurant_Manager.Classes
             string userEmail = GetEmailByUsername(CurrentUsername);
             string emailText = $"hey {fullName}\n" +
                 $"your order code is {Cart.Code}\n" +
-                $"total price: {Cart.SumPrice}";
+                $"total price: {totalCost}";
             Classes.Email.SendPaymentEmail(userEmail, fullName, emailText);
         }
 
@@ -244,7 +284,8 @@ namespace Restaurant_Manager.Classes
             {
                 return false;
             }
-            
+            Cart.Foods.Where(x => x.ID == foodID)
+                .First().NumberOrdered = number;
             return true;
         }
 

@@ -41,7 +41,7 @@ namespace Restaurant_Manager.Classes
                     .Where(x => x.RestaurantID == ID) //sus
                     .First().Foods
                     .Select(y => y.Rating);
-                var orderRatings = Orders.Select(x => x.Rating.Value);
+                var orderRatings = Orders.Where(x =>x.Rating != null).Select(x => x.Rating!.Value);
                 return (int)((foodRatings.Sum() + orderRatings.Sum()) / (foodRatings.Count() + orderRatings.Count()));
             }
         }
