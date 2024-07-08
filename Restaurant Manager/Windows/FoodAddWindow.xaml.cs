@@ -33,7 +33,7 @@ namespace Restaurant_Manager.Windows
         {
             try
             {
-                Classes.Restaurant.AddFoodToMenu(Menu.ID, NameBox.Name, RemainingBox.Number, IngrediantsBox.Text, double.Parse(PriceBox.Text),ImagePath);
+                Classes.Restaurant.AddFoodToMenu(Menu.ID, NameBox.Text, RemainingBox.Number, IngrediantsBox.Text, double.Parse(PriceBox.Text),ImagePath);
                 this.DialogResult = true;
                 this.Close();
             }

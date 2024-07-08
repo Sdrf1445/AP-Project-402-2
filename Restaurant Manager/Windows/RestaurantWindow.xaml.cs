@@ -27,5 +27,11 @@ namespace Restaurant_Manager.Windows
             Restaurant = Classes.Restaurant.GetRestaurantById(Classes.Restaurant.CurrentRestaurantID);
             Frame.Navigate(new Pages.Restaurant.Main(Restaurant));
         }
+
+        private void Exit_Checked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

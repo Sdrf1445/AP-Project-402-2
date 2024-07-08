@@ -24,7 +24,6 @@ namespace Restaurant_Manager
             this.Hide();
             var LoginWindow = new LoginWindow();
             LoginWindow.ShowDialog();
-            Database.Instance.Dispose();
             this.Close();
         }
     }

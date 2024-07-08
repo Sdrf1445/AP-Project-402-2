@@ -1,4 +1,5 @@
 ﻿using Restaurant_Manager.Classes.Controls;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,12 +28,32 @@ namespace Restaurant_Manager.Pages.User
             InitializeComponent();
             User = user;
             var list = Classes.User.GetAllComplaints();
-            foreach(var item in list)
+            bool first = true;
+            foreach (var item in list)
             {
                 var tile = new ComplaintUserTile(item);
-                tile.Margin = new Thickness(0,10,0,0);
+                tile.Margin = new Thickness(0,first ? 0: 200, 0, 0);
+                if(first) {first = false;}
                 ComplaintsTileList.Children.Add(tile);
+                if (item.Answer != null)
+                {
+                    var answertile = new CommentTile(item.Answer, false, false);
+                    answertile.Margin = new Thickness(20, 300, 0, 0);
+                    ComplaintsTileList.Children.Add(answertile);
+
+                }
             }
+        }
+
+        private void AddComplaint_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddComplaintWindow();
+            bool? dialogresult = window.ShowDialog();
+            if (dialogresult == true)
+            {
+                NavigationService.Navigate(new ComplaintsUser(Classes.User.GetCurrentUSer()));
+            }
+
         }
     }
 }

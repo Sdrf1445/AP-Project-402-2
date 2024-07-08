@@ -35,11 +35,20 @@ namespace Restaurant_Manager.Pages.Admin
                 //<controls:RestaurantTile StarText="0" VotesCountText="50" RestaurantText="Nice"  LocationText="Nicer" CommentsCountNumber="76" Margin="0,23,0,0" Width="608" Height="151"></controls:RestaurantTile>
                 if (item.Status)
                 {
+                    var complaintadminTile = new ComplaintAnsweredAdminTile(item);
+                    complaintadminTile.Margin = new Thickness(0, 23, 0, 0);
+                    complaintadminTile.Width = 608;
+                    complaintadminTile.Height = 151;
+                    ComplaintsTileList.Children.Add(complaintadminTile);
+                }
+                else
+                {
                     var complaintadminTile = new ComplaintAdminTile(item, this);
                     complaintadminTile.Margin = new Thickness(0, 23, 0, 0);
                     complaintadminTile.Width = 608;
                     complaintadminTile.Height = 151;
                     ComplaintsTileList.Children.Add(complaintadminTile);
+
                 }
                 /*                var restaurantadminTile = new RestaurantAdminTile(item);
                                 restaurantadminTile.Margin = new Thickness(0,23,0,0);

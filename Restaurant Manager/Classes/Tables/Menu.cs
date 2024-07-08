@@ -38,6 +38,7 @@ namespace Restaurant_Manager.Classes
         {
             RestaurantID = restaurantID;
             Name = name;
+            Foods = new List<Food>();
         }
     }
 

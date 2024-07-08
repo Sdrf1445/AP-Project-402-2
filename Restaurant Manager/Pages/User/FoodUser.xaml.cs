@@ -1,4 +1,5 @@
-﻿using Restaurant_Manager.Classes.Controls;
+﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Classes.Controls;
 using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Restaurant_Manager.Pages.Food
     {
         public Classes.Food Food { get; set; }
         public Classes.Restaurant Restaurant { get; set; }
-        public FoodUser(Classes.Food food,Classes.Restaurant restaurant)
+        public FoodUser(Classes.Food food, Classes.Restaurant restaurant)
         {
             InitializeComponent();
             Food = food;
@@ -34,18 +35,19 @@ namespace Restaurant_Manager.Pages.Food
             RemainingBlock.Text = $"Remaning: {Food.Remaining}";
             RatingBlock.Text = $"{Food.Rating} (30 Votes)";
             Ingridients.Text = $"Ingridients: {Food.Ingredients}";
+            ImageBox.Source = Classes.Food.ReadImage(food.MenuID, food.ID);
             foreach (var item in Food.Comments)
             {
                 var editAllowed = item.AuthorUsername == Classes.User.CurrentUsername;
-                var commentTile = new CommentTile(Food,Restaurant,this, item, allowEdit: editAllowed);
-                commentTile.HorizontalAlignment = HorizontalAlignment.Left;
+                var commentTile = new CommentTile(Food, Restaurant, this, item, allowEdit: editAllowed);
+                commentTile.Margin = new Thickness(0, 200, 0, 0);
                 CommentListBox.Children.Add(commentTile);
                 foreach (var reply in item.Replies)
                 {
                     editAllowed = reply.AuthorUsername == Classes.User.CurrentUsername;
-                    var replyTile = new CommentTile(Food,Restaurant,this, reply, false, allowEdit: editAllowed);
-                    commentTile.HorizontalAlignment = HorizontalAlignment.Right;
-                    CommentListBox.Children.Add(commentTile);
+                    var replyTile = new CommentTile(Food, Restaurant, this, reply, false, allowEdit: editAllowed);
+                    replyTile.Margin = new Thickness(20, 200, 0, 0);
+                    CommentListBox.Children.Add(replyTile);
                 }
             }
         }
@@ -71,10 +73,18 @@ namespace Restaurant_Manager.Pages.Food
         private void AddComment_Click(object sender, RoutedEventArgs e)
         {
             bool? dialogresult = new AddCommentFood(Food, Restaurant).ShowDialog();
-            if(dialogresult == true)
+            if (dialogresult == true)
             {
-                NavigationService.Refresh();
+                NavigationService.Navigate(new FoodUser(Food, Restaurant));
             }
+
+        }
+
+        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.User.AddToCart(Food.ID, Restaurant.ID);
+            var window = Window.GetWindow(this);
+            (window as UserWindow).ShowMessageBox("Added");
 
         }
     }

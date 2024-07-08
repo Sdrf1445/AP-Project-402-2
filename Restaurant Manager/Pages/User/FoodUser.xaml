@@ -9,7 +9,7 @@
       Title="FoodRestaurant">
 
     <Canvas>
-        <Image Source="/Images/defaultfood.png" Canvas.Left="68" Canvas.Top="51"></Image>
+        <Image Width="150" Height="150" x:Name="ImageBox" Source="/Images/defaultfood.png" Canvas.Left="68" Canvas.Top="51"></Image>
         <TextBlock x:Name="FoodNameBlock" Text="Food Name" FontSize="30" FontWeight="Bold" Canvas.Left="240" Canvas.Top="51"></TextBlock>
         <TextBlock x:Name="RemainingBlock" Text="Remaning: 12" FontSize="12" Canvas.Left="249" Canvas.Top="125" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="PriceBlock" Text="19.99$" FontSize="30" FontWeight="Bold" Canvas.Left="240" Canvas.Top="146" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
@@ -28,6 +28,6 @@
         <TextBlock Text="Your Given Score:" FontSize="15" FontWeight="Bold" Foreground="#140F7B" Canvas.Left="670" Canvas.Top="130"></TextBlock>
         <TextBox x:Name="RatingBox" Width="30" Canvas.Left="820" Canvas.Top="131" TextAlignment="Center"></TextBox>
         <Button Width="114" Height="24" Style="{StaticResource Shared.SmallButton3}" Click="Submit_Click" Content="Submit" Foreground="White" Canvas.Left="737" Canvas.Top="175"></Button>
-        <Button Content="Add To Cart" Width="953" Height="80" Background="Green" FontSize="30" Foreground="White" Canvas.Bottom="0"></Button>
+        <Button Click="AddToCart_Click" Content="Add To Cart" Width="953" Height="80" Background="Green" FontSize="30" Foreground="White" Canvas.Bottom="0"></Button>
     </Canvas>
 </Page>

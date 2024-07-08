@@ -20,24 +20,37 @@ namespace Restaurant_Manager.Classes.Controls
     /// <summary>
     /// Interaction logic for CustomTextBox.xaml
     /// </summary>
-    public partial class CustomTextBox : UserControl 
+    public partial class CustomTextBox : UserControl
     {
-        
-        public static readonly DependencyProperty HintProperty=
+
+        public static readonly DependencyProperty HintProperty =
             DependencyProperty.Register("Hint", typeof(string), typeof(CustomTextBox), new PropertyMetadata(""));
-        public static readonly DependencyProperty TextProperty=
+        public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(CustomTextBox), new PropertyMetadata(""));
 
 
-        public string HintText 
+        public string HintText
         {
             get { return (string)GetValue(HintProperty); }
             set { SetValue(HintProperty, value); }
         }
         public string Text
         {
-            get { return (string)GetValue(TextProperty); } 
-            set { SetValue(TextProperty, value); }
+            get { return (string)GetValue(TextProperty); }
+            set
+            {
+                SetValue(TextProperty, value);
+                this.TextBox.Text = value;
+                if (value == "")
+                {
+                    HintBlock.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    HintBlock.Visibility = Visibility.Collapsed;
+
+                }
+            }
         }
 
 
@@ -50,7 +63,7 @@ namespace Restaurant_Manager.Classes.Controls
             base.OnApplyTemplate();
             HintBlock.Text = HintText;
             TextBox.TextChanged += TextBox_TextChanged;
-            if(Width != null && Width != 0)
+            if (Width != null && Width != 0)
             {
                 CanvasBox.Width = Width;
                 TextBox.Width = Width - 20;
@@ -64,7 +77,20 @@ namespace Restaurant_Manager.Classes.Controls
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             this.Text = TextBox.Text;
-            if(TextBox.Text == "")
+            if (TextBox.Text == "")
+            {
+                HintBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                HintBlock.Visibility = Visibility.Hidden;
+            }
+        }
+        private void Changed()
+        {
+
+            this.Text = TextBox.Text;
+            if (TextBox.Text == "")
             {
                 HintBlock.Visibility = Visibility.Visible;
             }

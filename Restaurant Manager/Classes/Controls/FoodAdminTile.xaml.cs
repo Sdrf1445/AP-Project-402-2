@@ -48,7 +48,7 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 return;
             }
-            Page.NavigationService.Refresh();
+            Page.NavigationService.Navigate(new Main(Restaurant));
         }
 
         private void View_Click(object sender, RoutedEventArgs e)

@@ -32,6 +32,12 @@ namespace Restaurant_Manager.Pages.User
                 var ordertile = new OrderUserTile(this,item);
                 ordertile.Margin = new Thickness(0, 10, 0, 0);
                 OrderListBox.Children.Add(ordertile);
+                if(item.Comment != null)
+                {
+                    var commenttile = new CommentTile(item, this, item.Comment, false,false);
+                    commenttile.Margin = new Thickness(0, 10, 0, 0);
+                    OrderListBox.Children.Add(commenttile);
+                }
             }
         }
     }

@@ -38,9 +38,6 @@ namespace Restaurant_Manager.Classes.Controls
             {
                 FoodTileList.Children.Add(new FoodTile(food,Page,Restaurant));
             });
-            //<Button Height="40" BorderBrush="Green" BorderThickness="2" Content="Add" FontWeight="Bold" FontSize="15" Background="LightGreen"></Button>
-            Button button = new Button { BorderBrush = Brushes.Green, BorderThickness = new Thickness(2),Content = "Add" , FontWeight=  FontWeights.Bold , FontSize = 15 , Background = Brushes.LightGreen };
-            FoodTileList.Children.Add(button);
         }
     }
 }

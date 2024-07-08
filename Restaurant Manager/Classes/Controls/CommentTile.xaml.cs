@@ -1,4 +1,7 @@
-﻿using Restaurant_Manager.Windows;
+﻿using Restaurant_Manager.Pages.Food;
+using Restaurant_Manager.Pages.Restaurant;
+using Restaurant_Manager.Pages.User;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +28,8 @@ namespace Restaurant_Manager.Classes.Controls
         public Page Page { get; set; }
         public Restaurant Restaurant { get; set; }
         public Food Food { get; set; }
-        public CommentTile(Food food,Restaurant restaurant,Page page,Comment comment,bool allowReply = true , bool allowEdit = false)
+        public Order Order { get; set; } = null;
+        public CommentTile(Food food, Restaurant restaurant, Page page, Comment comment, bool allowReply = true, bool allowEdit = false)
         {
             InitializeComponent();
             Comment = comment;
@@ -35,13 +39,73 @@ namespace Restaurant_Manager.Classes.Controls
             if (!allowReply)
             {
                 ReplyButton.Visibility = Visibility.Collapsed;
+                RepliedBlock.Visibility = Visibility.Visible;
             }
-            if(!allowEdit)
+            else
+            {
+                RepliedBlock.Visibility = Visibility.Collapsed;
+
+            }
+            if (!allowEdit)
             {
                 EditButton.Visibility = Visibility.Collapsed;
             }
             UsernameBlock.Text = $"@{Comment.AuthorUsername}";
-            if(!Comment.IsEdited)
+            if (!Comment.IsEdited)
+            {
+                EditedBlock.Visibility = Visibility.Collapsed;
+            }
+            DescriptionBox.Text = Comment.Message;
+            DateBlock.Text = Comment.Date.ToString("MM/dd/yyyy");
+        }
+        public CommentTile(Order order, Page page, Comment comment, bool allowReply = true, bool allowEdit = false)
+        {
+            InitializeComponent();
+            Comment = comment;
+            Page = page;
+            Order = order;
+            if (!allowReply)
+            {
+                ReplyButton.Visibility = Visibility.Collapsed;
+                RepliedBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                RepliedBlock.Visibility = Visibility.Collapsed;
+
+            }
+            if (!allowEdit)
+            {
+                EditButton.Visibility = Visibility.Collapsed;
+            }
+            UsernameBlock.Text = $"@{Comment.AuthorUsername}";
+            if (!Comment.IsEdited)
+            {
+                EditedBlock.Visibility = Visibility.Collapsed;
+            }
+            DescriptionBox.Text = Comment.Message;
+            DateBlock.Text = Comment.Date.ToString("MM/dd/yyyy");
+        }
+        public CommentTile(Comment comment, bool allowReply = true, bool allowEdit = false)
+        {
+            InitializeComponent();
+            Comment = comment;
+            if (!allowReply)
+            {
+                ReplyButton.Visibility = Visibility.Collapsed;
+                RepliedBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                RepliedBlock.Visibility = Visibility.Collapsed;
+
+            }
+            if (!allowEdit)
+            {
+                EditButton.Visibility = Visibility.Collapsed;
+            }
+            UsernameBlock.Text = $"@Admin";
+            if (!Comment.IsEdited)
             {
                 EditedBlock.Visibility = Visibility.Collapsed;
             }
@@ -51,22 +115,49 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            var editcomment = new EditCommentWindow(Comment,Restaurant,Food);
-            bool? dialogresult = editcomment.ShowDialog();
-            if(dialogresult == true)
+            if (Order == null)
             {
-                Page.NavigationService.Refresh();
+                var editcomment = new EditCommentWindow(Comment, Restaurant, Food);
+                bool? dialogresult = editcomment.ShowDialog();
+                if (dialogresult == true)
+                {
+                    if (Page is FoodRestaurant)
+                    {
+                        Page.NavigationService.Navigate(new FoodRestaurant(Food, Restaurant));
+                    }
+                    else
+                    {
+                        Page.NavigationService.Navigate(new FoodUser(Food, Restaurant));
+                    }
+                }
+            }
+            else
+            {
+                var editcomment = new EditCommentWindow(Comment, Order);
+                bool? dialogresult = editcomment.ShowDialog();
+                if (dialogresult == true)
+                {
+                    Page.NavigationService.Navigate(new OrderHistoryUser(User.GetCurrentUSer()));
+                }
+
             }
 
         }
 
         private void Reply_Click(object sender, RoutedEventArgs e)
         {
-            var window = new ReplyCommentWindow(Comment);
+            var window = new ReplyCommentWindow(Comment, Food, Restaurant);
             bool? dialogresult = window.ShowDialog();
-            if(dialogresult == true)
+            if (dialogresult == true)
             {
-                Page.NavigationService.Refresh();
+                if (Page is FoodRestaurant)
+                {
+                    Page.NavigationService.Navigate(new FoodRestaurant(Food, Restaurant));
+                }
+                else
+                {
+                    Page.NavigationService.Navigate(new FoodUser(Food, Restaurant));
+                }
             }
 
         }

@@ -64,6 +64,7 @@ namespace Restaurant_Manager.Pages.User
             {
                 int postcode = int.Parse(PostalCodeBox.Text);
                 Classes.User.EditUserInfo((Gender)GenderBox.SelectedIndex, postcode, EmailBox.Text);
+                (window as UserWindow).ShowMessageBox("Successful");
             }
             catch
             {

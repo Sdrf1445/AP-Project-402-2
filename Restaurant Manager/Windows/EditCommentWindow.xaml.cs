@@ -22,8 +22,9 @@ namespace Restaurant_Manager.Windows
     {
         public Comment Comment { get; set; }
         public Restaurant Restaurant { get; set; }
-        public Food Food { get; set; }
-        public EditCommentWindow(Comment comment,Restaurant restaurant,Food food)
+        public Food Food { get; set; } = null;
+        public Order Order { get; set; } = null;
+        public EditCommentWindow(Comment comment, Restaurant restaurant, Food food)
         {
             InitializeComponent();
             Comment = comment;
@@ -31,11 +32,27 @@ namespace Restaurant_Manager.Windows
             Restaurant = restaurant;
             Food = food;
         }
+        public EditCommentWindow(Comment comment, Order order)
+        {
+            InitializeComponent();
+            Comment = comment;
+            CommentBox.Text = Comment.Message;
+            Order = order;
+        }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            Classes.Comment.EditComment(CommentBox.Text, Comment.ID,Food.ID ,Restaurant.ID);
+            if (Food == null)
+            {
+                Classes.Order.EditComment(CommentBox.Text, Comment.ID);
+
+            }
+            else
+            {
+                Classes.Food.EditComment(CommentBox.Text, Comment.ID, Food.ID, Restaurant.ID);
+            }
+            Comment.Message = CommentBox.Text;
             this.Close();
 
         }

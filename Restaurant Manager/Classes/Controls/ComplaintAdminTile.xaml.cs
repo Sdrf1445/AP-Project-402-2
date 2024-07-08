@@ -44,7 +44,7 @@ namespace Restaurant_Manager.Classes.Controls
             bool? result = new AnswerComplaintWindow(Complaint).ShowDialog();
             if(result == true)
             {
-                Page.Rerender();
+                Page.NavigationService.Navigate(new Complaints());
             }
         }
     }

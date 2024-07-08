@@ -8,12 +8,12 @@
         Title="AddComplaintWindow" Height="300" Width="492" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <TextBlock Text="Add Complaint" FontSize="25" FontWeight="Bold" Width="200" Height="30" Margin="10,10,282,260"></TextBlock>
-        <controls:CustomTextBox Width="200" Height="40" Margin="28,60,264,200" HintText="Title"></controls:CustomTextBox>
-        <controls:CustomTextBox Width="200" Height="40" Margin="266,60,26,200" HintText="Restaurant Name"></controls:CustomTextBox>
-        <controls:CustomTextBox Height="40" Margin="28,127,26,133" HintText="Description"/>
+        <controls:CustomTextBox x:Name="TitleBox" Width="200" Height="40" Margin="28,60,264,200" HintText="Title"></controls:CustomTextBox>
+        <controls:CustomTextBox x:Name="RestaurantUsernameBox" Width="200" Height="40" Margin="266,60,26,200" HintText="Restaurant Name"></controls:CustomTextBox>
+        <controls:CustomTextBox x:Name="DescBox" Width="400" Height="40" Margin="28,127,26,133" HintText="Description"/>
 
-        <Button Content="Save" Width="100" Height="40" Margin="297,223,95,37" Style="{StaticResource Shared.SmallButton3}" Foreground="White"></Button>
-        <Button Content="Discard" Width="100" Height="40" Margin="93,223,299,37" Style="{StaticResource Shared.SmallButton}" Foreground="White"></Button>
+        <Button Click="Save_Click" Content="Save" Width="100" Height="40" Margin="297,223,95,37" Style="{StaticResource Shared.SmallButton3}" Foreground="White"></Button>
+        <Button Click="Discard_Click" Content="Discard" Width="100" Height="40" Margin="93,223,299,37" Style="{StaticResource Shared.SmallButton}" Foreground="White"></Button>
 
 
     </Grid>

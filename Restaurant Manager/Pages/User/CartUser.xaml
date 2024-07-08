@@ -20,12 +20,12 @@
                 </Border.Effect>
             </Border>
             <TextBlock Text="Total Cost" FontSize="20" FontWeight="Bold" Canvas.Left="46" Canvas.Top="10"></TextBlock>
-            <TextBlock Text="123.99$" FontSize="20" TextAlignment="Center" FontWeight="Bold" Canvas.Left="55" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock x:Name="TotalCostBox" Text="123.99$" FontSize="20" TextAlignment="Center" FontWeight="Bold" Canvas.Left="55" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
             <TextBlock Text="Payment Method" FontSize="20" FontWeight="Bold" Canvas.Left="14" Canvas.Top="69" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
 
-            <RadioButton Content="Cash" IsChecked="True" FontWeight="Bold" Canvas.Left="33" Canvas.Top="114"></RadioButton>
-            <RadioButton Content="Online" FontWeight="Bold" Canvas.Left="33" Canvas.Top="134" HorizontalAlignment="Center" VerticalAlignment="Top"></RadioButton>
-            <Button Content="Pay" Height="40" Width="100" Foreground="White" Style="{StaticResource Shared.SmallButton}" Canvas.Left="42" Canvas.Top="179"></Button>
+            <RadioButton x:Name="CashBox" Content="Cash" IsChecked="True" FontWeight="Bold" Canvas.Left="33" Canvas.Top="114"></RadioButton>
+            <RadioButton x:Name="OnlineBox" Content="Online" FontWeight="Bold" Canvas.Left="33" Canvas.Top="134" HorizontalAlignment="Center" VerticalAlignment="Top"></RadioButton>
+            <Button Content="Pay" Click="Pay_Click" Height="40" Width="100" Foreground="White" Style="{StaticResource Shared.SmallButton}" Canvas.Left="42" Canvas.Top="179"></Button>
         </Canvas>
 
 

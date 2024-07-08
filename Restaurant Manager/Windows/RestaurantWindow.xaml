@@ -25,7 +25,7 @@
                 <TextBlock Margin="0,11,0,0" Text="Restaurant Admin" TextAlignment="Center" FontWeight="Bold" FontFamily="LilGrotesk" FontSize="30"></TextBlock>
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Margin="0,55,0,0" GroupName="NavigationBar" Width="245" Height="49" IsChecked="True" Content="Main"></RadioButton>
                 <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Margin="0,10,0,0" GroupName="NavigationBar" Width="245" Height="49" Content="Order History"></RadioButton>
-                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Margin="0,10,0,0" GroupName="NavigationBar" Width="245" Height="49" Content="Reservation History"></RadioButton>
+                <RadioButton Style="{StaticResource Admin.Shared.NavigationBarButton}" Checked="Exit_Checked" Margin="0,10,0,0" GroupName="NavigationBar" Width="245" Height="49" Content="Exit"></RadioButton>
 
 
             </StackPanel>

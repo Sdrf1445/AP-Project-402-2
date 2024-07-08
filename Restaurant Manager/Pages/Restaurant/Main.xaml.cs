@@ -55,7 +55,7 @@ namespace Restaurant_Manager.Pages.Restaurant
             bool? result = new MenuAddWindow().ShowDialog();
             if(result == true)
             {
-                NavigationService.Refresh();
+                NavigationService.Navigate(new Pages.Restaurant.Main(Restaurant));
             }
         }
     }

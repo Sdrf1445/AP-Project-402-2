@@ -25,22 +25,29 @@ namespace Restaurant_Manager.Windows
         public UserWindow()
         {
             InitializeComponent();
+            User = Classes.User.GetCurrentUSer();
             Frame.Navigate(new RestaurantsUser());
-            UsernameBlock.Text = User.GetFullNameByUsername(User.FullName);
+            UsernameBlock.Text = User.FullName;
         }
 
         private void RestaurantsNavButton_Checked(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(new RestaurantsUser());
+            if(Frame != null)
+            {
+                Frame.Navigate(new RestaurantsUser());
+
+            }
         }
 
         private void OrderHistoryNavButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(new OrderHistoryUser(User.GetCurrentUSer()));
         }
 
         private void Logout_Checked(object sender, RoutedEventArgs e)
         {
+            new LoginWindow().Show();
+            this.Close();
 
         }
 
@@ -58,6 +65,39 @@ namespace Restaurant_Manager.Windows
 
         private void Complaints_Checked(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(new ComplaintsUser(User));
+
+        }
+        public void ShowMessageBox(string message)
+        {
+
+            MessageBoxBlock.Content = message;
+            MessageBoxBlock.Opacity = 1;
+            Task.Factory.StartNew(async () =>
+            {
+                await Task.Delay(4000);
+                this.Dispatcher.Invoke(new Action(() =>
+                {
+                    MessageBoxBlock.Opacity = 0;
+                }));
+            }
+            );
+            /*            MessageBoxBlock.Opacity = 1;
+                        Task.Factory.StartNew(async () =>
+                        {
+                            await Task.Delay(5000);
+                            this.Dispatcher.Invoke(new Action(() =>
+                            {
+                                MessageBoxBlock.Opacity = 0;
+                            }));
+                        });
+            */
+
+        }
+
+        private void Cart_Checked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new CartUser());
 
         }
     }

@@ -13,6 +13,7 @@ using System.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Windows.Media.Imaging;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Restaurant_Manager.Classes
 {
@@ -30,7 +31,7 @@ namespace Restaurant_Manager.Classes
         public List<Comment>? Comments { get; set; }
         public List<Rating>? Ratings { get; set; }
         // fix this part if you could
-        private int? numberOrdered;
+        private int? numberOrdered { get; set; }
         public int? NumberOrdered
         {
             get
@@ -71,6 +72,7 @@ namespace Restaurant_Manager.Classes
             Price = price;
             ID = UniqueIdGenerator();
         }
+        [JsonConstructor]
         public Food(int menuID, int remaining, string name, string? imageSource, string ingredients, double price)
         {
             MenuID = menuID;
@@ -132,7 +134,7 @@ namespace Restaurant_Manager.Classes
                 .Where(y => y.ID == foodID)
                 .First().Comments!;
             var comment = comments.Where(x => x.ID == commentID).First();
-            comment.Replies.Add(new Comment(replyMessage, User.CurrentUsername));
+            comment.Replies.Add(new Comment(replyMessage, User.CurrentAccoutName));
 
             Database.Instance.Menus
                 .Where(x => x.RestaurantID == restaurantID)
@@ -160,18 +162,18 @@ namespace Restaurant_Manager.Classes
                 .Select(x => x.RestaurantID)
                 .First();
             string filePath = $"./Images/{restaurantID}/{menuID}/{foodID}.data";
-            Uri defaultPath = new Uri("./Images/DefaultFood/image.png");
+            var defaultpath = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent;
+            Uri defaultPath = new Uri(defaultpath.GetDirectories("Images").First().GetDirectories("DefaultFood").First().GetFiles("image.png").First().FullName,UriKind.Absolute);
             if (!File.Exists(filePath))
             {
                 return new BitmapImage(defaultPath);
             }
-
-            return new BitmapImage(new Uri(filePath));
+            return new BitmapImage(new Uri(Path.Join(Environment.CurrentDirectory,filePath),UriKind.Absolute));
         }
 
         public static void AddComment(string message, int foodID, int restaurantID)
         {
-            Comment newComment = new Comment(message, User.CurrentUsername);
+            Comment newComment = new Comment(message, User.CurrentAccoutName);
 
             var foods = Database.Instance.Menus
                 .Where(x => x.RestaurantID == restaurantID)

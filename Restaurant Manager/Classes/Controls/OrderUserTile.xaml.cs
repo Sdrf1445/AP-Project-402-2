@@ -1,4 +1,5 @@
-﻿using Restaurant_Manager.Windows;
+﻿using Restaurant_Manager.Pages.User;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace Restaurant_Manager.Classes.Controls
             bool? dialogresult = window.ShowDialog();
             if(dialogresult == true)
             {
-                Page.NavigationService.Refresh();
+                Page.NavigationService.Navigate(new OrderHistoryUser(User.GetCurrentUSer()));
             }
         }
     }

@@ -33,8 +33,12 @@ namespace Restaurant_Manager.Classes
         {
             get
             {
+                if(!Database.Instance.Menus.Any(x => x.RestaurantID == ID))
+                {
+                    return 0;
+                }
                 var foodRatings = Database.Instance.Menus
-                    .Where(x => x.RestaurantID == CurrentRestaurantID)
+                    .Where(x => x.RestaurantID == ID) //sus
                     .First().Foods
                     .Select(y => y.Rating);
                 var orderRatings = Orders.Select(x => x.Rating.Value);
@@ -378,6 +382,10 @@ namespace Restaurant_Manager.Classes
         {
             return Database.Instance.Restaurants.First(x => x.ID==restaurantID);
         } 
+        public static bool DoesRestaurantUsernameExist(string username)
+        {
+            return Database.Instance.Restaurants.Any(x => x.Username == username);
+        }
 
         
     }

@@ -50,7 +50,7 @@ namespace Restaurant_Manager.Classes.Controls
             bool? result = new FoodAddWindow(Menu).ShowDialog();
             if(result == true)
             {
-                Page.NavigationService.Refresh();
+                Page.NavigationService.Navigate(new Pages.Restaurant.Main(Restaurant));
             }
         }
 
@@ -60,7 +60,7 @@ namespace Restaurant_Manager.Classes.Controls
 
             if (result == true)
             {
-                Page.NavigationService.Refresh();
+                Page.NavigationService.Navigate(new Pages.Restaurant.Main(Restaurant));
             }
 
         }

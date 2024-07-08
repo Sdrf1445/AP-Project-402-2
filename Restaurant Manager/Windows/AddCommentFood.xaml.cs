@@ -33,13 +33,13 @@ namespace Restaurant_Manager.Windows
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
             Food.AddComment(CommentBox.Text, Food.ID, Restaurant.ID);
+            Food.Comments.Add(new Comment(CommentBox.Text, User.CurrentAccoutName));
             this.Close();
         }
     }

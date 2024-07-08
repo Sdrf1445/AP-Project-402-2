@@ -14,8 +14,20 @@ namespace Restaurant_Manager.Classes
     public enum Gender { MALE, FEMALE}
     public class User
     {
+        public static string CurrentAccoutName { get
+            {
+                if(CurrentUsername != null && CurrentUsername != "")
+                {
+                    return CurrentUsername;
+                }
+                else
+                {
+                    return Restaurant.GetRestaurantById(Restaurant.CurrentRestaurantID).Username;
+                }
+            } }
         public static string CurrentUsername { get; set; }
         public static Order Cart { get; set; } = new Order(CurrentUsername!);
+        public static int CurrentCartRestaurantId { get; set; } = -1;
 
         [Key]
         public string Username { get; set; }
@@ -51,7 +63,7 @@ namespace Restaurant_Manager.Classes
                 OrdersJson = JsonSerializer.Serialize(value);
             }
         }
-       
+
 
         public User(string username, string name, string lastName, string phoneNumber, string email)
         {
@@ -151,6 +163,11 @@ namespace Restaurant_Manager.Classes
 
         public static bool AddToCart(int foodID, int restaurantID) // can food be added to cart(is there anything remaining)
         {
+            if(CurrentCartRestaurantId != restaurantID)
+            {
+                CurrentCartRestaurantId = restaurantID;
+                Cart = new Order(CurrentUsername);
+            }
             var foods = Database.Instance.Menus
                 .Where(x => x.RestaurantID == restaurantID)
                 .First().Foods;

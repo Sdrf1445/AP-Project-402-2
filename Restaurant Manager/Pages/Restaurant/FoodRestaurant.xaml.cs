@@ -35,17 +35,21 @@ namespace Restaurant_Manager.Pages.Restaurant
             RemainingBlock.Text = $"Remaning: {Food.Remaining}";
             RatingBlock.Text = $"{Food.Rating} (30 Votes)";
             Ingridients.Text = $"Ingridients: {Food.Ingredients}";
+            ImageBox.Source = Classes.Food.ReadImage(food.MenuID, food.ID);
+            
+            bool first = true;
             foreach (var item in Food.Comments)
             {
-                var commenttile = new CommentTile(Food,Restaurant,this,item, allowEdit: item.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
-                commenttile.Margin = new Thickness(0, 10, 0, 0);
+                var commenttile = new CommentTile(Food,Restaurant,this,item, allowEdit: item.AuthorUsername == Classes.User.CurrentAccoutName);
+                commenttile.Margin = new Thickness(0, first ? 10 : 200, 0, 0);
+                if (first) { first = false; }
                 commenttile.HorizontalAlignment = HorizontalAlignment.Left;
                 CommentListBox.Children.Add(commenttile);
                 foreach (var reply in item.Replies)
                 {
-                    var replytile = new CommentTile(Food,Restaurant,this,reply, false, reply.AuthorUsername == Classes.Restaurant.GetNameByID(Classes.Restaurant.CurrentRestaurantID));
-                    replytile.Margin = new Thickness(0, 10, 0, 0);
-                    replytile.HorizontalAlignment = HorizontalAlignment.Right;
+                    var replytile = new CommentTile(Food,Restaurant,this,reply, false, reply.AuthorUsername == Classes.User.CurrentAccoutName);
+                    replytile.Margin = new Thickness(30, 200, 0, 0);
+                    replytile.HorizontalAlignment = HorizontalAlignment.Left;
                     CommentListBox.Children.Add(replytile);
 
                 }
@@ -57,7 +61,7 @@ namespace Restaurant_Manager.Pages.Restaurant
             bool? dialogresult = new AddCommentFood(Food, Restaurant).ShowDialog() ;
             if (dialogresult == true)
             {
-                NavigationService.Refresh();
+                NavigationService.Navigate(new FoodRestaurant(Food,Restaurant));
             }
         }
     }

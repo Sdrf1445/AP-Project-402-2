@@ -84,6 +84,7 @@ namespace Restaurant_Manager.Classes.Controls
             this.RestaurantText = restaurant.Name;
             this.LocationText = restaurant.City;
             this.CommentsCountNumber = "0";
+            this.StarText = Restaurant.Rating.ToString();
         }
         
         public override void OnApplyTemplate()

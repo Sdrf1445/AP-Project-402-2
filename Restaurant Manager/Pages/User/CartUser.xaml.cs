@@ -1,4 +1,5 @@
-﻿using Restaurant_Manager.Classes.Controls;
+﻿using Restaurant_Manager.Classes;
+using Restaurant_Manager.Classes.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,19 @@ namespace Restaurant_Manager.Pages.User
             InitializeComponent();
             foreach(var item in Classes.User.Cart.Foods)
             {
-                //var carttile = new CartFoodTile(item,)
-
+                var carttile = new CartFoodTile(item, Classes.Restaurant.GetRestaurantById(Classes.User.CurrentCartRestaurantId),this);
+                carttile.Margin = new Thickness(0,10,0,0);
+                FoodOrderTileList.Children.Add(carttile);
             }
+            TotalCostBox.Text = $"{Classes.User.Cart.SumPrice}$";
+
+        }
+
+        private void Pay_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.User.PayOrder((bool)CashBox.IsChecked ? PaymentMethod.CASH: PaymentMethod.ONLINE,Classes.User.CurrentCartRestaurantId);
+            Classes.User.Cart = new Order(Classes.User.CurrentUsername);
+            NavigationService.Navigate(new CartUser());
         }
     }
 }

@@ -70,6 +70,9 @@
     <Compile Update="Pages\Admin\Restaurants.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Restaurant\RestaurantOrders.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\User\Cart.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -226,6 +229,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Admin\Restaurants.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restaurant\RestaurantOrders.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\User\Cart.xaml">

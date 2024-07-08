@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,8 +27,15 @@ namespace Restaurant_Manager.Windows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            if(!Classes.Restaurant.DoesRestaurantUsernameExist(RestaurantUsernameBox.Text))
+            {
+                new ErrorWindow("Such restaurant does not exist").ShowDialog();
+                return;
 
+            }
+            this.DialogResult = true;
+            Classes.User.AddComplaint(RestaurantUsernameBox.Text, TitleBox.Text, DescBox.Text);
+            this.Close();
         }
 
         private void Discard_Click(object sender, RoutedEventArgs e)

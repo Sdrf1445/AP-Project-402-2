@@ -1,4 +1,5 @@
-﻿using Restaurant_Manager.Windows;
+﻿using Restaurant_Manager.Pages.User;
+using Restaurant_Manager.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,8 @@ namespace Restaurant_Manager.Classes.Controls
     {
         public Food Food { get; set; }
         public Restaurant Restaurant { get; set; }
-        public CartFoodTile(Food food,Restaurant restaurant)
+        public Page Page { get; set; }
+        public CartFoodTile(Food food,Restaurant restaurant, Page page)
         {
             InitializeComponent();
             Food = food;
@@ -32,6 +34,7 @@ namespace Restaurant_Manager.Classes.Controls
             RemaningBlock.Text = $"Remaning: {Food.Remaining}";
             PriceBlock.Text = $"{Food.Price}$";
             NumericUpdown.Number = Food.NumberOrdered!.Value;
+            Page = page;
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
@@ -46,8 +49,8 @@ namespace Restaurant_Manager.Classes.Controls
 
         private void Delete_Clicked(object sender, MouseButtonEventArgs e)
         {
-            //remove from cart
-
+            Classes.User.RemoveFromCart(Food.ID);
+            Page.NavigationService.Navigate(new CartUser());
         }
     }
 }

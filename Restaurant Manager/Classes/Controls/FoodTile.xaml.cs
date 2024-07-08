@@ -53,8 +53,17 @@ namespace Restaurant_Manager.Classes.Controls
             if(!result)
             {
                 new ErrorWindow("Cannot do that").ShowDialog();
+                return;
 
             }
+            var window = Window.GetWindow(this);
+            (window as UserWindow).ShowMessageBox("Added");
+        }
+
+        private void Image_Click(object sender, MouseButtonEventArgs e)
+        {
+            Page.NavigationService.Navigate(new Pages.Food.FoodUser(Food, Restaurant));
+
         }
     }
 }

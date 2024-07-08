@@ -104,7 +104,7 @@ namespace Restaurant_Manager.Pages.User
                 restaurantadminTile.Height = 151;
                 RestaurantTileList.Children.Add(restaurantadminTile);
             }
-            if(!IsFilterDisplayed)
+            if(IsFilterDisplayed)
             {
                 RestaurantTileList.Children.Insert(0, filterControl);
             }

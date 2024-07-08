@@ -8,7 +8,6 @@
         Title="FoodEditWindow" Height="300" Width="492" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Canvas>
         <TextBlock Text="Food Information" FontWeight="Bold" FontSize="25" Canvas.Left="10" Canvas.Top="10"></TextBlock>
-        <Button Content="🗑️" Width="32" Height="32" FontSize="22" Background="Transparent" Foreground="Orange" Canvas.Left="439" Canvas.Top="11" BorderThickness="0"></Button>
         <controls:CustomTextBox x:Name="NameBox" Width="273" Height="40" HintText="Name" Canvas.Left="171" Canvas.Top="48" HorizontalAlignment="Left" VerticalAlignment="Center"></controls:CustomTextBox>
         <controls:CustomTextBox x:Name="PriceBox" Width="130" Height="40" HintText="Price" Canvas.Left="171" Canvas.Top="103" HorizontalAlignment="Center" VerticalAlignment="Top"></controls:CustomTextBox>
         <controls:CustomNumbericUpDown x:Name="RemainingBox" Width="130" Height="40" Canvas.Left="314" Canvas.Top="103"></controls:CustomNumbericUpDown>
